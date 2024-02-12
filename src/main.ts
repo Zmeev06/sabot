@@ -5,5 +5,7 @@ import App from './index.vue';
 import PrimeVue from 'primevue/config';
 import './assets/tailwind.css';
 
-const app = createApp(App).use(store).use(router).use(PrimeVue);
+const app = createApp(App).use(store).use(router).use(PrimeVue, {
+	unstyled: true,
+});
 app.mount('#app');
