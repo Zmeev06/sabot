@@ -9,7 +9,7 @@
 		error?: boolean;
 		label?: string;
 		icon?: string;
-		iconPos?: string;
+		iconPos?: 'right' | 'left' | 'top' | 'bottom' | undefined;
 	}
 
 	const props = withDefaults(defineProps<ButtonProps>(), {
