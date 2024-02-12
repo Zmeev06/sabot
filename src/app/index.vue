@@ -1,6 +1,3 @@
-<script setup lang="ts">
-import "dayjs/locale/ru";
-</script>
+<script setup lang="ts"></script>
 
-<template>
-</template>
+<template></template>
