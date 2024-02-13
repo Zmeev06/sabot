@@ -1,11 +1,13 @@
 <script setup lang="ts">
-	import { ref } from 'vue';
+	import { computed, ref, useSlots } from 'vue';
+	import { isDropdownSlot } from '../model/slots';
 	import Dropdown from 'primevue/dropdown';
-	import { Icon } from '../icon';
+	import { Icon } from '../../icon';
 
 	const modelValue = defineModel();
 
-	defineProps<{
+	const props = defineProps<{
+		pt?: any;
 		options: any[];
 		optionLabel: string;
 		placeholder?: string;
@@ -13,7 +15,7 @@
 
 	const isShow = ref(false);
 
-	const dropdownStyle = ref({
+	const dropdownStyleObject = {
 		root: ['ptDropdownRoot', { ptRootFocused: isShow }],
 		input: 'ptDropdownInput',
 		trigger: 'ptDropdownTrigger',
@@ -25,6 +27,19 @@
 			leaveActiveClass: 'transition-opacity duration-100 ease-linear',
 			leaveToClass: 'opacity-0',
 		},
+	};
+
+	const dropdownStyle =
+		typeof props.pt === 'undefined' ? ref(dropdownStyleObject) : Object.assign(dropdownStyleObject, props.pt);
+
+	const $slots = useSlots();
+	const dropDownSlots = computed(() => {
+		return Object.keys($slots)
+			.filter((name) => isDropdownSlot(name))
+			.reduce((obj: Record<string, any>, key: string) => {
+				obj[key] = $slots[key];
+				return obj;
+			}, {});
 	});
 </script>
 
@@ -46,6 +61,9 @@
 			<Transition mode="out-in" name="pt-fade-in">
 				<Icon v-if="modelValue === options[index]" name="checkbox" class="ptDropdownIndicator" />
 			</Transition>
+		</template>
+		<template v-for="(_, slot) of dropDownSlots" #[slot]="scope">
+			<slot :name="slot" v-bind="scope" />
 		</template>
 	</Dropdown>
 </template>

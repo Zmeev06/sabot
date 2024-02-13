@@ -1,7 +1,25 @@
 <script setup lang="ts">
+	import { ref } from 'vue';
+
 	import { Header } from '../components/header';
 	import { Navbar } from '../modules/navbar';
 	import { PageTabs } from '../modules/pageLinkTabs';
+
+	import { SearchBox } from '../components/searchBox';
+	import { ColorModeToggler } from '../modules/colorModeToggler';
+	import { ReadMessages } from '../modules/readMessage';
+	import { Notifications } from '../modules/notifications';
+	import { Avatar } from '../ui/avatar';
+	import { ProfileMenu } from '../modules/profileMenu';
+
+	const selectedCity = ref();
+	const cities = ref([
+		{ name: 'New York', code: 'NY' },
+		{ name: 'Rome', code: 'RM' },
+		{ name: 'London', code: 'LDN' },
+		{ name: 'Istanbul', code: 'IST' },
+		{ name: 'Paris', code: 'PRS' },
+	]);
 </script>
 
 <template>
@@ -11,7 +29,21 @@
 				<Navbar />
 			</template>
 			<template #actions>
-				<div>Actions</div>
+				<div class="flex items-center gap-4">
+					<SearchBox
+						v-model="selectedCity"
+						:options="cities"
+						placeholder="Поиск по странице"
+						optionLabel="name" />
+					<div class="flex items-center gap-1">
+						<ColorModeToggler />
+						<ReadMessages />
+						<Notifications :notifications="28" />
+					</div>
+					<ProfileMenu>
+						<Avatar image="../assets/media/avatar.jpg" />
+					</ProfileMenu>
+				</div>
 			</template>
 		</Header>
 		<div>

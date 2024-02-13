@@ -1,3 +1,3 @@
-import Dropdown from './Dropdown.vue';
+import Dropdown from './components/Dropdown.vue';
 
 export { Dropdown };
