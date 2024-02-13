@@ -30,7 +30,7 @@
 	};
 
 	const dropdownStyle =
-		typeof props.pt === 'undefined' ? ref(dropdownStyleObject) : Object.assign(dropdownStyleObject, props.pt);
+		typeof props.pt === 'undefined' ? ref(dropdownStyleObject) : ref(Object.assign(dropdownStyleObject, props.pt));
 
 	const $slots = useSlots();
 	const dropDownSlots = computed(() => {

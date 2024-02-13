@@ -6,6 +6,6 @@
 <template>
 	<div>
 		<TopSection class="mb-6" />
-		<ChartSection />
+		<ChartSection class="max-h-[536px]" />
 	</div>
 </template>

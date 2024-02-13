@@ -2,7 +2,7 @@
 	import { Tag } from '../../../ui/tag';
 	import type { IChartFilterProp } from '../constants/types';
 
-	const modelValue = defineModel();
+	const modelValue = defineModel<number>();
 
 	defineProps<{
 		filters: IChartFilterProp[];

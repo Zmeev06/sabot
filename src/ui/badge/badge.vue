@@ -3,6 +3,7 @@
 	import Badge from 'primevue/badge';
 
 	interface BadgeProps {
+		pt?: any;
 		variant?: 'primary' | 'error';
 		size?: 'sm' | 'md' | 'lg';
 	}
@@ -12,7 +13,7 @@
 		size: 'md',
 	});
 
-	const badgeStyle = ref({
+	const badgeStyleObject = {
 		root: [
 			{
 				ptBadgePrimary: props.variant === 'primary',
@@ -24,7 +25,10 @@
 				ptBadgeLg: props.size === 'lg',
 			},
 		],
-	});
+	};
+
+	const badgeStyle =
+		typeof props.pt === 'undefined' ? ref(badgeStyleObject) : ref(Object.assign(badgeStyleObject, props.pt));
 </script>
 
 <template>
@@ -35,7 +39,7 @@
 
 <style>
 	.ptBadgePrimary {
-		@apply border-[1px] border-grey-200 bg-gray-50 text-grey-700;
+		@apply border-[1px] border-grey-200 bg-gray-50 text-grey-700 font-medium;
 	}
 
 	.ptBadgeError {
