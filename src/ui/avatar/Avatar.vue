@@ -34,14 +34,12 @@
 		],
 		image: 'ptAvatarImage',
 	});
-
-	console.log(props.size);
 </script>
 
 <template>
 	<div class="relative inline-flex justify-center">
 		<AvatarIndicator v-if="indicator" />
-		<Avatar :pt="avatarStyle" v-bind="$attrs" :image="image" :size="size" :shape="shape" />
+		<Avatar :pt="avatarStyle" v-bind="$attrs" :image="image" :shape="shape" />
 	</div>
 </template>
 

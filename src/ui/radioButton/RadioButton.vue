@@ -8,7 +8,7 @@
 		root: 'ptRadioButtonRoot',
 		box: 'ptRadioButtonBox',
 		input: ['peer', 'ptRadioButtonInput'],
-		icon: ({ props }) => ({
+		icon: ({ props }: { props: { value: any } }) => ({
 			class: [
 				'ptRadioButtonIcon',
 				{

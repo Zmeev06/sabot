@@ -1,7 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+	import TopSection from './TopSection.vue';
+	import ChartSection from './ChartSection.vue';
+</script>
 
 <template>
 	<div>
-		<div class="flex gap-4 items-center"></div>
+		<TopSection class="mb-6" />
+		<ChartSection />
 	</div>
 </template>

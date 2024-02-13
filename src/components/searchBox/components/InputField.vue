@@ -6,8 +6,9 @@
 	import InputText from 'primevue/inputtext';
 	import IconField from 'primevue/iconfield';
 	import InputIcon from 'primevue/inputicon';
+	import { Nullable } from 'primevue/ts-helpers';
 
-	const modelValue = defineModel();
+	const modelValue = defineModel<Nullable<string>>();
 	const isFocused = ref(false);
 	const input = ref<InstanceType<typeof InputText>>();
 	const root = ref<InstanceType<typeof IconField>>();
@@ -52,7 +53,6 @@
 <template>
 	<IconField
 		iconPosition="right"
-		:data-focused="isFocused"
 		class="inline-flex rounded-lg py-2.5 px-3.5 items-center gap-2 border-[1px] border-border-strong bg-base-white shadow-sm shadow-text-primary/5 transition-all hover:border-accent-normal cursor-text"
 		:class="{ '!border-accent-normal': isFocused }"
 		ref="root">
