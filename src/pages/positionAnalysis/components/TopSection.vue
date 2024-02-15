@@ -1,9 +1,9 @@
 <script setup lang="ts">
 	import { ref } from 'vue';
-	import { Button } from '../../../ui/button';
-	import { FullWidthSection } from '../../../components/fullWidthSection/';
-	import { Dropdown } from '../../../ui/dropdown';
-	import { Calendar } from '../../../ui/calendar';
+	import { Button } from '@ui/button';
+	import { FullWidthSection } from '@components/fullWidthSection/';
+	import { Dropdown } from '@ui/dropdown';
+	import { Calendar } from '@ui/calendar';
 
 	const selectedCity = ref();
 	const cities = ref([

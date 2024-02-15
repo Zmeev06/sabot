@@ -16,12 +16,11 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src*"],
-      "@shared/*": ["src/shared/*"],
+      "@components/*": ["src/components/*"],
       "@pages/*": ["src/pages/*"],
-      "@widgets/*": ["src/widgets/*"],
-      "@features/*": ["src/features/*"],
-      "@entities/*": ["src/entities/*"],
-      "@assets/*": ["src/shared/assets/*"],
+      "@ui/*": ["src/ui/*"],
+      "@assets/*": ["src/assets/*"],
+      "@services/*": ["src/services/*"],
     },
     /* Linting */
     "strict": true,

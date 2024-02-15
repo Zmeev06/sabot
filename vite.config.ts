@@ -4,4 +4,15 @@ import vue from '@vitejs/plugin-vue'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
+  resolve: {
+    
+    alias: {
+      "@": "/src/",
+      "@components": "/src/components/",
+      "@pages": "/src/pages/",
+      "@ui": "/src/ui/",
+      "@assets": "/src/assets/",
+      "@services": "/src/services/",
+    },
+  },
 })
