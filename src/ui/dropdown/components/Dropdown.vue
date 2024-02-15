@@ -70,11 +70,11 @@
 
 <style>
 	.ptDropdownRoot {
-		@apply inline-flex justify-between bg-base-white transition-all items-center rounded-lg border-[1px] border-border-strong shadow-sm shadow-text-primary/5 px-[14px] py-[10px] gap-2 cursor-pointer focus:border-accent-normal;
+		@apply inline-flex justify-between bg-base-white transition-all items-center hover:outline-accent-normal outline rounded-lg outline-1 outline-border-strong shadow-sm shadow-text-primary/5 px-[14px] py-[10px] gap-2 cursor-pointer focus:outline-accent-normal;
 	}
 
 	.ptRootFocused {
-		@apply border-accent-normal;
+		@apply outline-accent-normal;
 	}
 
 	.ptDropdownInput {

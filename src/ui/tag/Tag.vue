@@ -1,5 +1,5 @@
 <script setup lang="ts">
-	import { ref } from 'vue';
+	import { computed } from 'vue';
 	import Tag from 'primevue/tag';
 	import { Icon } from '../icon';
 
@@ -9,7 +9,7 @@
 		active?: boolean;
 	}>();
 
-	const tagStyle = ref({
+	const tagStyle = computed(() => ({
 		root: [
 			'group',
 			'ptTagRoot',
@@ -25,7 +25,7 @@
 				'text-text-primary': props.active,
 			},
 		],
-	});
+	}));
 </script>
 
 <template>

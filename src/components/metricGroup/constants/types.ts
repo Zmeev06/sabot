@@ -21,3 +21,16 @@ export interface IBadgeLegendItem {
 	styles?: BadgeItemStyles;
 	text: string;
 }
+
+export interface IGraphicBadgeItem {
+	styles?: BadgeItemStyles;
+	increaseType: 'up' | 'down' | 'equal';
+	increaseValue: string;
+}
+
+export interface IGraphicItem {
+	label: string;
+	additionalLabel?: string;
+	numberValue: number;
+	badge: IGraphicBadgeItem;
+}

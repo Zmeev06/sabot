@@ -206,7 +206,7 @@
 				:options="cities"
 				optionLabel="name"
 				placeholder="Поиск по группам"
-				class="flex-shrink w-full" />
+				class="flex-shrink w-full max-h-9" />
 			<button>
 				<Icon name="show-more" class="w-5 h-5 text-fill-light" />
 			</button>

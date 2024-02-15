@@ -1,11 +1,12 @@
 <script setup lang="ts">
-	import { ref, watcher } from 'vue';
-	import { Chart, ChartCategory, ChartFilters, ChartLegend } from '../../../components/metricGroup';
+	import { ref } from 'vue';
+	import { Chart, ChartCategory, ChartFilters, ChartLegend, InfoGraphic } from '../../../components/metricGroup';
 	import Clusters from './Clusters.vue';
 
 	import { categories } from '../constants/categories';
 	import { filters } from '../constants/filters';
 	import { legend } from '../constants/legend';
+	import { graphicItems } from '../constants/graphic';
 
 	const currentCategory = ref(0);
 	const currentChartType = ref(0);
@@ -127,13 +128,16 @@
 </script>
 
 <template>
-	<div class="grid gap-6 grid-cols-[1fr_380px]">
-		<div class="max-h-[536px] grid grid-rows-[auto_auto_1fr_auto]">
-			<ChartCategory v-model="currentCategory" :categories="categories" class="mb-2" />
-			<ChartFilters v-model="currentChartType" :filters="filters" class="mb-[18px]" />
-			<Chart class="overflow-hidden mb-[22px]" :chartData="chartData" :chartOptions="chartOptions" />
-			<ChartLegend :items="legend" />
+	<div>
+		<div class="grid gap-6 grid-cols-[1fr_380px] mb-6">
+			<div class="max-h-[536px] grid grid-rows-[auto_auto_1fr_auto] pb-[18px]">
+				<ChartCategory v-model="currentCategory" :categories="categories" class="mb-2" />
+				<ChartFilters v-model="currentChartType" :filters="filters" class="mb-[18px]" />
+				<Chart class="overflow-hidden mb-[22px]" :chartData="chartData" :chartOptions="chartOptions" />
+				<ChartLegend :items="legend" />
+			</div>
+			<Clusters class="max-h-[536px]" />
 		</div>
-		<Clusters class="max-h-[536px]" />
+		<InfoGraphic :items="graphicItems" />
 	</div>
 </template>

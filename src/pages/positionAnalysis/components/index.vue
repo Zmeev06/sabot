@@ -1,11 +1,13 @@
 <script setup lang="ts">
 	import TopSection from './TopSection.vue';
 	import ChartSection from './ChartSection.vue';
+	import TableFilters from './TableFilters.vue';
 </script>
 
 <template>
-	<div>
-		<TopSection class="mb-6" />
-		<ChartSection class="max-h-[536px]" />
+	<div class="space-y-6">
+		<TopSection />
+		<ChartSection />
+		<TableFilters />
 	</div>
 </template>

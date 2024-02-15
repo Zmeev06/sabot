@@ -1,5 +1,5 @@
 <template>
-	<div class="border-r-[1px] border-r-border-strong last:border-none">
+	<div class="outline-1 outline-border-strong outline">
 		<slot />
 	</div>
 </template>

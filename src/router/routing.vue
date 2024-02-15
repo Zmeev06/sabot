@@ -24,7 +24,8 @@
 
 <template>
 	<div class="my-3 h-full w-full rounded-l-[32px] bg-base-white px-8 pb-12 pt-6 text-text-primary">
-		<Header class="-mx-8 mb-6 border-b-[1px] border-b-border-mid px-8">
+		<Header
+			class="-mx-8 mb-6 relative after:absolute after:bottom-0 after:left-0 after:bg-border-mid after:h-[1px] after:w-full px-8">
 			<template #navbar>
 				<Navbar />
 			</template>
