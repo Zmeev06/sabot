@@ -86,7 +86,7 @@
 	}
 
 	.ptDropdownItem {
-		@apply my-0.5 mx-1.5 py-2.5 flex items-center justify-between px-2 cursor-pointer transition-colors rounded-md hover:bg-grey-light aria-[selected="true"]:bg-grey-light data-[p-focused="true"]:bg-grey-light;
+		@apply my-0.5 mx-1.5 py-2.5 flex gap-3 items-center justify-between px-2 cursor-pointer transition-colors rounded-md hover:bg-grey-light aria-[selected="true"]:bg-grey-light data-[p-focused="true"]:bg-grey-light;
 	}
 
 	.ptDropdownTrigger svg {

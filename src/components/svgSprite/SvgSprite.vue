@@ -175,8 +175,16 @@
 		<symbol id="arrow-narrow-left" viewBox="0 0 28 28" fill="none">
 			<path
 				d="M23.3337 14H4.66699M4.66699 14L11.667 21M4.66699 14L11.667 7"
-				stroke="#98A2B3"
+				stroke="currentColor"
 				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round" />
+		</symbol>
+		<symbol id="arrow-narrow-right" viewBox="0 0 20 20" fill="none">
+			<path
+				d="M4.16663 9.99996H15.8333M15.8333 9.99996L9.99996 4.16663M15.8333 9.99996L9.99996 15.8333"
+				stroke="currentColor"
+				stroke-width="1.66667"
 				stroke-linecap="round"
 				stroke-linejoin="round" />
 		</symbol>

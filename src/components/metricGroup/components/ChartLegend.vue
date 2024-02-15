@@ -8,7 +8,7 @@
 </script>
 
 <template>
-	<div class="flex items-center justify-center">
+	<div class="flex items-center justify-center gap-2">
 		<ChartLegendItem v-for="item in items" :key="item.id" :styles="item.styles" size="lg">
 			{{ item.text }}
 		</ChartLegendItem>

@@ -6,15 +6,15 @@ export const filters: IChartFilterProp[] = [
 		icon: 'chart-line',
 	},
 	{
-		type: 'line',
-		icon: 'chart-line',
+		type: 'line-filled',
+		icon: 'chart-line-filled',
 	},
 	{
-		type: 'line',
-		icon: 'chart-line',
+		type: 'bar',
+		icon: 'chart-bar',
 	},
 	{
-		type: 'line',
-		icon: 'chart-line',
+		type: 'doughnut',
+		icon: 'chart-doughnut',
 	},
 ];
