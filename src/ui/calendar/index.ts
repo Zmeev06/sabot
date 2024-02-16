@@ -1,4 +1,4 @@
-import Calendar from './Calendar.vue';
-import CalendarSidebar from './CalendarSidebar.vue';
+import Calendar from './components/Calendar.vue';
+import CalendarSidebar from './components/CalendarSidebar.vue';
 
 export { Calendar, CalendarSidebar };

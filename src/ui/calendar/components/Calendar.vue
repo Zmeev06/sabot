@@ -1,10 +1,12 @@
 <script setup lang="ts">
 	import { computed } from 'vue';
 	import Calendar from 'primevue/calendar';
-	import { Icon } from '../icon';
-	import { Button } from '../button';
-	import { Input } from '../input';
-	import { CalendarSidebar } from '.';
+	import { Icon } from '@//ui/icon';
+	import { Button } from '@//ui/button';
+	import { Input } from '@//ui/input';
+	import CalendarSidebar from './CalendarSidebar.vue';
+
+	import { sidebarItems } from '../constants/sidebar';
 
 	const modelValue = defineModel();
 
@@ -61,7 +63,7 @@
 						<Button variant="primary" label="Применить" />
 					</div>
 				</div>
-				<CalendarSidebar />
+				<CalendarSidebar :items="sidebarItems" />
 			</div>
 		</template>
 	</Calendar>
@@ -113,9 +115,7 @@
 	}
 
 	.ptCalendarPanel {
-		@apply bg-base-white rounded-lg border-[1px] border-grey-mid !mt-1;
-
-		box-shadow: 0px 8px 8px -4px rgba(var(--text-primary), 0.03), 0px 20px 24px -4px rgba(var(--text-primary), 0.08);
+		@apply !mt-1;
 	}
 
 	.ptCalendarButton {

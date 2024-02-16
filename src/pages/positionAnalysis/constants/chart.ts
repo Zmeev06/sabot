@@ -209,7 +209,8 @@ const axeY = {
 		stepSize: 8,
 	},
 	grid: {
-		display: false,
+		backgroundColor: '#F2F4F7',
+		borderWidth: 1,
 	},
 	border: {
 		display: false,
