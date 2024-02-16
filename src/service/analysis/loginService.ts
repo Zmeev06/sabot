@@ -1,13 +1,15 @@
 import { AxiosError } from "axios";
 import { ApiClient } from "../Client";
-export const getCarData = async (id: number) => {
+export const getCarData = async (login: string, password: string) => {
+  const loginData = {
+    email: login,
+    password
+  }
   try {
     const response = await ApiClient({
-      method: "GET",
-      url: `service-client/car/get?id=${id}`,
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("authToken")}`,
-      },
+      method: "POST",
+      url: `/login`,
+      data: loginData
     });
     const { data, status } = response;
     if (status === 200) {
