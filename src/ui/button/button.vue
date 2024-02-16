@@ -68,11 +68,11 @@
 	}
 
 	.ptButtonPrimary {
-		@apply bg-accent-normal text-base-white border-[1px] border-accent-normal hover:bg-accent-dark hover:border-accent-dark disabled:bg-accent-light disabled:border-accent-light shadow-sm shadow-text-primary/5 focus:shadow-none focus:ring-2 focus:ring-accent-light;
+		@apply bg-accent-normal text-base-white outline outline-1 outline-accent-normal hover:bg-accent-dark hover:outline-accent-dark disabled:bg-accent-light disabled:border-accent-light shadow-sm shadow-text-primary/5 focus:shadow-none focus:ring-2 focus:ring-accent-light;
 	}
 
 	.ptButtonSecondary {
-		@apply border-[1px] bg-base-white border-border-strong text-text-secondary shadow-sm shadow-text-primary/5 hover:text-text-primary hover:bg-bg-secondary focus:ring-4 focus:ring-accent-light disabled:text-border-strong disabled:border-border-mid;
+		@apply outline outline-1 bg-base-white outline-border-strong text-text-secondary shadow-sm shadow-text-primary/5 hover:text-text-primary hover:bg-bg-secondary focus:ring-4 focus:ring-accent-light disabled:text-border-strong disabled:outline-border-mid;
 	}
 
 	.ptButtonTertiary {
@@ -80,11 +80,11 @@
 	}
 
 	.ptButtonPrimaryError {
-		@apply bg-error-600 text-base-white border-[1px] border-error-600 hover:bg-error-700 hover:border-error-700 disabled:bg-error-200 disabled:border-error-200 shadow-sm shadow-text-primary/5 focus:ring-4 focus:ring-error-100;
+		@apply bg-error-600 text-base-white outline outline-1 outline-error-600 hover:bg-error-700 hover:outline-error-700 disabled:bg-error-200 disabled:outline-error-200 shadow-sm shadow-text-primary/5 focus:ring-4 focus:ring-error-100;
 	}
 
 	.ptButtonSecondaryError {
-		@apply border-[1px] bg-base-white border-error-300 text-error-700 shadow-sm shadow-text-primary/5 hover:text-error-800 hover:bg-error-50 focus:ring-4 focus:ring-error-100 disabled:text-error-300 disabled:border-error-200;
+		@apply outline outline-1 bg-base-white outline-error-300 text-error-700 shadow-sm shadow-text-primary/5 hover:text-error-800 hover:bg-error-50 focus:ring-4 focus:ring-error-100 disabled:text-error-300 disabled:outline-error-200;
 	}
 
 	.ptButtonSizeSm {

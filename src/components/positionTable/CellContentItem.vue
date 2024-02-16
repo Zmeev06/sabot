@@ -68,7 +68,7 @@
 
 <template>
 	<div
-		class="py-2 px-3 w-20 flex items-start gap-0.5"
+		class="py-2 px-3 flex items-start gap-0.5"
 		:style="{ backgroundColor: testColor }"
 		:class="[textColor]"
 		:data-increase-type="increaseType">

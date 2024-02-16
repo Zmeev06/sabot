@@ -47,7 +47,7 @@ export const columns = [
 		cell: ({ row }) =>
 			h(
 				'div',
-				{ class: 'px-2 flex items-center justify-center h-[50px]' },
+				{ class: 'px-2 flex items-center justify-center' },
 				h(Checkbox, {
 					modelValue: row.getIsSelected(),
 					'onUpdate:modelValue': (value: boolean) => row.toggleSelected(!!value),
@@ -163,6 +163,7 @@ export const columns = [
 			header: () => h(CellContentHeader, { date: item.header.date, value: item.header.value }),
 			cell: ({ row }) =>
 				h(CellContentItem, {
+					class: 'w-20 h-[40px] border-r-[1px] border-r-base-white',
 					increaseType: item.body.increaseType,
 					increaseLevel: item.body.increaseLevel,
 					title: item.body.title,

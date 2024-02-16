@@ -2,15 +2,6 @@
 	import { Routing } from './router';
 	import { Sidebar } from './modules/sidebar';
 	import { SvgSprite } from './components/svgSprite';
-
-	import { useRoute, useRouter } from 'vue-router';
-
-	const route = useRoute();
-	const router = useRouter();
-
-	if (route.path === '/') {
-		router.push('/projects');
-	}
 </script>
 
 <template>
