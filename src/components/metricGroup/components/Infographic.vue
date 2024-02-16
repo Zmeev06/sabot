@@ -15,7 +15,7 @@
 				v-for="(item, index) in items"
 				:key="index"
 				v-bind="item"
-				class="outline outline-1 outline-border-mid" />
+				class="outline outline-1 outline-border-mid w-[136px]" />
 		</div>
 		<Button icon="chevron-up" class="!rounded-full" />
 	</div>

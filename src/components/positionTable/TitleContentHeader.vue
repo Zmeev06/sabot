@@ -7,7 +7,7 @@
 </script>
 
 <template>
-	<div class="flex items-center gap-3 px-2 w-[271px]">
+	<div class="flex items-center gap-3 px-2">
 		<h2 class="text-text-primary text-lg/7 font-medium">Запросы ({{ requestsAmount }})</h2>
 		<button class="flex items-center justify-center">
 			<Icon name="search" class="w-[18px] h-[18px] text-fill-light" />

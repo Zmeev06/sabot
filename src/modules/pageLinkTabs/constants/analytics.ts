@@ -3,22 +3,22 @@ import type { IPageTabItem } from './linkType';
 export const analyticsTabList: IPageTabItem[] = [
 	{
 		title: 'Анализ позиций',
-		url: '/projects/analytics/position-analysis',
+		url: '/projects/1/analytics/position-analysis',
 	},
 	{
 		title: 'Конкуренты',
-		url: '/projects/analytics/competitors',
+		url: '/projects/1/analytics/competitors',
 	},
 	{
 		title: 'Снимки выдачи',
-		url: '/projects/analytics/photos',
+		url: '/projects/1/analytics/photos',
 	},
 	{
 		title: 'Посещаемость',
-		url: '/projects/analytics/attendance',
+		url: '/projects/1/analytics/attendance',
 	},
 	{
 		title: 'Аналитика кластеров',
-		url: '/projects/analytics/clusters',
+		url: '/projects/1/analytics/clusters',
 	},
 ];

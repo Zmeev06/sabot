@@ -1,5 +1,5 @@
 <script setup lang="ts">
-	import { ref } from 'vue';
+	import { computed, ref } from 'vue';
 	import type { ColumnDef } from '@tanstack/vue-table';
 	import type { Response } from '../constants/types';
 	import { FlexRender, getCoreRowModel, getPaginationRowModel, useVueTable } from '@tanstack/vue-table';
@@ -33,6 +33,8 @@
 			},
 		},
 	});
+
+	const testColor = computed(() => 'rgb(217, 45, 32)');
 </script>
 
 <template>
@@ -59,7 +61,7 @@
 						v-for="row in table.getRowModel().rows"
 						:key="row.id"
 						:data-state="row.getIsSelected() ? 'selected' : undefined">
-						<TableCell v-for="cell in row.getVisibleCells()" :key="cell.id">
+						<TableCell class="h-[40px]" v-for="cell in row.getVisibleCells()" :key="cell.id">
 							<FlexRender :render="cell.column.columnDef.cell" :props="cell.getContext()" />
 						</TableCell>
 					</TableRow>

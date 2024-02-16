@@ -32,6 +32,7 @@
 			<template #actions>
 				<div class="flex items-center gap-4">
 					<SearchBox
+						class="w-[280px]"
 						v-model="selectedCity"
 						:options="cities"
 						placeholder="Поиск по странице"

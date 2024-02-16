@@ -4,6 +4,7 @@
 	import { Icon } from '../icon';
 	import { Button } from '../button';
 	import { Input } from '../input';
+	import { CalendarSidebar } from '.';
 
 	const modelValue = defineModel();
 
@@ -48,16 +49,19 @@
 			<Icon name="chevron-right" class="ptCalendarIcon" />
 		</template>
 		<template #footer>
-			<div class="grid grid-cols-2 items-center overflow-hidden border-t-[1px] border-t-border-mid p-4">
-				<div class="flex items-center gap-3 justify-center">
-					<Input class="max-w-[136px] w-full" placeholder="06.01.2022" />
-					<span class="text-base text-fill-mid">-</span>
-					<Input class="max-w-[136px] w-full" placeholder="06.01.2022" />
+			<div>
+				<div class="grid grid-cols-2 items-center overflow-hidden border-t-[1px] border-t-border-mid p-4">
+					<div class="flex items-center gap-3 justify-center">
+						<Input class="max-w-[136px] w-full" placeholder="06.01.2022" />
+						<span class="text-base text-fill-mid">-</span>
+						<Input class="max-w-[136px] w-full" placeholder="06.01.2022" />
+					</div>
+					<div class="flex items-center justify-end gap-3">
+						<Button variant="secondary" label="Отмена" />
+						<Button variant="primary" label="Применить" />
+					</div>
 				</div>
-				<div class="flex items-center justify-end gap-3">
-					<Button variant="secondary" label="Отмена" />
-					<Button variant="primary" label="Применить" />
-				</div>
+				<CalendarSidebar />
 			</div>
 		</template>
 	</Calendar>

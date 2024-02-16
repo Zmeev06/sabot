@@ -134,9 +134,9 @@ export const columns = [
 	}),
 	columnHelper.display({
 		id: 'title',
-		header: () => h(TitleContentHeader, { requestsAmount: 1280 }),
+		header: () => h(TitleContentHeader, { class: 'w-[271px]', requestsAmount: 1280 }),
 		cell: ({ row }) => {
-			return h(TitleContentItem, { title: row.original.title, trend: row.original.trend });
+			return h(TitleContentItem, { class: 'w-[271px]', title: row.original.title, trend: row.original.trend });
 		},
 	}),
 	columnHelper.display({

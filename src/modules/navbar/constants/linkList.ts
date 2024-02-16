@@ -6,7 +6,7 @@ export interface INavLink {
 export const menuLinks: INavLink[] = [
 	{
 		title: 'Аналитика',
-		path: '/projects/analytics/position-analysis',
+		path: '/projects/1/analytics/position-analysis',
 	},
 	{
 		title: 'Семантика',
