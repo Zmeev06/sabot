@@ -5,6 +5,8 @@
 	import { FlexRender, getCoreRowModel, getPaginationRowModel, useVueTable } from '@tanstack/vue-table';
 	import { valueUpdater } from '../../../utils/helpers';
 	import TableTopHeader from './TableTopHeader.vue';
+	import { Button } from '@//ui/button';
+	import { Pagination } from '@//components/pagination';
 
 	import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../../../ui/table';
 
@@ -39,7 +41,7 @@
 		<Table>
 			<TableHeader class="!p-0 !border-none">
 				<TableRow
-					class="!p-0 !border-none"
+					class="!p-0 border-b-[1px] border-b-border-heavy"
 					v-for="headerGroup in table.getHeaderGroups()"
 					:key="headerGroup.id">
 					<TableHead class="!p-0 !border-none" v-for="header in headerGroup.headers" :key="header.id">
@@ -69,5 +71,10 @@
 				</template>
 			</TableBody>
 		</Table>
+		<div class="pt-3 pb-4 px-6 flex items-center justify-between gap-4 border-t-[1px] border-t-border-mid">
+			<Button variant="secondary" size="sm" icon="arrow-narrow-left" iconPos="left" label="Назад" />
+			<Pagination />
+			<Button variant="secondary" size="sm" icon="arrow-narrow-right" iconPos="right" label="Вперёд" />
+		</div>
 	</div>
 </template>

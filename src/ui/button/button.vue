@@ -43,7 +43,7 @@
 
 				ptButtonIconOnly: typeof props.iconPos === 'undefined' && typeof props.label === 'undefined',
 
-				'flex-row-reverse': props.iconPos === 'right',
+				'flex-row-reverse': props.iconPos === 'left',
 			},
 		],
 	});

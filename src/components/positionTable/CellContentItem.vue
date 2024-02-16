@@ -48,8 +48,6 @@
 		return result;
 	});
 
-	console.log(bgColor.value);
-
 	const textColor = computed(() => {
 		let result = 'text-';
 

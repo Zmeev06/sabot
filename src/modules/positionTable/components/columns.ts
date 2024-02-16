@@ -1,4 +1,4 @@
-import { ColumnDef, createColumnHelper } from '@tanstack/vue-table';
+import { ColumnDef, createColumnHelper, getExpandedRowModel } from '@tanstack/vue-table';
 import { h, computed } from 'vue';
 import { Icon } from '@//ui/icon';
 import { Checkbox } from '@//ui/checkbox';
