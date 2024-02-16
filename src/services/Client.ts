@@ -1,13 +1,13 @@
 import axios, { AxiosRequestConfig, ResponseType } from "axios";
-import dotenv from 'dotenv'
+// import dotenv from 'dotenv'
 
-dotenv.config()
+// dotenv.config()
 
-const API_BASE_URL = process.env.BASE_URL!;
+// const API_BASE_URL = process.env.BASE_URL!;
 
-if (!API_BASE_URL) {
-  throw new Error('BASE_URL is not defined in the environment variables!');
-}
+// if (!API_BASE_URL) {
+//   throw new Error('BASE_URL is not defined in the environment variables!');
+// }
 
 interface Client {
   data?: unknown | undefined;
@@ -26,7 +26,7 @@ interface Client {
 const REQUEST_TIMEOUT = 5000;
 
 const API = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: 'https://api.seobot.pro/api',
   timeout: REQUEST_TIMEOUT,
   headers: {
     Accept: "application/json",
