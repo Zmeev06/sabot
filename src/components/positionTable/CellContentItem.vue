@@ -68,7 +68,7 @@
 <template>
 	<div
 		class="py-2 px-3 w-20 flex items-start gap-0.5"
-		:class="[bgColor, textColor]"
+		:class="`${bgColor} ${textColor}`"
 		:data-increase-type="increaseType">
 		<h2 v-if="increaseType !== 'empty'" class="title">{{ title }}</h2>
 		<h2 v-else class="title">--</h2>

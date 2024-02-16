@@ -15,7 +15,7 @@ export const routes = [
 		name: 'Analytics',
 	},
 	{
-		path: '/projects/analytics/position-analysis',
+		path: '/projects/:id/analytics/position-analysis',
 		component: () => import('./positionAnalysis'),
 		name: 'PositionAnalysis',
 	},
