@@ -20,9 +20,9 @@
 <template>
 	<router-link
 		:to="item.to"
-		class="group flex items-center justify-between gap-4 rounded-full px-4 py-3 text-[18px] font-medium leading-[26px] transition-colors hover:bg-accent-normal"
+		class="group flex items-center justify-between gap-4 rounded-full px-4 py-3 text-[18px] font-medium leading-[26px] transition-colors hover:bg-brand-normal"
 		:class="{
-			'bg-accent-normal text-base-black': isCurrent,
+			'bg-brand-normal text-base-black': isCurrent,
 			'text-base-white hover:text-base-black': !isCurrent,
 			'w-fit': !sidebarStore.isSidebarExpanded,
 		}">
