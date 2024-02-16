@@ -17,7 +17,6 @@
 			case 3:
 				return '300';
 		}
-
 		return '300';
 	}
 
