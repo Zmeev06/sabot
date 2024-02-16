@@ -5,7 +5,7 @@
 	const router = useRouter();
 
 	if (route.path === '/projects/analytics') {
-		router.push('/projects/analytics/position-analysis');
+		router.push('/projects/12/analytics/position-analysis');
 	}
 </script>
 
