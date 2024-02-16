@@ -6,15 +6,8 @@
 	import { Calendar } from '@ui/calendar';
 import { getListCores } from '@services/analysis/getListCoresService';
 import { useRoute } from 'vue-router';
-
-	const selectedCity = ref();
-	const cities = ref([
-		{ name: 'New York', code: 'NY' },
-		{ name: 'Rome', code: 'RM' },
-		{ name: 'London', code: 'LDN' },
-		{ name: 'Istanbul', code: 'IST' },
-		{ name: 'Paris', code: 'PRS' },
-	]);
+import { getRegion } from '@services/analysis/getRegionService';
+import {getSearchType} from '@services/analysis/getSearchTypeService'
 
 const date = ref();
 
@@ -24,6 +17,13 @@ const id = route.params.id
 
 const versions = ref()
 const currentVersion = ref()
+
+const regions = ref()
+const currentRegion = ref()
+
+const searchTypes = ref()
+const currentSearchType = ref()
+
 const getCores = async () => {
 	const { data, status } = await getListCores(+id)
 	if (status === 200) {
@@ -32,8 +32,26 @@ const getCores = async () => {
 		}
 }
 
+const getRegions = async () => {
+	const { data, status } = await getRegion()
+	if (status === 200) {
+		regions.value = data.data
+		currentRegion.value = data.data[0]
+	}
+}
+
+const getSearchTypesData = async () => {
+	const { data, status } = await getSearchType()
+	if (status === 200) {
+		searchTypes.value = data.data
+		currentSearchType.value = data.data[0]
+	}
+}
+
 onMounted(() => {
-		getCores()
+	getCores()
+	getRegions()
+	getSearchTypesData()
 	})
 </script>
 
@@ -48,15 +66,15 @@ onMounted(() => {
 				optionLabel="name"
 				class="w-[220px]" />
 			<Dropdown
-				v-model="selectedCity"
-				:options="cities"
-				placeholder="Select a City"
+				v-model="currentSearchType"
+				:options="searchTypes"
+				placeholder="Поисковая система"
 				optionLabel="name"
 				class="w-[210px]" />
 			<Dropdown
-				v-model="selectedCity"
-				:options="cities"
-				placeholder="Select a City"
+				v-model="currentRegion"
+				:options="regions"
+				placeholder="Регион"
 				optionLabel="name"
 				class="w-[220px]" />
 			<Calendar v-model="date" selectionMode="range" :manualInput="false" :numberOfMonths="2" />
