@@ -40,6 +40,9 @@ export default {
 					dark: 'rgb(var(--accent-dark))',
 					light: 'rgb(var(--accent-light))',
 				},
+				brand: {
+					normal: 'rgb(var(--brand-normal))',
+				},
 				fill: {
 					light: 'rgb(var(--fill-light))',
 					strong: 'rgb(var(--fill-strong))',

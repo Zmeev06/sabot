@@ -39,7 +39,7 @@
 
 <style>
 	.ptBadgePrimary {
-		@apply border-[1px] border-grey-200 bg-gray-50 text-grey-700 font-medium;
+		@apply outline outline-1 outline-grey-200 bg-gray-50 text-grey-700 font-medium;
 	}
 
 	.ptBadgeError {
