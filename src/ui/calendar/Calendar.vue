@@ -20,18 +20,14 @@
 		table: 'ptCalendarTable',
 		tablebodyrow: 'ptCalendarTableBodyRow',
 		day: 'ptCalendarDay',
-		daylabel: ({ context }: any) => {
-			console.log(context);
-
-			return {
-				class: [
-					'ptCalendarDayLabel',
-					{
-						ptCalendarDaySelected: context.selected,
-					},
-				],
-			};
-		},
+		daylabel: ({ context }: any) => ({
+			class: [
+				'ptCalendarDayLabel',
+				{
+					ptCalendarDaySelected: context.selected,
+				},
+			],
+		}),
 		previousbutton: 'ptCalendarButton',
 		nextbutton: 'ptCalendarButton',
 		transition: {

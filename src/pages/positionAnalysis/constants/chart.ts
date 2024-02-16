@@ -32,7 +32,7 @@ function getChartDatasetDefault() {
 	return {
 		tension: 0.4,
 		fill: true,
-		clip: { left: -5, right: -5, top: false, bottom: false },
+		clip: { left: 0, right: 0, top: false, bottom: false },
 		pointRadius: (context: any) => pointRadiusFunc(context),
 	};
 }
@@ -65,7 +65,7 @@ const chartLine: IChartDataConfig = {
 		},
 		{
 			label: 'My Dataset',
-			data: [12, 14, 13, 15, 18, 19, 18, 17, 19, 25, 19, 18, 16, 28],
+			data: [12, 14, 13, 15, 18, 19, 18, 17, 19, 25, 19, 18, 16, 18],
 			borderColor: '#A48AFB',
 			backgroundColor: 'transparent',
 			pointBackgroundColor: '#A48AFB',
@@ -154,21 +154,21 @@ const chartBar: IChartDataConfig = {
 			type: 'bar',
 			backgroundColor: '#67E3F9',
 			data: [50, 25, 12, 48, 90, 76, 42, 32, 54, 213, 54, 123],
-			borderRadius: 24,
+			borderRadius: 8,
 		},
 		{
 			label: 'Second bar',
 			type: 'bar',
 			backgroundColor: '#A48AFB',
 			data: [21, 84, 24, 75, 37, 65, 34, 32, 54, 213, 54, 123],
-			borderRadius: 24,
+			borderRadius: 8,
 		},
 		{
 			label: 'Third bar',
 			type: 'bar',
 			backgroundColor: '#47CD89',
 			data: [41, 52, 24, 74, 23, 21, 32, 32, 54, 213, 54, 123],
-			borderRadius: 24,
+			borderRadius: 8,
 		},
 	],
 };

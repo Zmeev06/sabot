@@ -1,26 +1,73 @@
 <script setup lang="ts">
-	import TableHeader from './TableHeader.vue';
-	import DataTable from 'primevue/datatable';
-	import Column from 'primevue/column';
+	import { ref } from 'vue';
+	import type { ColumnDef } from '@tanstack/vue-table';
+	import type { Response } from '../constants/types';
+	import { FlexRender, getCoreRowModel, getPaginationRowModel, useVueTable } from '@tanstack/vue-table';
+	import { valueUpdater } from '../../../utils/helpers';
+	import TableTopHeader from './TableTopHeader.vue';
 
-	import { ref, onMounted } from 'vue';
-	import { ProductService } from '../constants/ProductService';
+	import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../../../ui/table';
 
-	onMounted(() => {
-		ProductService.getProductsMini().then((data) => (products.value = data));
+	const props = defineProps<{
+		columns: ColumnDef<Response>[];
+		data: Response[];
+	}>();
+
+	const rowSelection = ref({});
+
+	const table = useVueTable({
+		get data() {
+			return props.data;
+		},
+		get columns() {
+			return props.columns;
+		},
+		onRowSelectionChange: (updaterOrValue) => valueUpdater(updaterOrValue, rowSelection),
+		getCoreRowModel: getCoreRowModel(),
+		getPaginationRowModel: getPaginationRowModel(),
+		state: {
+			get rowSelection() {
+				return rowSelection.value;
+			},
+		},
 	});
-
-	const products = ref();
 </script>
 
 <template>
 	<div class="shadow-sm shadow-text-primary/5 outline outline-1 outline-border-mid rounded-xl overflow-hidden">
-		<TableHeader class="border-b-[1px] border-b-border-heavy" />
-		<DataTable :value="products" class="w-full">
-			<Column field="code" header="Code"></Column>
-			<Column field="name" header="Name"></Column>
-			<Column field="category" header="Category"></Column>
-			<Column field="quantity" header="Quantity"></Column>
-		</DataTable>
+		<TableTopHeader class="border-b-[1px] border-b-border-heavy" />
+		<Table>
+			<TableHeader class="!p-0 !border-none">
+				<TableRow
+					class="!p-0 !border-none"
+					v-for="headerGroup in table.getHeaderGroups()"
+					:key="headerGroup.id">
+					<TableHead class="!p-0 !border-none" v-for="header in headerGroup.headers" :key="header.id">
+						<FlexRender
+							v-if="!header.isPlaceholder"
+							:render="header.column.columnDef.header"
+							:props="header.getContext()" />
+					</TableHead>
+				</TableRow>
+			</TableHeader>
+			<TableBody>
+				<template v-if="table.getRowModel().rows?.length">
+					<TableRow
+						class="border-b-[1px] border-b-border-mid last:border-none"
+						v-for="row in table.getRowModel().rows"
+						:key="row.id"
+						:data-state="row.getIsSelected() ? 'selected' : undefined">
+						<TableCell v-for="cell in row.getVisibleCells()" :key="cell.id">
+							<FlexRender :render="cell.column.columnDef.cell" :props="cell.getContext()" />
+						</TableCell>
+					</TableRow>
+				</template>
+				<template v-else>
+					<TableRow>
+						<TableCell :colSpan="columns.length" class="h-24 text-center"> No results. </TableCell>
+					</TableRow>
+				</template>
+			</TableBody>
+		</Table>
 	</div>
 </template>

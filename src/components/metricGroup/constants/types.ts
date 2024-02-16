@@ -23,7 +23,8 @@ export interface IBadgeLegendItem {
 }
 
 export interface IGraphicBadgeItem {
-	styles?: BadgeItemStyles;
+	variant?: 'primary' | 'error';
+	size?: 'sm' | 'md' | 'lg';
 	increaseType: 'up' | 'down' | 'equal';
 	increaseValue: string;
 }

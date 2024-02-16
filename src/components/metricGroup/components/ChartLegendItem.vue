@@ -26,11 +26,7 @@
 				ptBadgeMd: props.size === 'md',
 				ptBadgeLg: props.size === 'lg',
 			},
-			typeof props.styles !== 'undefined'
-				? Object.values(props.styles)
-						.map((item) => `!${item}`)
-						.join(' ')
-				: '',
+			typeof props.styles !== 'undefined' ? Object.values(props.styles).join(' ') : '',
 		],
 	}));
 </script>
@@ -43,7 +39,7 @@
 
 <style>
 	.ptBadgePrimary {
-		@apply border-[1px] border-grey-200 bg-gray-50 text-grey-700;
+		@apply border-[1px];
 	}
 
 	.ptBadgeError {

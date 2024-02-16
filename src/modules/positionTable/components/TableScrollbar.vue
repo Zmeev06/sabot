@@ -27,8 +27,6 @@
 	}
 
 	function nextPage() {
-		console.log(currentPage.value);
-		console.log(Math.floor(props.totalPages / props.pageItemsCount));
 		if (currentPage.value >= Math.floor(props.totalPages / props.pageItemsCount)) return;
 		currentPage.value++;
 	}
@@ -39,7 +37,7 @@
 		<Button class="!py-2 !px-3.5" variant="secondary" size="sm" icon="arrow-narrow-left" @click="prevPage" />
 		<div class="p-1 bg-transparent h-auto" ref="scrollTrack">
 			<div
-				class="rounded-lg h-full bg-grey-heavy w-[50px] transition-transform transform"
+				class="rounded-lg h-full bg-grey-heavy w-[50px] transition-transform transform cursor-grab"
 				:style="{ width: `${scrollThumbWidth}px`, translate: `${scrollThumbOffset}px` }"></div>
 		</div>
 		<Button class="!py-2 !px-3.5" variant="secondary" size="sm" icon="arrow-narrow-right" @click="nextPage" />
