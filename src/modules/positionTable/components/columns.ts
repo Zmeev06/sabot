@@ -1,8 +1,9 @@
-import { ColumnDef, createColumnHelper, getExpandedRowModel } from '@tanstack/vue-table';
+import { createColumnHelper } from '@tanstack/vue-table';
 import { h, computed } from 'vue';
 import { Icon } from '@//ui/icon';
 import { Checkbox } from '@//ui/checkbox';
 import { Dropdown } from '@//ui/dropdown';
+import { MultiSelect } from '@//components/positionTable';
 
 import {
 	TitleContentItem,
@@ -12,7 +13,7 @@ import {
 } from '../../../components/positionTable';
 import { responseData } from '../constants/data';
 
-import type { Response, ResponseBody, ResponseHeader, ContentCell } from '../constants/types';
+import type { Response } from '../constants/types';
 
 const columnHelper = createColumnHelper<Response>();
 
@@ -36,7 +37,7 @@ export const columns = [
 		header: ({ table }) =>
 			h(
 				'div',
-				{ class: 'px-2' },
+				{ class: 'px-2 flex items-center justify-center h-[50px]' },
 				h(Checkbox, {
 					modelValue: table.getIsAllPageRowsSelected(),
 					'onUpdate:modelValue': (value: boolean) => table.toggleAllPageRowsSelected(!!value),
@@ -46,7 +47,7 @@ export const columns = [
 		cell: ({ row }) =>
 			h(
 				'div',
-				{ class: 'px-2' },
+				{ class: 'px-2 flex items-center justify-center h-[50px]' },
 				h(Checkbox, {
 					modelValue: row.getIsSelected(),
 					'onUpdate:modelValue': (value: boolean) => row.toggleSelected(!!value),
@@ -60,18 +61,19 @@ export const columns = [
 			h(
 				'button',
 				{
-					class: 'px-2 h-[50px]',
+					class: 'flex items-center justify-center px-2 h-[50px]',
 				},
-				h(Icon, {
+				h(MultiSelect, {
 					class: 'w-4 h-4 text-fill-light',
-					name: 'settings',
+					iconName: 'settings',
+					header: 'Поля таблицы',
 				})
 			),
 		cell: () =>
 			h(
 				'button',
 				{
-					class: 'px-2 h-10',
+					class: 'flex items-center justify-center px-2 h-10',
 				},
 				h(Icon, {
 					class: 'w-4 h-4 text-fill-mid',
