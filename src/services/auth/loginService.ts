@@ -1,6 +1,6 @@
 import { AxiosError } from "axios";
 import { ApiClient } from "../Client";
-export const getCarData = async (login: string, password: string) => {
+export const loginUser = async (login: string, password: string) => {
   const loginData = {
     email: login,
     password
@@ -13,6 +13,7 @@ export const getCarData = async (login: string, password: string) => {
     });
     const { data, status } = response;
     if (status === 200) {
+      localStorage.setItem('authToken', data.access_token)
       return { data, status };
     } else {
       console.error(`Ошибка на сервере. Статус: ${status}`);

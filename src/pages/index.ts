@@ -5,6 +5,11 @@ export const routes = [
 		name: 'Home',
 	},
 	{
+		path: '/auth',
+		component: () => import('./login'),
+		name: 'Login',
+	},
+	{
 		path: '/projects',
 		component: () => import('./projects'),
 		name: 'Projects',
