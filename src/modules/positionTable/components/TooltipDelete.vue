@@ -1,13 +1,6 @@
 <script setup lang="ts">
 	import { Tippy } from 'vue-tippy';
 	import { Icon } from '@//ui/icon';
-
-	interface ITippyProps {
-		heading: string;
-		body: string;
-	}
-
-	defineProps<ITippyProps>();
 </script>
 
 <template>
@@ -16,13 +9,13 @@
 
 		<template #content>
 			<div class="wrapper relative overflow-visible">
-				<div class="text-text-primary space-y-1 py-2.5 px-1.5 bg-grey-mid rounded-lg">
-					<h3 class="text-base font-bold">{{ heading }}</h3>
-					<p class="text-sm">{{ body }}</p>
-				</div>
+				<button class="flex items-center gap-1 text-error-500 bg-base-white p-3 rounded-lg overflow-hidden">
+					<Icon name="trash" class="w-4 h-4" />
+					<span class="text-sm/[18px] font-medium">Удалить</span>
+				</button>
 				<Icon
 					name="tooltip-arrow"
-					class="w-4 z-10 text-base-white h-1.5 absolute top-[100%] left-[50%] -translate-x-[50%]" />
+					class="w-4 text-base-white h-1.5 absolute top-[100%] left-[50%] -translate-x-[50%]" />
 			</div>
 		</template>
 	</Tippy>

@@ -4,6 +4,7 @@ import { Icon } from '@//ui/icon';
 import { Checkbox } from '@//ui/checkbox';
 import { Dropdown } from '@//ui/dropdown';
 import { MultiSelect } from '@//components/positionTable';
+import TooltipDelete from './TooltipDelete.vue';
 
 import {
 	TitleContentItem,
@@ -160,7 +161,8 @@ export const columns = [
 	...responseData[0].contentCells.map((item) =>
 		columnHelper.display({
 			id: `content-cell-${item.header.date}`,
-			header: () => h(CellContentHeader, { date: item.header.date, value: item.header.value }),
+			header: () =>
+				h(TooltipDelete, {}, h(CellContentHeader, { date: item.header.date, value: item.header.value })),
 			cell: ({ row }) =>
 				h(CellContentItem, {
 					class: 'w-20 h-[40px] border-r-[1px] border-r-base-white',
