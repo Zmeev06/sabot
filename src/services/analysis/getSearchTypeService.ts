@@ -12,7 +12,6 @@ export const getSearchType = async () => {
     });
     const { data, status } = response;
     if (status === 200) {
-      localStorage.setItem('authToken', data.access_token)
       return { data, status };
     } else {
       console.error(`Ошибка на сервере. Статус: ${status}`);

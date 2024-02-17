@@ -1,17 +1,18 @@
 import { AxiosError } from "axios";
 import { ApiClient } from "../Client";
 
-export const getRegion = async () => {
+export const getUser = async () => {
   try {
     const response = await ApiClient({
       method: "GET",
-      url: `/dict/region`,
+      url: `/me`,
       headers: {
         Authorization: `Bearer ${localStorage.getItem('authToken')}`
       }
     });
     const { data, status } = response;
     if (status === 200) {
+      
       return { data, status };
     } else {
       console.error(`Ошибка на сервере. Статус: ${status}`);

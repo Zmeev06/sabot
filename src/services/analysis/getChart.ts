@@ -1,11 +1,11 @@
 import { AxiosError } from "axios";
 import { ApiClient } from "../Client";
 
-export const getRegion = async () => {
+export const getChart = async (coreId: number, dateEnd: string, dateStart: string, regionId?: number, searchType?: string, clusterIds?: number[]) => {
   try {
     const response = await ApiClient({
       method: "GET",
-      url: `/dict/region`,
+      url: `/analytic/${coreId}/chart?region_id=${regionId}&search_type=${searchType}&date_start=${dateStart}&date_end=${dateEnd}${clusterIds ? `& cluster_ids=${clusterIds}` : ''}`,
       headers: {
         Authorization: `Bearer ${localStorage.getItem('authToken')}`
       }

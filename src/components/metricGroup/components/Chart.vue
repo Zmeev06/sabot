@@ -2,6 +2,10 @@
 	import { ref, onMounted, watch } from 'vue';
 	import Chart from 'primevue/chart';
 	import { ChartType } from '../../../components/metricGroup/constants/types';
+import { getChart } from '../../../services/analysis/getChart';
+import { useCoreStore } from '../../../store/coreStore';
+import { useRegionStore } from '../../../store/regionStore';
+import { useSearchTypeStore } from '../../../store/searchTypeStore';
 
 	type ChartPropType = 'line' | 'bar' | 'doughnut';
 
@@ -23,6 +27,19 @@
 		}));
 	}
 
+const coreStore = useCoreStore()
+const regionStore = useRegionStore()
+const searchTypeStore = useSearchTypeStore()
+
+const getChardData = async () => {
+	if (coreStore.core?.id) {
+		const { data, status } = await getChart(coreStore.core?.id, '2023-06-01', '2023-01-01', regionStore.region?.id, searchTypeStore.searchType?.id)
+		if (status === 200) {
+			console.log(data);
+		}
+	}
+}
+
 	onMounted(() => {
 		const canvasWrapper = chart.value.$el as HTMLDivElement;
 		const canvas = canvasWrapper.querySelector('canvas') as HTMLCanvasElement;
@@ -34,6 +51,7 @@
 		if (props.chartType === 'line') {
 			setGradient();
 		}
+		
 	});
 
 	watch(
@@ -44,6 +62,12 @@
 			}
 		}
 	);
+
+watch(() => [coreStore.core?.id, regionStore.region?.id, searchTypeStore.searchType?.id], () => {
+	if (coreStore.core?.id && regionStore.region?.id && searchTypeStore.searchType?.id) {
+		getChardData()
+	}
+})
 </script>
 
 <template>

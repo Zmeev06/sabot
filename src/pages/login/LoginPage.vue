@@ -4,15 +4,15 @@ import { ref } from 'vue';
 import { loginUser } from '@services/auth/loginService';
 import { useRouter } from 'vue-router';
 
-const email = ref('')
-const password = ref('')
+const email = ref('user@example.com')
+const password = ref('string')
 
 const router = useRouter()
 
 const login = async () => {
   const { status } = await loginUser(email.value, password.value)
   if (status === 200) {
-    router.push('/projects')
+    router.push('/projects/1/analytics/position-analysis')
   }
 }
 </script>
