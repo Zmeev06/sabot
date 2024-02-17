@@ -1,5 +1,35 @@
 import { ChartType } from '../../../components/metricGroup/constants/types';
 
+import Chart from 'chart.js/auto';
+
+const doughnutLabelPlugin = {
+	id: 'doughnutLabel',
+	beforeDraw: function (chart) {
+		if (chart.config.type === 'doughnut') {
+			const width = chart.canvas.width,
+				height = chart.canvas.height,
+				ctx = chart.ctx;
+
+			ctx.restore();
+			const fontSize = 32;
+			ctx.font = `${fontSize}px sans-serif`;
+			ctx.textBaseline = 'middle';
+
+			const total = Math.min(...chart.data.datasets[0].data);
+			const text = `${total.toString()}%`;
+
+			const textX = Math.round((width - ctx.measureText(text).width) / 2);
+			const textY = height / 2;
+
+			ctx.fillStyle = '#17B26A';
+			ctx.fillText(text, textX, textY);
+			ctx.save();
+		}
+	},
+};
+
+Chart.register(doughnutLabelPlugin);
+
 interface IDataset {
 	type?: 'bar';
 	label: string;
@@ -239,6 +269,11 @@ function getChartOptions(options?: { axeX?: boolean; axeY?: boolean; bar?: boole
 				stacked: options?.bar ?? false,
 				display: options?.axeY ?? true,
 				...axeY,
+			},
+		},
+		elements: {
+			arc: {
+				borderWidth: 0,
 			},
 		},
 	};
