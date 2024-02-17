@@ -162,7 +162,7 @@ export const columns = [
 		columnHelper.display({
 			id: `content-cell-${item.header.date}`,
 			header: () =>
-				h(TooltipDelete, {}, h(CellContentHeader, { date: item.header.date, value: item.header.value })),
+				h(TooltipDelete, {}, () => h(CellContentHeader, { date: item.header.date, value: item.header.value })),
 			cell: ({ row }) =>
 				h(CellContentItem, {
 					class: 'w-20 h-[40px] border-r-[1px] border-r-base-white',
