@@ -22,7 +22,7 @@
 				</div>
 				<Icon
 					name="tooltip-arrow"
-					class="w-4 z-10 text-base-white h-1.5 absolute top-[100%] left-[50%] -translate-x-[50%]" />
+					class="w-4 z-10 text-grey-mid h-1.5 absolute top-[100%] left-[50%] -translate-x-[50%]" />
 			</div>
 		</template>
 	</Tippy>
