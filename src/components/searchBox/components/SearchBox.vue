@@ -1,6 +1,6 @@
 <script setup lang="ts">
 	import { ref } from 'vue';
-	import InputField from './InputField.vue';
+	import { InputField } from '@//ui/inputField';
 	import { Dropdown } from '../../../ui/dropdown';
 
 	const modelValue = defineModel<any>();

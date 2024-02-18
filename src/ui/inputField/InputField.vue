@@ -1,7 +1,7 @@
 <script setup lang="ts">
 	import { ref, onMounted, onUnmounted } from 'vue';
 
-	import { Icon } from '../../../ui/icon';
+	import { Icon } from '@//ui/icon';
 
 	import InputText from 'primevue/inputtext';
 	import IconField from 'primevue/iconfield';
@@ -17,6 +17,7 @@
 		defineProps<{
 			icon?: string;
 			iconPosition?: string;
+			disabled?: boolean;
 		}>(),
 		{
 			icon: 'search',
@@ -54,7 +55,10 @@
 	<IconField
 		iconPosition="right"
 		class="inline-flex rounded-lg py-2.5 px-3.5 items-center gap-2 border-[1px] border-border-strong bg-base-white shadow-sm shadow-text-primary/5 transition-all hover:border-accent-normal cursor-text"
-		:class="{ '!border-accent-normal': isFocused }"
+		:class="{
+			'!border-accent-normal': isFocused && !disabled,
+			'bg-grey-light hover:border-border-strong cursor-default': disabled,
+		}"
 		ref="root">
 		<InputIcon>
 			<Icon
@@ -63,9 +67,10 @@
 				:class="{ 'text-text-primary': isFocused }" />
 		</InputIcon>
 		<InputText
-			class="bg-transparent outline-none outline-transparent ring-0 ring-transparent appearance-none text-base placeholder:text-text-tertiary text-text-primary font-medium placeholder:font-normal"
+			class="bg-transparent border-none border-transparent ring-0 ring-transparent outline-none appearance-none text-base placeholder:text-text-tertiary text-text-primary font-medium placeholder:font-normal disabled:text-fill-mid"
 			data-input-field
 			v-model="modelValue"
+			:disabled="disabled"
 			v-bind="$attrs"
 			@blur="blur"
 			ref="input" />

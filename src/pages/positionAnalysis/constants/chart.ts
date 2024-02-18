@@ -4,7 +4,7 @@ import Chart from 'chart.js/auto';
 
 const doughnutLabelPlugin = {
 	id: 'doughnutLabel',
-	beforeDraw: function (chart) {
+	beforeDraw: function (chart: any) {
 		if (chart.config.type === 'doughnut') {
 			const width = chart.canvas.width,
 				height = chart.canvas.height,
