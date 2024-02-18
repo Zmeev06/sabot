@@ -101,4 +101,14 @@ export const graphicItems: IGraphicItem[] = [
 			increaseValue: '7.2%',
 		},
 	},
+	{
+		label: 'На том же уровне',
+		numberValue: 743,
+		badge: {
+			variant: 'primary',
+			size: 'md',
+			increaseType: 'equal',
+			increaseValue: '7.2%',
+		},
+	},
 ];

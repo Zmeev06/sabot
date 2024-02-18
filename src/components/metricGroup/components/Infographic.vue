@@ -16,13 +16,13 @@
 </script>
 
 <template>
-	<div class="flex items-center gap-2">
+	<div class="grid grid-cols-[1fr_auto] items-center gap-2 w-full">
 		<div class="flex items-center rounded-lg overflow-hidden outline outline-1 outline-border-mid flex-wrap">
 			<InfographicItem
+				class="flex-auto outline outline-1 outline-border-mid"
 				v-for="(item, index) in items"
 				:key="index"
-				v-bind="item"
-				class="outline outline-1 outline-border-mid w-[136px]" />
+				v-bind="item" />
 		</div>
 		<Button icon="chevron-up" class="!rounded-full" @click="emit('toggle')" />
 	</div>

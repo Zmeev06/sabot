@@ -71,7 +71,12 @@
 				<TableBody class="border-b-2">
 					<template v-if="table.getRowModel().rows?.length">
 						<TableRow
-							class="border-b-[1px] border-b-border-mid last:border-b-transparent transition-colors hover:bg-grey-light hover:outline hover:outline-1 hover:outline-border-heavy group"
+							class="border-b-[1px] border-b-border-mid last:border-b-transparent transition-colors group"
+							:class="{
+								'hover:bg-grey-light hover:outline hover:outline-1 hover:outline-border-heavy':
+									row.depth === 0,
+								'outline outline-1 outline-border-heavy': row.getIsExpanded(),
+							}"
 							v-for="row in table.getRowModel().rows"
 							:key="row.id"
 							:data-state="row.getIsSelected() ? 'selected' : undefined">

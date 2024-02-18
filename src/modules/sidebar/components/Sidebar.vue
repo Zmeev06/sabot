@@ -20,7 +20,7 @@
 			</RouterLink>
 
 			<button
-				class="flex items-center justify-center p-0.5 transition-transform"
+				class="flex items-center justify-center p-0.5 transition-transform text-gray-400"
 				@click="sidebarStore.toggleSidebar"
 				:class="{ 'rotate-180': !sidebarStore.isSidebarExpanded }">
 				<Icon name="arrow-narrow-left" class="w-7 h-7" />
