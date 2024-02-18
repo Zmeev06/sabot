@@ -2,6 +2,7 @@
 	import { computed, ref } from 'vue';
 	import { Chart, ChartCategory, ChartFilters, ChartLegend, InfoGraphic } from '../../../components/metricGroup';
 	import Clusters from './Clusters.vue';
+	import { Toggler } from '@//components/toggler';
 
 	import { categories } from '../constants/categories';
 	import { filters } from '../constants/filters';
@@ -30,20 +31,26 @@
 
 <template>
 	<div>
-		<div class="grid gap-6 grid-cols-[1fr_380px] mb-6">
-			<div class="max-h-[536px] grid grid-rows-[auto_auto_1fr_auto] pb-[18px]">
-				<ChartCategory v-model="currentCategory" :categories="categories" class="mb-2" />
-				<ChartFilters v-model="currentChartType" :filters="filters" class="mb-[18px]" />
-				<Chart
-					class="overflow-hidden mb-[22px]"
-					v-model:chartData="chartData"
-					:chartType="currentChartType"
-					:chartPropType="chartTypeComputed"
-					:chartOptions="chartOptions" />
-				<ChartLegend :items="legend" />
-			</div>
-			<Clusters class="max-h-[536px]" />
-		</div>
-		<InfoGraphic :items="graphicItems" />
+		<Toggler class="flex flex-col-reverse">
+			<template #content>
+				<div class="grid gap-6 grid-cols-[1fr_380px] mb-6">
+					<div class="max-h-[536px] grid grid-rows-[auto_auto_1fr_auto] pb-[18px]">
+						<ChartCategory v-model="currentCategory" :categories="categories" class="mb-2" />
+						<ChartFilters v-model="currentChartType" :filters="filters" class="mb-[18px]" />
+						<Chart
+							class="overflow-hidden mb-[22px]"
+							v-model:chartData="chartData"
+							:chartType="currentChartType"
+							:chartPropType="chartTypeComputed"
+							:chartOptions="chartOptions" />
+						<ChartLegend :items="legend" />
+					</div>
+					<Clusters class="max-h-[536px]" />
+				</div>
+			</template>
+			<template #default="{ toggle }">
+				<InfoGraphic :items="graphicItems" @toggle="toggle" />
+			</template>
+		</Toggler>
 	</div>
 </template>

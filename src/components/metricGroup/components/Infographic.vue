@@ -3,9 +3,16 @@
 	import InfographicItem from './InfographicItem.vue';
 	import { IGraphicItem } from '../constants/types';
 
-	defineProps<{
+	interface Props {
 		items: IGraphicItem[];
-	}>();
+	}
+
+	interface Emits {
+		(e: 'toggle'): void;
+	}
+
+	defineProps<Props>();
+	const emit = defineEmits<Emits>();
 </script>
 
 <template>
@@ -17,6 +24,6 @@
 				v-bind="item"
 				class="outline outline-1 outline-border-mid w-[136px]" />
 		</div>
-		<Button icon="chevron-up" class="!rounded-full" />
+		<Button icon="chevron-up" class="!rounded-full" @click="emit('toggle')" />
 	</div>
 </template>
