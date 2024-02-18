@@ -1,12 +1,19 @@
 <script setup lang="ts">
-	import { computed, ref } from 'vue';
-	import type { ColumnDef } from '@tanstack/vue-table';
+	import { ref } from 'vue';
+	import type { ColumnDef, ExpandedState } from '@tanstack/vue-table';
 	import type { Response } from '../constants/types';
-	import { FlexRender, getCoreRowModel, getPaginationRowModel, useVueTable } from '@tanstack/vue-table';
+	import {
+		FlexRender,
+		getCoreRowModel,
+		getPaginationRowModel,
+		useVueTable,
+		getExpandedRowModel,
+	} from '@tanstack/vue-table';
 	import { valueUpdater } from '../../../utils/helpers';
 	import TableTopHeader from './TableTopHeader.vue';
 	import { Button } from '@//ui/button';
 	import { Pagination } from '@//components/pagination';
+	import RowExpanded from './RowExpanded.vue';
 
 	import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../../../ui/table';
 
@@ -16,6 +23,7 @@
 	}>();
 
 	const rowSelection = ref({});
+	const expanded = ref<ExpandedState>({});
 
 	const table = useVueTable({
 		get data() {
@@ -25,11 +33,17 @@
 			return props.columns;
 		},
 		onRowSelectionChange: (updaterOrValue) => valueUpdater(updaterOrValue, rowSelection),
+		onExpandedChange: (updaterOrValue) => valueUpdater(updaterOrValue, expanded),
+		getExpandedRowModel: getExpandedRowModel(),
 		getCoreRowModel: getCoreRowModel(),
 		getPaginationRowModel: getPaginationRowModel(),
+		getSubRows: (row) => row.subRows,
 		state: {
 			get rowSelection() {
 				return rowSelection.value;
+			},
+			get expanded() {
+				return expanded.value;
 			},
 		},
 	});
@@ -54,15 +68,20 @@
 						</TableHead>
 					</TableRow>
 				</TableHeader>
-				<TableBody>
+				<TableBody class="border-b-2">
 					<template v-if="table.getRowModel().rows?.length">
 						<TableRow
-							class="border-b-[1px] border-b-border-mid last:border-none"
+							class="border-b-[1px] border-b-border-mid last:border-b-transparent transition-colors hover:bg-grey-light hover:outline hover:outline-1 hover:outline-border-heavy group"
 							v-for="row in table.getRowModel().rows"
 							:key="row.id"
 							:data-state="row.getIsSelected() ? 'selected' : undefined">
-							<TableCell class="h-[40px]" v-for="cell in row.getVisibleCells()" :key="cell.id">
-								<FlexRender :render="cell.column.columnDef.cell" :props="cell.getContext()" />
+							<template v-if="row.depth === 0">
+								<TableCell class="h-[40px]" v-for="cell in row.getVisibleCells()" :key="cell.id">
+									<FlexRender :render="cell.column.columnDef.cell" :props="cell.getContext()" />
+								</TableCell>
+							</template>
+							<TableCell v-else :colspan="table.getAllColumns().length">
+								<RowExpanded />
 							</TableCell>
 						</TableRow>
 					</template>

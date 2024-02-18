@@ -21,15 +21,16 @@ const columnHelper = createColumnHelper<Response>();
 export const columns = [
 	columnHelper.display({
 		id: 'actions',
-		cell: () =>
+		cell: ({ row }) =>
 			h(
 				'button',
 				{
 					class: 'px-2 h-10',
+					onClick: () => row.toggleExpanded(),
 				},
 				h(Icon, {
 					class: 'w-4 h-4 text-fill-mid',
-					name: 'chevron-right',
+					name: row.getIsExpanded() ? 'chevron-down' : 'chevron-right',
 				})
 			),
 	}),
@@ -144,7 +145,7 @@ export const columns = [
 		id: 'ws',
 		header: () =>
 			h(Dropdown, {
-				class: 'py-1 px-2',
+				class: 'py-1 px-2 w-full',
 				options: [{ name: 'WS' }, { name: '"WS"' }],
 				optionLabel: 'name',
 				modelValue: { name: 'WS' },
@@ -153,7 +154,7 @@ export const columns = [
 			h(
 				'div',
 				{
-					class: 'text-fill-strong text-sm/[22px]',
+					class: 'text-fill-strong w-[72px] text-sm/[22px] px-3 py-[9px] flex items-center justify-center',
 				},
 				56
 			),
@@ -180,7 +181,7 @@ export const columns = [
 		cell: ({ row }) => {
 			return h(
 				'div',
-				{ class: 'w-full h-full p-2 pr-3' },
+				{ class: 'w-full h-full p-2 pr-3 bg-base-white' },
 				h('h2', { class: 'text-text-primary text-sm/[14px]' }, row.original.download)
 			);
 		},

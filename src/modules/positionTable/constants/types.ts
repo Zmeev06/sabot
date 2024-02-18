@@ -28,4 +28,5 @@ export interface Response {
 	ws: number;
 	contentCells: ContentCell[];
 	download: string;
+	subRows?: Response[];
 }
