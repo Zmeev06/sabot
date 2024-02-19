@@ -5,6 +5,15 @@
 	import { Dropdown } from '../../../ui/dropdown';
 	import TableScrollbar from './TableScrollbar.vue';
 
+
+	const props = defineProps<{
+		scrollTrack: number | string;
+	}>();
+
+	const emit = defineEmits<{
+		'update:scrollTrack': [number];
+	}>();
+
 	const selectedCity = ref();
 	const cities = ref([
 		{ name: 'New York', code: 'NY' },
@@ -22,8 +31,6 @@
 		{ id: 's', value: '500' },
 	]);
 	const selectedOutput = ref(output.value[2]);
-
-	const currentPage = ref(0);
 </script>
 
 <template>
@@ -38,7 +45,7 @@
 			<FilterButton icon="contrast" />
 		</div>
 		<div class="flex items-center gap-[18px] max-w-[1038px] w-full">
-			<TableScrollbar class="w-full" :totalPages="100" :pageItemsCount="10" v-model="currentPage" />
+			<TableScrollbar :scroll-track="props.scrollTrack" @update:scroll-track="emit('update:scrollTrack', $event)"  class="w-full" />
 			<div class="flex items-center gap-3">
 				<span class="text-text-primary text-base">Выводить:</span>
 				<Dropdown class="px-2 py-1" :options="output" optionLabel="value" v-model="selectedOutput" />
