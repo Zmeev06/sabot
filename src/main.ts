@@ -6,6 +6,9 @@ import VueTippy from 'vue-tippy';
 import PrimeVue from 'primevue/config';
 import './assets/tailwind.css';
 
+import VCalendar from 'v-calendar';
+import 'v-calendar/style.css';
+
 import ru from './locale/ru.json';
 
 const app = createApp(App)
@@ -15,5 +18,6 @@ const app = createApp(App)
 		unstyled: true,
 		locale: ru.ru,
 	})
-	.use(VueTippy);
+	.use(VueTippy)
+	.use(VCalendar);
 app.mount('#app');
