@@ -75,7 +75,7 @@ export const columns = [
 			h(
 				'button',
 				{
-					class: 'flex items-center justify-center px-2 h-10',
+					class: 'flex items-center justify-center px-2 h-10 column-drag-handle',
 				},
 				h(Icon, {
 					class: 'w-4 h-4 text-fill-mid',
