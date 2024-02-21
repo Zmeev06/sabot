@@ -1,35 +1,28 @@
 <script setup lang="ts">
 	import { Button } from '../../../ui/button';
-
-	const currentPage = defineModel<number>({ required: true });
+	import TableRangeBar from './TableRangeBar.vue';
 
 	const props = defineProps<{
-		totalPages: number;
-		pageItemsCount: number;
+		scrollTrack: number | string;
 	}>();
 
 	const emit = defineEmits<{
-		prevPage: [];
-		nextPage: [];
+		'update:scrollTrack': [number];
 	}>();
 
-	function prevPage() {
-		if (currentPage.value === 0) return;
-		currentPage.value--;
+	function increaseScrollTrack() {
+		emit('update:scrollTrack', Number(props.scrollTrack) + 10 > 100 ? 100 : Number(props.scrollTrack) + 10);
 	}
 
-	function nextPage() {
-		if (currentPage.value >= Math.floor(props.totalPages / props.pageItemsCount)) return;
-		currentPage.value++;
+	function decreaseScrollTrack() {
+		emit('update:scrollTrack',  Number(props.scrollTrack) - 10 < 0 ? 0 : Number(props.scrollTrack) - 10);
 	}
 </script>
 
 <template>
 	<div class="grid grid-cols-[auto_1fr_auto] gap-2">
-		<Button class="!py-2 !px-3.5" variant="secondary" size="sm" icon="arrow-narrow-left" @click="prevPage" />
-		<div class="p-1 bg-transparent h-auto" ref="scrollTrack">
-			<div class="rounded-lg h-full bg-grey-heavy transition-transform transform cursor-grab w-[182px]"></div>
-		</div>
-		<Button class="!py-2 !px-3.5" variant="secondary" size="sm" icon="arrow-narrow-right" @click="nextPage" />
+		<Button class="!py-2 !px-3.5" variant="secondary" size="sm" icon="arrow-narrow-left" @click="decreaseScrollTrack" />
+		<TableRangeBar :model-value="props.scrollTrack" @update:model-value="emit('update:scrollTrack', $event)" />
+		<Button class="!py-2 !px-3.5" variant="secondary" size="sm" icon="arrow-narrow-right" @click="increaseScrollTrack" />
 	</div>
 </template>

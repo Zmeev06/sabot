@@ -1,5 +1,5 @@
 <script setup lang="ts">
-	import { ref } from 'vue';
+	import { ref, computed } from 'vue';
 	import type { ColumnDef, ExpandedState } from '@tanstack/vue-table';
 	import type { Response } from '../constants/types';
 	import {
@@ -47,13 +47,25 @@
 			},
 		},
 	});
+
+	const scrollTrack = ref(0);
+	const wrapper = ref<HTMLElement>();
+
+	function controlScroll() {
+		wrapper.value?.scrollTo({ 
+			left: scrollTrack.value,
+			behavior: 'smooth'
+		 });
+	}
+
 </script>
 
 <template>
 	<div
 		class="shadow-sm shadow-text-primary/5 outline outline-1 outline-border-mid rounded-xl overflow-hidden grid grid-flow-row">
-		<TableTopHeader class="border-b-[1px] border-b-border-heavy" />
-		<div class="w-full overflow-auto">
+		<TableTopHeader v-model:scroll-track="scrollTrack" @update:scroll-track="controlScroll" class="border-b-[1px] border-b-border-heavy" />
+		<div class="w-full overflow-y-auto overflow-x-hidden" ref="wrapper"
+		>
 			<Table>
 				<TableHeader class="!p-0 !border-none">
 					<TableRow
