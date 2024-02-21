@@ -1,5 +1,5 @@
 <script setup lang="ts">
-	import { RendererElement, computed, ref } from 'vue';
+	import { computed, ref } from 'vue';
 
 	const isShow = ref(true);
 	const state = computed(() => (isShow.value ? 'opened' : 'hidden'));
