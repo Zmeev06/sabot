@@ -3,15 +3,16 @@
 	import { Icon } from '@//ui/icon';
 	import type { Calendar } from 'v-calendar';
 	import { DatePicker } from 'v-calendar';
-	import { ComputedRef, computed, nextTick, onMounted, ref, watch } from 'vue';
+	import { ComputedRef, computed, nextTick, onMounted, ref } from 'vue';
 	import CalendarSidebar from './CalendarSidebar.vue';
 	import { Button } from '@//ui/button';
+	import { Input } from '@//ui/input';
 
 	/* Extracted from v-calendar */
 	type DatePickerModel = DatePickerDate | DatePickerRangeObject;
 	type DateSource = Date | string | number;
 	type DatePickerDate = DateSource | Partial<SimpleDateParts> | null;
-		
+
 	interface DatePickerRangeObject {
 		start: Exclude<DatePickerDate, null>;
 		end: Exclude<DatePickerDate, null>;
@@ -26,38 +27,37 @@
 		milliseconds: number;
 	}
 
-	// defineOptions({
-	// 	inheritAttrs: false,
-	// });
+	defineOptions({
+		inheritAttrs: false,
+	});
 
-	// const props = withDefaults(
-	// 	defineProps<{
-	// 		modelValue?: string | number | Date | DatePickerModel;
-	// 		modelModifiers?: object;
-	// 		columns?: number;
-	// 		type?: 'single' | 'range';
-	// 		sidebar?: boolean;
-	// 	}>(),
-	// 	{
-	// 		type: 'single',
-	// 		columns: 1,
-	// 		sidebar: false,
-	// 	}
-	// );
-	// const emits = defineEmits<{
-	// 	(e: 'update:modelValue', payload: typeof props.modelValue): void;
-	// }>();
+	const props = withDefaults(
+		defineProps<{
+			modelValue?: string | number | Date | DatePickerModel;
+			modelModifiers?: object;
+			columns?: number;
+			type?: 'single' | 'range';
+			sidebar?: boolean;
+		}>(),
+		{
+			type: 'single',
+			columns: 1,
+			sidebar: false,
+		}
+	);
+	const emits = defineEmits<{
+		(e: 'update:modelValue', payload: typeof props.modelValue): void;
+	}>();
 
-	// const modelValue = useVModel(props, 'modelValue', emits, {
-	// 	passive: true,
-	// });
+	const modelValue = useVModel(props, 'modelValue', emits, {
+		passive: true,
+	});
 
 	const datePicker = ref<InstanceType<typeof DatePicker>>();
 	// @ts-expect-error in this current version of v-calendar has the calendaRef instance, which is required to handle arrow nav.
-const calendarRef = computed<InstanceType<typeof Calendar>>(() => datePicker.value.calendarRef);
-		
+	const calendarRef = computed<InstanceType<typeof Calendar>>(() => datePicker.value.calendarRef);
+
 	const monthsNames = computed(() => getCalendarMonths(calendarRef));
-	const date = ref()
 	function getCalendarMonths(calendar: ComputedRef<InstanceType<typeof Calendar>>) {
 		return calendar.value.pages.map((page) =>
 			new Date(page.year, page.month - 1).toLocaleString('default', { month: 'long' })
@@ -75,10 +75,6 @@ const calendarRef = computed<InstanceType<typeof Calendar>>(() => datePicker.val
 		await nextTick();
 		// if (modelValue.value instanceof Date && calendarRef.value) calendarRef.value.focusDate(modelValue.value);
 	});
-
-watch(date, () => {
-		console.log(date.value);
-	})
 </script>
 
 <template>
@@ -102,9 +98,9 @@ watch(date, () => {
 			<DatePicker
 				ref="datePicker"
 				v-bind="$attrs"
-				v-model.string="date"
-				
+				v-model.range="modelValue"
 				class="calendar"
+				:columns="2"
 				trim-weeks
 				:transition="'none'">
 				<template #nav-prev-button>

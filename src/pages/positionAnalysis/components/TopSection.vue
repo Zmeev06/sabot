@@ -1,9 +1,8 @@
 <script setup lang="ts">
-	import { ref, onMounted, computed } from 'vue';
+	import { ref, onMounted } from 'vue';
 	import { Button } from '@ui/button';
 	import { FullWidthSection } from '@components/fullWidthSection/';
 	import { Dropdown } from '@ui/dropdown';
-	import { Calendar } from '@components/calendar';
 	import { getListCores } from '@services/analysis/getListCoresService';
 	import { useRoute } from 'vue-router';
 	import { getRegion } from '@services/analysis/getRegionService';
@@ -12,22 +11,9 @@
 	import { useCoreStore } from '../../../store/coreStore';
 	import { useRegionStore } from '../../../store/regionStore';
 	import { useSearchTypeStore } from '../../../store/searchTypeStore';
-	import { Overlay } from '@//ui/overlay';
-	import { addDays, format } from 'date-fns';
+	import Calendar from './Calendar.vue';
 
 	const route = useRoute();
-	const date = ref({
-		start: new Date(2022, 0, 20),
-		end: addDays(new Date(2022, 0, 20), 20),
-	});
-
-	const dateComputed = computed(() =>
-		date.value.start
-			? date.value.end
-				? `${format(date.value.start, 'LL.dd.y')} - ${format(date.value.end, 'LL.dd.y')}`
-				: format(date.value.start, 'LL.dd.y')
-			: 'Pick a date'
-	);
 
 	const id = route.params.id;
 
@@ -103,21 +89,7 @@
 				optionLabel="name"
 				@change="(e:any) => regionStore.setRegion(e.value)"
 				class="w-[220px]" />
-			<Overlay>
-				<template #trigger="{ toggle }">
-					<Button
-						class="!font-normal"
-						icon="calendar"
-						size="lg"
-						iconPos="left"
-						variant="secondary"
-						:label="dateComputed"
-						@click="toggle" />
-				</template>
-				<template #content>
-					<Calendar v-model.range="date" :columns="2" />
-				</template>
-			</Overlay>
+			<Calendar />
 		</div>
 		<div class="flex items-center gap-2">
 			<Button icon="settings" />
