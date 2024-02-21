@@ -20,13 +20,13 @@
 </script>
 
 <template>
-	<div class="space-y-6">
+	<div>
 		<Toggler class="space-y-6 flex-col-reverse">
 			<template #default="{ toggle, state }">
-				<TableFiltersToggler @toggle="toggle" :state="state" />
+				<TableFiltersToggler @toggle="toggle" :state="state" :class="{ 'mb-6': state === 'opened' }" />
 			</template>
-			<template #content>
-				<TableFilters />
+			<template #content="{ state }">
+				<TableFilters :class="{ 'mb-6': state === 'opened' }" />
 			</template>
 		</Toggler>
 		<Table :columns="columns" :data="data" />
