@@ -2,7 +2,7 @@
 	import { ref, onMounted, watch } from 'vue';
 	import Chart from 'primevue/chart';
 	import { ChartType } from '../../../components/metricGroup/constants/types';
-	import { getChart } from '../../../services/analysis/getChart';
+	import { getChart } from '../../../services/analysis/getChartService';
 	import { useCoreStore } from '../../../store/coreStore';
 	import { useRegionStore } from '../../../store/regionStore';
 	import { useSearchTypeStore } from '../../../store/searchTypeStore';
@@ -94,3 +94,4 @@
 		width: 100% !important;
 	}
 </style>
+../../../services/analysis/getChartService
