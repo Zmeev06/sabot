@@ -16,13 +16,13 @@
 
 		<template #content>
 			<div class="wrapper relative overflow-visible">
-				<div class="text-text-primary space-y-1 py-2.5 px-1.5 bg-grey-mid rounded-lg">
-					<h3 class="text-base font-bold">{{ heading }}</h3>
-					<p class="text-sm">{{ body }}</p>
+				<div class="text-text-primary space-y-1 p-3 bg-grey-light rounded-lg">
+					<h3 class="text-sm/[18px] font-medium text-text-primary">{{ heading }}</h3>
+					<p class="text-[0.75rem]/[18px] text-text-secondary">{{ body }}</p>
 				</div>
 				<Icon
 					name="tooltip-arrow"
-					class="w-4 z-10 text-grey-mid h-1.5 absolute top-[100%] left-[50%] -translate-x-[50%]" />
+					class="w-4 z-10 text-grey-light h-1.5 absolute top-[100%] left-[50%] -translate-x-[50%]" />
 			</div>
 		</template>
 	</Tippy>
@@ -30,6 +30,6 @@
 
 <style scoped>
 	.wrapper {
-		box-shadow: 0px 4px 6px -2px rgba(16, 24, 40, 0.03), 0px 12px 16px -4px rgba(16, 24, 40, 0.08);
+		box-shadow: 0px 4px 6px -2px rgba(var(--text-primary), 0.03), 0px 12px 16px -4px rgba(var(--text-primary), 0.08);
 	}
 </style>

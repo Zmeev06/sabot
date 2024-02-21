@@ -26,7 +26,9 @@
 				optionLabel="name"
 				placeholder="Поиск"
 				class="max-w-[1036px] w-full" />
-			<Tooltip heading="head" body="body text">
+			<Tooltip
+				heading="Заголовок подсказки"
+				body="Это последовательность символов, которую пользователь вводит в поисковую строку, чтобы найти интересующую его информацию. Формат поискового запроса зависит как от устройства поисковой системы, так и от типа информации для поиска.">
 				<Icon name="help-circle" class="tooltip-trigger" />
 			</Tooltip>
 		</div>
@@ -37,7 +39,9 @@
 				placeholder="Запрос"
 				optionLabel="name"
 				class="dropdown-filter" />
-			<Tooltip heading="head" body="body text">
+			<Tooltip
+				heading="Заголовок подсказки"
+				body="Это последовательность символов, которую пользователь вводит в поисковую строку, чтобы найти интересующую его информацию. Формат поискового запроса зависит как от устройства поисковой системы, так и от типа информации для поиска.">
 				<Icon name="help-circle" class="tooltip-trigger" />
 			</Tooltip>
 			<Dropdown
@@ -46,7 +50,9 @@
 				placeholder="Строго равен"
 				optionLabel="name"
 				class="dropdown-filter" />
-			<Tooltip heading="head" body="body text">
+			<Tooltip
+				heading="Заголовок подсказки"
+				body="Это последовательность символов, которую пользователь вводит в поисковую строку, чтобы найти интересующую его информацию. Формат поискового запроса зависит как от устройства поисковой системы, так и от типа информации для поиска.">
 				<Icon name="help-circle" class="tooltip-trigger" />
 			</Tooltip>
 			<Dropdown
@@ -55,7 +61,9 @@
 				placeholder="Значение"
 				optionLabel="name"
 				class="dropdown-filter" />
-			<Tooltip heading="head" body="body text">
+			<Tooltip
+				heading="Заголовок подсказки"
+				body="Это последовательность символов, которую пользователь вводит в поисковую строку, чтобы найти интересующую его информацию. Формат поискового запроса зависит как от устройства поисковой системы, так и от типа информации для поиска.">
 				<Icon name="help-circle" class="tooltip-trigger" />
 			</Tooltip>
 			<Button class="h-full" variant="secondary" label="И" />
@@ -64,7 +72,9 @@
 		</div>
 		<div class="flex items-center gap-2">
 			<span class="text-text-primary text-lg font-medium">Готовые фильтры:</span>
-			<Tooltip heading="head" body="body text">
+			<Tooltip
+				heading="Заголовок подсказки"
+				body="Это последовательность символов, которую пользователь вводит в поисковую строку, чтобы найти интересующую его информацию. Формат поискового запроса зависит как от устройства поисковой системы, так и от типа информации для поиска.">
 				<Icon name="help-circle" class="tooltip-trigger" />
 			</Tooltip>
 			<Badge size="lg">Выпали из ТОП 10</Badge>
