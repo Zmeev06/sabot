@@ -1,10 +1,15 @@
 <script setup lang="ts">
 	import { Icon } from '@//ui/icon';
 
+	interface Props {
+		state: 'opened' | 'hidden';
+	}
+
 	interface Emits {
 		(e: 'toggle'): void;
 	}
 
+	const props = defineProps<Props>();
 	const emit = defineEmits<Emits>();
 </script>
 
@@ -18,7 +23,10 @@
 			@click="emit('toggle')">
 			<Icon name="filter-lines" class="w-5 h-5 mr-3" />
 			<span class="mr-2">Фильтры</span>
-			<Icon name="chevron-down" class="w-5 h-5" />
+			<Icon
+				name="chevron-down"
+				class="w-5 h-5 transition-all"
+				:class="{ 'rotate-180': props.state === 'hidden' }" />
 		</button>
 	</div>
 </template>
