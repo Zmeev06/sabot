@@ -25,7 +25,7 @@ export const columns = [
 			h(
 				'button',
 				{
-					class: 'px-2 h-10',
+					class: 'px-2 h-10 sticky top-0 left-0',
 					onClick: () => row.toggleExpanded(),
 				},
 				h(Icon, {
@@ -166,7 +166,7 @@ export const columns = [
 				h(TooltipDelete, {}, () => h(CellContentHeader, { date: item.header.date, value: item.header.value })),
 			cell: ({ row }) =>
 				h(CellContentItem, {
-					class: 'w-20 h-[40px] border-r-[1px] border-r-base-white',
+					class: 'w-full h-[40px] border-r-[1px] border-r-base-white',
 					increaseType: item.body.increaseType,
 					increaseLevel: item.body.increaseLevel,
 					title: item.body.title,

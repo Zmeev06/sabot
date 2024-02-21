@@ -5,7 +5,7 @@
 </script>
 
 <template>
-	<table :class="cn('caption-bottom', props.class)">
+	<table :class="cn('caption-bottom border-collapse', props.class)">
 		<slot />
 	</table>
 </template>
