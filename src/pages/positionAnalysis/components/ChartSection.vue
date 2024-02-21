@@ -48,8 +48,8 @@
 					<Clusters class="max-h-[536px]" />
 				</div>
 			</template>
-			<template #default="{ toggle }">
-				<InfoGraphic :items="graphicItems" @toggle="toggle" />
+			<template #default="{ toggle, state }">
+				<InfoGraphic :items="graphicItems" @toggle="toggle" :state="state" />
 			</template>
 		</Toggler>
 	</div>

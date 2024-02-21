@@ -22,8 +22,8 @@
 <template>
 	<div class="space-y-6">
 		<Toggler class="space-y-6 flex-col-reverse">
-			<template #default="{ toggle }">
-				<TableFiltersToggler @toggle="toggle" />
+			<template #default="{ toggle, state }">
+				<TableFiltersToggler @toggle="toggle" :state="state" />
 			</template>
 			<template #content>
 				<TableFilters />

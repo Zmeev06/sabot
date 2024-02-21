@@ -5,13 +5,14 @@
 
 	interface Props {
 		items: IGraphicItem[];
+		state: 'opened' | 'hidden';
 	}
 
 	interface Emits {
 		(e: 'toggle'): void;
 	}
 
-	defineProps<Props>();
+	const props = defineProps<Props>();
 	const emit = defineEmits<Emits>();
 </script>
 
@@ -24,6 +25,10 @@
 				:key="index"
 				v-bind="item" />
 		</div>
-		<Button icon="chevron-up" class="!rounded-full" @click="emit('toggle')" />
+		<Button
+			icon="chevron-up"
+			class="!rounded-full transition-all"
+			:class="{ 'rotate-180': props.state === 'hidden' }"
+			@click="emit('toggle')" />
 	</div>
 </template>
