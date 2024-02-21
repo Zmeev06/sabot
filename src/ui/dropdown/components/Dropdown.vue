@@ -70,7 +70,7 @@
 
 <style>
 	.ptDropdownRoot {
-		@apply inline-flex justify-between bg-base-white transition-all items-center hover:outline-accent-normal outline rounded-lg outline-1 outline-border-strong shadow-sm shadow-text-primary/5 px-[14px] py-[10px] gap-2 cursor-pointer focus:outline-accent-normal;
+		@apply inline-flex justify-between bg-base-white transition-all items-center hover:outline-accent-normal outline rounded-lg -outline-offset-1 outline-1 outline-border-strong shadow-sm shadow-text-primary/5 px-[14px] py-[10px] gap-2 cursor-pointer focus:outline-accent-normal;
 	}
 
 	.ptRootFocused {
