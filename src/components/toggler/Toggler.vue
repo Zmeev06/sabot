@@ -13,7 +13,7 @@
 	<div>
 		<slot :toggle="toggle" :state="state" />
 		<div class="transition-all overflow-hidden max-h-[999px]" :style="{ maxHeight: isShow ? '' : '0' }">
-			<slot name="content" />
+			<slot name="content" :state="state" />
 		</div>
 	</div>
 </template>
