@@ -4,17 +4,18 @@
 	import { Overlay } from '@//ui/overlay';
 	import { addDays, format } from 'date-fns';
 	import { Button } from '@//ui/button';
+import dayjs from 'dayjs';
 
 	const date = ref({
-		start: new Date(2022, 0, 20),
-		end: addDays(new Date(2022, 0, 20), 20),
+		start: '2023-01-02.',
+		end: '2023-01-03',
 	});
 
 	const dateComputed = computed(() =>
 		date.value.start
 			? date.value.end
-				? `${format(date.value.start, 'LL.dd.y')} - ${format(date.value.end, 'LL.dd.y')}`
-				: format(date.value.start, 'LL.dd.y')
+				? `${dayjs(date.value.start).format('DD.MM.YYYY')} - ${dayjs(date.value.end).format('DD.MM.YYYY')}`
+				:dayjs(date.value.start).format('DD.MM.YYYY')
 			: 'Pick a date'
 	);
 
