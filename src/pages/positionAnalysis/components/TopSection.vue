@@ -24,7 +24,7 @@
 	const dateComputed = computed(() =>
 		date.value.start
 			? date.value.end
-				? `${format(date.value.start, 'LL.dd.y')} - ${format(date.value.end, 'LL.dd.y')}`
+				? `${format(date.value.start, 'LL.dd.yy')} - ${format(date.value.end, 'LL.dd.yy')}`
 				: format(date.value.start, 'LL.dd.y')
 			: 'Pick a date'
 	);
@@ -80,44 +80,46 @@
 
 <template>
 	<FullWidthSection>
-		<div class="flex items-center gap-2 flex-wrap">
+		<div class="flex items-center gap-2 w-full">
 			<Button icon="refresh" />
-			<Dropdown
-				v-model="currentVersion"
-				:options="versions ? versions : []"
-				placeholder="Версия"
-				optionLabel="name"
-				@change="(e: any) => coreStore.setCore(e.value)"
-				class="w-[220px]" />
-			<Dropdown
-				v-model="currentSearchType"
-				:options="searchTypes"
-				placeholder="Поисковая система"
-				optionLabel="name"
-				@change="(e: any) => searchTypeStore.setSearchType(e.value)"
-				class="w-[210px]" />
-			<Dropdown
-				v-model="currentRegion"
-				:options="regions"
-				placeholder="Регион"
-				optionLabel="name"
-				@change="(e:any) => regionStore.setRegion(e.value)"
-				class="w-[220px]" />
-			<Overlay>
-				<template #trigger="{ toggle }">
-					<Button
-						class="!font-normal"
-						icon="calendar"
-						size="lg"
-						iconPos="left"
-						variant="secondary"
-						:label="dateComputed"
-						@click="toggle" />
-				</template>
-				<template #content>
-					<Calendar v-model.range="date" :columns="2" />
-				</template>
-			</Overlay>
+			<div class="w-full grid grid-cols-4 xl:flex items-center gap-2">
+				<Dropdown
+					v-model="currentVersion"
+					:options="versions ? versions : []"
+					placeholder="Версия"
+					optionLabel="name"
+					@change="(e: any) => coreStore.setCore(e.value)"
+					class="xl:w-[220px]" />
+				<Dropdown
+					v-model="currentSearchType"
+					:options="searchTypes"
+					placeholder="Поисковая система"
+					optionLabel="name"
+					@change="(e: any) => searchTypeStore.setSearchType(e.value)"
+					class="xl:w-[210px]" />
+				<Dropdown
+					v-model="currentRegion"
+					:options="regions"
+					placeholder="Регион"
+					optionLabel="name"
+					@change="(e:any) => regionStore.setRegion(e.value)"
+					class="xl:w-[220px]" />
+				<Overlay>
+					<template #trigger="{ toggle }">
+						<Button
+							class="!font-normal"
+							icon="calendar"
+							size="lg"
+							iconPos="left"
+							variant="secondary"
+							:label="dateComputed"
+							@click="toggle" />
+					</template>
+					<template #content>
+						<Calendar v-model.range="date" :columns="2" />
+					</template>
+				</Overlay>
+			</div>
 		</div>
 		<div class="flex items-center gap-2">
 			<Button icon="settings" />
