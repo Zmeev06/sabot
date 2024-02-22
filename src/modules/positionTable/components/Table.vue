@@ -87,7 +87,7 @@
 			return '';
 		}
 
-		return `sticky top-0 after:absolute after:z-[-1] after:top-0 after:left-0 after:w-full after:h-[calc(100%-6px)] after:bg-base-white group-hover:after:bg-grey-light after:transition-colors`;
+		return `sticky top-0 after:absolute after:z-[-1] after:top-0 after:left-0 after:w-full after:h-full after:bg-base-white group-hover:after:bg-grey-light after:transition-colors`;
 	}
 
 	/* */
@@ -182,7 +182,7 @@
 			@update:scroll-track="controlScroll"
 			class="border-b-[1px] border-b-border-heavy" />
 		<div class="w-full overflow-y-auto" ref="scrollWrapperRef" @scroll="handleNativeScroll">
-			<Table class="w-full table-auto" ref="tableRef">
+			<Table class="w-full border-collapse table-auto" ref="tableRef">
 				<TableHeader class="!p-0 !border-none relative z-20">
 					<TableRow
 						class="relative !p-0 border-b-[1px] border-transparent after:absolute after:top-[100%] after:left-0 after:w-full after:h-[1px] after:bg-border-heavy"
@@ -209,7 +209,7 @@
 				<TableBody class="border-b-2 relative z-10">
 					<template v-if="table.getRowModel().rows?.length">
 						<TableRow
-							class="group relative z-10 border-b-[1px] border-b-transparent min-w-min max-w-min outline outline-1 outline-border-mid -outline-offset-1"
+							class="group overflow-visible relative z-10 border-none min-w-min max-w-min outline outline-1 outline-border-mid"
 							:class="[
 								{
 									'hover:outline-border-heavy': row.depth === 0,
