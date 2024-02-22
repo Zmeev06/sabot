@@ -2,13 +2,15 @@
 	import { ref } from 'vue';
 	import InputText from 'primevue/inputtext';
 
+	const modelValue = defineModel();
+
 	const inputStyle = ref({
 		root: 'ptInputRoot',
 	});
 </script>
 
 <template>
-	<InputText :pt="inputStyle" />
+	<InputText :pt="inputStyle" v-model="modelValue" />
 </template>
 
 <style>
