@@ -16,6 +16,7 @@
 	import RowExpanded from './RowExpanded.vue';
 
 	import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@//ui/table';
+	import { wrapper as scrollWrapperRef, scrollTrackPercent, controlScroll, handleNativeScroll } from './table-scrollbar/model';
 
 	const props = defineProps<{
 		columns: ColumnDef<Response>[];
@@ -163,8 +164,8 @@
 <template>
 	<div
 		class="shadow-sm shadow-text-primary/5 outline outline-1 outline-border-mid rounded-xl overflow-hidden grid grid-flow-row">
-		<TableTopHeader class="border-b-[1px] border-b-border-heavy" />
-		<div class="w-full overflow-auto">
+		<TableTopHeader  v-model:scroll-track="scrollTrackPercent" @update:scroll-track="controlScroll" class="border-b-[1px] border-b-border-heavy" />
+		<div class="w-full overflow-y-auto" ref="scrollWrapperRef" @scroll="handleNativeScroll">
 			<Table class="w-full table-auto" ref="tableRef">
 				<TableHeader class="!p-0 !border-none">
 					<TableRow
@@ -246,3 +247,4 @@
 		@apply sticky left-0 top-0;
 	}
 </style>
+./table-scrollbar/table-scrollbar
