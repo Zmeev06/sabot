@@ -15,7 +15,7 @@
 
 <template>
 	<div class="flex items-center gap-4">
-		<h2 class="text-text-primary text-[1.75rem] leading-[2.25rem] font-medium">
+		<h2 class="text-text-primary text-2xl xl:text-[1.75rem] leading-[2.25rem] font-medium">
 			Запросы сайта <span class="text-accent-normal">kolbaska.biz</span>
 		</h2>
 		<button

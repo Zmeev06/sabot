@@ -49,7 +49,7 @@
 			</template>
 		</Header>
 		<div>
-			<PageTabs class="mb-6" />
+			<PageTabs class="mb-4 xl:mb-6" />
 			<slot />
 		</div>
 	</div>

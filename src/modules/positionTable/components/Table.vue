@@ -16,7 +16,12 @@
 	import RowExpanded from './RowExpanded.vue';
 
 	import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@//ui/table';
-	import { wrapper as scrollWrapperRef, scrollTrackPercent, controlScroll, handleNativeScroll } from './table-scrollbar/model';
+	import {
+		wrapper as scrollWrapperRef,
+		scrollTrackPercent,
+		controlScroll,
+		handleNativeScroll,
+	} from './table-scrollbar/model';
 
 	const props = defineProps<{
 		columns: ColumnDef<Response>[];
@@ -82,7 +87,7 @@
 			return '';
 		}
 
-		return `sticky top-0 bg-base-white`;
+		return `sticky top-0 after:absolute after:z-[-1] after:top-0 after:left-0 after:w-full after:h-[calc(100%-6px)] after:bg-base-white group-hover:after:bg-grey-light after:transition-colors`;
 	}
 
 	/* */
@@ -159,17 +164,28 @@
 
 		return cellBox.x - tableBox.x;
 	}
+
+	function getMinWidthContentCell(index: number) {
+		if (index > 5) {
+			return 80;
+		}
+
+		return '';
+	}
 </script>
 
 <template>
 	<div
 		class="shadow-sm shadow-text-primary/5 outline outline-1 outline-border-mid rounded-xl overflow-hidden grid grid-flow-row">
-		<TableTopHeader  v-model:scroll-track="scrollTrackPercent" @update:scroll-track="controlScroll" class="border-b-[1px] border-b-border-heavy" />
+		<TableTopHeader
+			v-model:scroll-track="scrollTrackPercent"
+			@update:scroll-track="controlScroll"
+			class="border-b-[1px] border-b-border-heavy" />
 		<div class="w-full overflow-y-auto" ref="scrollWrapperRef" @scroll="handleNativeScroll">
 			<Table class="w-full table-auto" ref="tableRef">
-				<TableHeader class="!p-0 !border-none">
+				<TableHeader class="!p-0 !border-none relative z-20">
 					<TableRow
-						class="relative !p-0 border-b-[1px] border-b-border-heavy min-w-min max-w-min"
+						class="relative !p-0 border-b-[1px] border-transparent after:absolute after:top-[100%] after:left-0 after:w-full after:h-[1px] after:bg-border-heavy"
 						v-for="headerGroup in table.getHeaderGroups()"
 						:key="headerGroup.id">
 						<TableHead
@@ -181,6 +197,7 @@
 							:style="{
 								width: `${getCellWidth(index)}px`,
 								left: `${getFixedHeaderCellPosition(index)}px`,
+								minWidth: `${getMinWidthContentCell(index)}px`,
 							}">
 							<FlexRender
 								v-if="!header.isPlaceholder"
@@ -189,14 +206,13 @@
 						</TableHead>
 					</TableRow>
 				</TableHeader>
-				<TableBody class="border-b-2">
+				<TableBody class="border-b-2 relative z-10">
 					<template v-if="table.getRowModel().rows?.length">
 						<TableRow
-							class="border-b-[1px] border-b-border-mid last:border-b-transparent transition-colors group min-w-min max-w-min"
+							class="group relative z-10 border-b-[1px] border-b-transparent min-w-min max-w-min outline outline-1 outline-border-mid -outline-offset-1"
 							:class="[
 								{
-									'hover:bg-grey-light hover:outline hover:outline-1 hover:outline-border-heavy':
-										row.depth === 0,
+									'hover:outline-border-heavy': row.depth === 0,
 									'outline outline-1 outline-border-heavy': row.getIsExpanded(),
 								},
 							]"
@@ -217,6 +233,7 @@
 											cellIndex,
 											table.getAllColumns().length
 										)}px`,
+										minWidth: `${getMinWidthContentCell(cellIndex)}px`,
 									}">
 									<FlexRender :render="cell.column.columnDef.cell" :props="cell.getContext()" />
 								</TableCell>
@@ -241,10 +258,3 @@
 		</div>
 	</div>
 </template>
-
-<style scoped>
-	.test {
-		@apply sticky left-0 top-0;
-	}
-</style>
-./table-scrollbar/table-scrollbar

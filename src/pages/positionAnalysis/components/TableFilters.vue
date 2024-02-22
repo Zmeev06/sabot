@@ -84,8 +84,8 @@
 			<Badge size="lg">Близко к ТОП 10</Badge>
 		</div>
 		<div class="flex items-center gap-3">
-			<Button class="w-[184px]" variant="primary" label="Применить" />
-			<Button class="w-[184px]" variant="secondary" label="Очистить" />
+			<Button class="w-[184px]" size="lg" variant="primary" label="Применить" />
+			<Button class="w-[184px]" size="lg" variant="secondary" label="Очистить" />
 		</div>
 	</div>
 </template>
