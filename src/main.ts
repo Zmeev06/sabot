@@ -8,15 +8,13 @@ import './assets/tailwind.css';
 
 import VCalendar from 'v-calendar';
 import 'v-calendar/style.css';
-
-import ru from './locale/ru.json';
+import 'swiper/css';
 
 const app = createApp(App)
 	.use(store)
 	.use(router)
 	.use(PrimeVue, {
 		unstyled: true,
-		locale: ru.ru,
 	})
 	.use(VueTippy)
 	.use(VCalendar);
