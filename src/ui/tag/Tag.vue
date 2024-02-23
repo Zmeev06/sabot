@@ -34,7 +34,7 @@ const tagStyle = computed(() => ({
       <template #icon v-if="icon">
         <Icon
           :name="icon"
-          class="w-5 h-5"
+          class="h-5 w-5"
           :class="{ 'text-fill-strong': active, 'text-text-tertiary': !active }"
         />
       </template>
@@ -44,7 +44,7 @@ const tagStyle = computed(() => ({
 
 <style>
 .ptTagRoot {
-  @apply inline-flex items-center gap-3 transition-colors hover:bg-grey-mid p-[6px] xl:px-3 xl:py-2 rounded-md whitespace-nowrap;
+  @apply inline-flex items-center gap-3 whitespace-nowrap rounded-md p-[6px] transition-colors hover:bg-grey-mid xl:px-3 xl:py-2;
 }
 
 .ptTagIconOnly {
@@ -52,6 +52,6 @@ const tagStyle = computed(() => ({
 }
 
 .ptTagValue {
-  @apply text-sm/[22px] xl:text-base font-medium text-text-tertiary transition-colors group-hover:text-text-primary;
+  @apply text-sm/[22px] font-medium text-text-tertiary transition-colors group-hover:text-text-primary xl:text-base;
 }
 </style>

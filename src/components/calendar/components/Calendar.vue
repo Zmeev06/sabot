@@ -85,7 +85,7 @@ onMounted(async () => {
 
 <template>
   <div
-    class="flex bg-base-white mt-1 rounded-lg border-[1px] border-grey-mid calendar-shadow"
+    class="calendar-shadow mt-1 flex rounded-lg border-[1px] border-grey-mid bg-base-white"
   >
     <CalendarSidebar />
 
@@ -142,7 +142,7 @@ onMounted(async () => {
 }
 
 .calendar .vc-monthly .is-not-in-month * {
-  @apply !opacity-100 text-fill-mid;
+  @apply text-fill-mid !opacity-100;
 }
 .calendar.vc-bordered {
   @apply !border-none;
@@ -151,13 +151,13 @@ onMounted(async () => {
   @apply grid;
 }
 .vc-header {
-  @apply !m-0 !p-0 h-9;
+  @apply !m-0 h-9 !p-0;
 }
 .calendar .vc-title-wrapper {
   @apply text-base font-semibold text-text-secondary;
 }
 .calendar .vc-pane-layout .vc-pane {
-  @apply px-6 py-5 border-r-[1px] border-r-border-mid last:border-none;
+  @apply border-r-[1px] border-r-border-mid px-6 py-5 last:border-none;
 }
 .calendar .vc-title {
   @apply relative z-20 text-base font-semibold text-text-secondary;
@@ -187,7 +187,7 @@ onMounted(async () => {
   @apply flex items-center gap-0;
 }
 .calendar .vc-weekday {
-  @apply w-10 h-10 px-2 py-2.5 flex items-center justify-center text-sm font-medium text-text-secondary;
+  @apply flex h-10 w-10 items-center justify-center px-2 py-2.5 text-sm font-medium text-text-secondary;
 }
 .calendar .vc-weeks {
   @apply !space-y-1;
@@ -196,19 +196,19 @@ onMounted(async () => {
   @apply h-full w-full bg-grey-light;
 }
 .calendar .vc-day:has(.vc-highlights) {
-  @apply first:rounded-l-[40px] last:rounded-r-[40px] overflow-hidden;
+  @apply overflow-hidden first:rounded-l-[40px] last:rounded-r-[40px];
 }
 .vc-highlights.vc-day-layer {
-  @apply !opacity-100 !pointer-events-auto;
+  @apply !pointer-events-auto !opacity-100;
 }
 .vc-highlights .vc-day-layer {
-  @apply !opacity-100 !pointer-events-auto;
+  @apply !pointer-events-auto !opacity-100;
 }
 .vc-highlight.vc-highlight-base-middle {
-  @apply !opacity-100 !pointer-events-auto;
+  @apply !pointer-events-auto !opacity-100;
 }
 .vc-day .vc-day-content {
-  @apply !opacity-100 !pointer-events-auto;
+  @apply !pointer-events-auto !opacity-100;
 }
 .calendar .vc-day.is-today:not(:has(.vc-day-layer)) .vc-day-content {
   @apply rounded-md;

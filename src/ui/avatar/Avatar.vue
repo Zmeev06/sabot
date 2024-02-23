@@ -45,7 +45,7 @@ const avatarStyle = ref({
 
 <style>
 .ptAvatarRoot {
-  @apply inline-flex justify-center items-center;
+  @apply inline-flex items-center justify-center;
 }
 
 .ptAvatarSm {
@@ -61,6 +61,6 @@ const avatarStyle = ref({
 }
 
 .ptAvatarImage {
-  @apply w-full h-full;
+  @apply h-full w-full;
 }
 </style>

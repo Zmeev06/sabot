@@ -63,25 +63,25 @@ function onContextMenuPopup(event: Event) {
         >
           <template #item="{ item }">
             <div
-              class="flex items-center py-3 px-2.5 justify-between gap-3 transition-colors hover:bg-border-mid cursor-pointer rounded-lg"
+              class="flex cursor-pointer items-center justify-between gap-3 rounded-lg px-2.5 py-3 transition-colors hover:bg-border-mid"
               tabindex="-1"
               aria-hidden="true"
             >
               <div class="flex items-center gap-2">
                 <Icon
                   :name="item.icon"
-                  class="w-4 h-4"
+                  class="h-4 w-4"
                   :class="[
                     { 'text-text-secondary': !item.iconColor },
                     item.iconColor
                   ]"
                 />
-                <span class="text-text-primary text-sm whitespace-nowrap">{{
+                <span class="whitespace-nowrap text-sm text-text-primary">{{
                   item.label
                 }}</span>
               </div>
               <span
-                class="text-text-tertiary text-[12px] leading-[18px] whitespace-nowrap"
+                class="whitespace-nowrap text-[12px] leading-[18px] text-text-tertiary"
                 >{{ item.hotkey }}</span
               >
             </div>
@@ -92,14 +92,14 @@ function onContextMenuPopup(event: Event) {
     <template #checkboxicon>
       <Icon
         name="checkbox"
-        class="w-3 h-3 text-base-white"
+        class="h-3 w-3 text-base-white"
         @contextmenu="onContextMenuPopup"
       />
     </template>
     <template #togglericon>
       <Icon
         name="chevron-right"
-        class="w-5 h-5 text-fill-light"
+        class="h-5 w-5 text-fill-light"
         @contextmenu="onContextMenuPopup"
       />
     </template>
@@ -108,7 +108,7 @@ function onContextMenuPopup(event: Event) {
 
 <style>
 .ptTreeRoot {
-  @apply text-text-secondary text-sm cursor-pointer;
+  @apply cursor-pointer text-sm text-text-secondary;
 }
 
 .ptTreeContainer {
@@ -124,19 +124,19 @@ ul.ptTreeSubgroup {
 }
 
 .ptCheckboxRoot {
-  @apply relative inline-flex justify-center items-center w-4 h-4 rounded-sm cursor-pointer select-none;
+  @apply relative inline-flex h-4 w-4 cursor-pointer select-none items-center justify-center rounded-sm;
 }
 
 .ptBox {
-  @apply flex items-center justify-center w-full h-full rounded-sm p-[1px] border-[1px] border-border-strong transition-all hover:border-accent-normal peer-checked:bg-accent-normal bg-base-white peer-checked:border-accent-normal peer-hover:border-accent-normal;
+  @apply flex h-full w-full items-center justify-center rounded-sm border-[1px] border-border-strong bg-base-white p-[1px] transition-all hover:border-accent-normal peer-checked:border-accent-normal peer-checked:bg-accent-normal peer-hover:border-accent-normal;
 }
 
 .ptCheckboxInput {
-  @apply w-full h-full absolute top-0 left-0 z-10 p-0 m-0 opacity-0 rounded-md outline-none border-2 border-border-mid appearance-none cursor-pointer;
+  @apply absolute left-0 top-0 z-10 m-0 h-full w-full cursor-pointer appearance-none rounded-md border-2 border-border-mid p-0 opacity-0 outline-none;
 }
 
 .ptCheckboxIcon {
-  @apply text-base-white w-full h-full transition-all;
+  @apply h-full w-full text-base-white transition-all;
 }
 
 .ptContextMenuRoot {
@@ -148,6 +148,6 @@ ul.ptTreeSubgroup {
 }
 
 .ptContextMenuMenu {
-  @apply py-1 px-1.5;
+  @apply px-1.5 py-1;
 }
 </style>

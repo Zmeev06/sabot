@@ -78,7 +78,7 @@ const dropDownSlots = computed(() => {
 
 <style>
 .ptDropdownRoot {
-  @apply inline-flex justify-between bg-base-white transition-all items-center hover:outline-accent-normal outline rounded-lg -outline-offset-1 outline-1 outline-border-strong shadow-sm shadow-text-primary/5 px-[14px] py-[10px] gap-2 cursor-pointer focus:outline-accent-normal;
+  @apply inline-flex cursor-pointer items-center justify-between gap-2 rounded-lg bg-base-white px-[14px] py-[10px] shadow-sm shadow-text-primary/5 outline outline-1 -outline-offset-1 outline-border-strong transition-all hover:outline-accent-normal focus:outline-accent-normal;
 }
 
 .ptRootFocused {
@@ -86,15 +86,15 @@ const dropDownSlots = computed(() => {
 }
 
 .ptDropdownInput {
-  @apply text-base text-text-secondary whitespace-nowrap line-clamp-1 focus:outline-none focus:text-text-primary focus:font-medium;
+  @apply line-clamp-1 whitespace-nowrap text-base text-text-secondary focus:font-medium focus:text-text-primary focus:outline-none;
 }
 
 .ptDropdownWrapper {
-  @apply rounded-lg border-[1px] overflow-auto border-border-mid bg-base-white shadow-md shadow-text-primary/[3] my-1 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-border-mid [&::-webkit-scrollbar-thumb]:rounded-lg;
+  @apply my-1 overflow-auto rounded-lg border-[1px] border-border-mid bg-base-white shadow-md shadow-text-primary/[3] [&::-webkit-scrollbar-thumb]:rounded-lg [&::-webkit-scrollbar-thumb]:bg-border-mid [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar]:w-2;
 }
 
 .ptDropdownItem {
-  @apply my-0.5 mx-1.5 py-2.5 flex gap-3 items-center justify-between px-2 cursor-pointer transition-colors rounded-md hover:bg-grey-light aria-[selected="true"]:bg-grey-light data-[p-focused="true"]:bg-grey-light;
+  @apply mx-1.5 my-0.5 flex cursor-pointer items-center justify-between gap-3 rounded-md px-2 py-2.5 transition-colors hover:bg-grey-light aria-[selected="true"]:bg-grey-light data-[p-focused="true"]:bg-grey-light;
 }
 
 .ptDropdownTrigger svg {
@@ -102,7 +102,7 @@ const dropDownSlots = computed(() => {
 }
 
 .ptDropdownIndicator {
-  @apply w-5 h-5 text-accent-normal;
+  @apply h-5 w-5 text-accent-normal;
 }
 
 .pt-fade-in-enter-active,

@@ -28,7 +28,7 @@ function decreaseScrollTrack() {
 <template>
   <div class="grid grid-cols-[auto_1fr_auto] gap-2">
     <Button
-      class="!py-2 !px-3.5"
+      class="!px-3.5 !py-2"
       variant="secondary"
       size="sm"
       icon="arrow-narrow-left"
@@ -39,7 +39,7 @@ function decreaseScrollTrack() {
       @update:model-value="emit('update:scrollTrack', $event)"
     />
     <Button
-      class="!py-2 !px-3.5"
+      class="!px-3.5 !py-2"
       variant="secondary"
       size="sm"
       icon="arrow-narrow-right"

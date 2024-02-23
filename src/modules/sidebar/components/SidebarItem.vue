@@ -28,7 +28,7 @@ withDefaults(
   <Tippy placement="right" sticky :duration="0" :hide-on-click="false">
     <router-link
       :to="item.to"
-      class="relative group flex items-center justify-between gap-4 rounded-full px-4 py-3 text-[18px] font-medium leading-[26px] transition-colors hover:bg-brand-normal"
+      class="group relative flex items-center justify-between gap-4 rounded-full px-4 py-3 text-[18px] font-medium leading-[26px] transition-colors hover:bg-brand-normal"
       :class="{
         'bg-brand-normal text-base-black': isCurrent,
         'text-base-white hover:text-base-black': !isCurrent,

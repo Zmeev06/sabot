@@ -6,10 +6,10 @@ defineProps<IHeaderInterface>();
 </script>
 
 <template>
-  <div class="flex items-center gap-3 py-3 px-4">
+  <div class="flex items-center gap-3 px-4 py-3">
     <Avatar indicator="online" :image="avatarUrl" size="sm" />
     <div class="flex flex-col justify-center">
-      <div class="text-fill-extra text-sm font-semibold">
+      <div class="text-sm font-semibold text-fill-extra">
         {{ `${firstName} ${secondName}` }}
       </div>
       <RouterLink

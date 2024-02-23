@@ -10,7 +10,7 @@ defineProps<{
 <template>
   <HeaderActionItem icon="notifications" class="relative">
     <Badge
-      class="absolute top-0 right-0"
+      class="absolute right-0 top-0"
       v-if="notifications"
       variant="error"
       size="sm"

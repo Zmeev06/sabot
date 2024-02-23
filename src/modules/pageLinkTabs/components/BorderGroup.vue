@@ -1,6 +1,6 @@
 <template>
   <div
-    class="shadow-text-primary/5 inline-flex items-center outline outline-1 outline-border-strong overflow-hidden rounded-lg shadow-sm"
+    class="inline-flex items-center overflow-hidden rounded-lg shadow-sm shadow-text-primary/5 outline outline-1 outline-border-strong"
   >
     <slot />
   </div>

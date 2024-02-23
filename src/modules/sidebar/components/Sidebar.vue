@@ -20,10 +20,10 @@ const iconLogoName = computed(() =>
 
 <template>
   <SidebarScrollPanel>
-    <aside class="scrollbar-none top-0 py-16 px-4 xl:pl-[42px] xl:pr-8">
+    <aside class="scrollbar-none top-0 px-4 py-16 xl:pl-[42px] xl:pr-8">
       <div class="flex flex-col gap-16">
         <div
-          class="flex items-center gap-[15px] justify-center 2xl:justify-start"
+          class="flex items-center justify-center gap-[15px] 2xl:justify-start"
         >
           <RouterLink to="/">
             <Icon
@@ -37,11 +37,11 @@ const iconLogoName = computed(() =>
           </RouterLink>
 
           <button
-            class="items-center justify-center p-0.5 transition-transform text-gray-400 hidden 2xl:flex"
+            class="hidden items-center justify-center p-0.5 text-gray-400 transition-transform 2xl:flex"
             @click="sidebarStore.toggleSidebar"
             :class="{ 'rotate-180': !sidebarStore.isSidebarExpanded }"
           >
-            <Icon name="arrow-narrow-left" class="w-7 h-7" />
+            <Icon name="arrow-narrow-left" class="h-7 w-7" />
           </button>
         </div>
         <div class="flex flex-col gap-16">

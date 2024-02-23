@@ -21,18 +21,18 @@ const checkboxStyle = ref({
 
 <style>
 .ptCheckboxRoot {
-  @apply relative inline-flex justify-center items-center w-4 h-4 rounded-sm cursor-pointer select-none;
+  @apply relative inline-flex h-4 w-4 cursor-pointer select-none items-center justify-center rounded-sm;
 }
 
 .ptBox {
-  @apply flex items-center justify-center w-full h-full rounded-sm p-[1px] border-[1px] border-border-strong transition-all hover:border-accent-normal peer-checked:bg-accent-normal bg-base-white peer-checked:border-accent-normal peer-hover:border-accent-normal;
+  @apply flex h-full w-full items-center justify-center rounded-sm border-[1px] border-border-strong bg-base-white p-[1px] transition-all hover:border-accent-normal peer-checked:border-accent-normal peer-checked:bg-accent-normal peer-hover:border-accent-normal;
 }
 
 .ptCheckboxInput {
-  @apply w-full h-full absolute top-0 left-0 z-10 p-0 m-0 opacity-0 rounded-md outline-none border-2 border-border-mid appearance-none cursor-pointer;
+  @apply absolute left-0 top-0 z-10 m-0 h-full w-full cursor-pointer appearance-none rounded-md border-2 border-border-mid p-0 opacity-0 outline-none;
 }
 
 .ptCheckboxIcon {
-  @apply text-base-white w-full h-full transition-all;
+  @apply h-full w-full text-base-white transition-all;
 }
 </style>

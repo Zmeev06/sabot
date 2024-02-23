@@ -6,11 +6,11 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex flex-col w-full gap-1 items-start p-2">
-    <h2 class="text-text-primary text-sm/[14px] whitespace-nowrap">
+  <div class="flex w-full flex-col items-start gap-1 p-2">
+    <h2 class="whitespace-nowrap text-sm/[14px] text-text-primary">
       {{ date }}
     </h2>
-    <div class="text-fill-mid text-[12px] leading-3 whitespace-nowrap">
+    <div class="whitespace-nowrap text-[12px] leading-3 text-fill-mid">
       {{ value }}
     </div>
   </div>

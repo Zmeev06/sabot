@@ -17,7 +17,7 @@ const currentPage = ref(0);
 
 <template>
   <div>
-    <div class="flex items-center gap-[18px] max-w-[1038px] w-full">
+    <div class="flex w-full max-w-[1038px] items-center gap-[18px]">
       <TableScrollbar
         class="w-full"
         :totalPages="100"
@@ -25,7 +25,7 @@ const currentPage = ref(0);
         v-model="currentPage"
       />
       <div class="flex items-center gap-3">
-        <span class="text-text-primary text-base">Выводить:</span>
+        <span class="text-base text-text-primary">Выводить:</span>
         <Dropdown
           class="px-2 py-1"
           :options="output"

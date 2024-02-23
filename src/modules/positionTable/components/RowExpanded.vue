@@ -47,7 +47,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="py-6 px-3 grid gap-6 grid-cols-[1026px_1fr]">
+  <div class="grid grid-cols-[1026px_1fr] gap-6 px-3 py-6">
     <div class="space-y-4">
       <div class="flex items-center gap-2">
         <button>
@@ -122,15 +122,15 @@ onMounted(() => {
 
 <style scoped>
 .block {
-  @apply rounded-lg outline outline-1 outline-border-mid bg-base-white p-[14px] space-y-[14px] divide-y-[1px] divide-border-mid *:pt-[14px] first:*:pt-0;
+  @apply space-y-[14px] divide-y-[1px] divide-border-mid rounded-lg bg-base-white p-[14px] outline outline-1 outline-border-mid *:pt-[14px] first:*:pt-0;
 }
 
 .title-wrapper {
-  @apply font-secondary flex items-center gap-2 text-base font-bold text-text-primary mb-1.5;
+  @apply mb-1.5 flex items-center gap-2 font-secondary text-base font-bold text-text-primary;
 }
 
 .title-icon {
-  @apply w-5 h-5 text-fill-light;
+  @apply h-5 w-5 text-fill-light;
 }
 
 .description {
@@ -138,7 +138,7 @@ onMounted(() => {
 }
 
 .input-field {
-  @apply py-2 px-3;
+  @apply px-3 py-2;
 }
 
 .chart {

@@ -16,25 +16,25 @@ const scrollTrack = defineModel<number | string>({ required: true });
 <style>
 .table-range-bar {
   -webkit-appearance: none;
-  @apply p-1 h-full bg-bg-gray-fill-light w-full rounded-[8px];
+  @apply h-full w-full rounded-[8px] bg-bg-gray-fill-light p-1;
 }
 .table-range-bar:focus {
   @apply outline-none;
 }
 .table-range-bar::-webkit-slider-runnable-track {
-  @apply w-full h-full rounded-[8px] bg-transparent shadow-none cursor-pointer;
+  @apply h-full w-full cursor-pointer rounded-[8px] bg-transparent shadow-none;
 }
 .table-range-bar::-webkit-slider-thumb {
   -webkit-appearance: none;
-  @apply shadow-none w-1/3 bg-grey-heavy h-full rounded-lg border-none cursor-ew-resize;
+  @apply h-full w-1/3 cursor-ew-resize rounded-lg border-none bg-grey-heavy shadow-none;
 }
 /* .table-range-bar:focus::-webkit-slider-runnable-track {
   background: transparent;
 } */
 .table-range-bar::-moz-range-track {
-  @apply w-full h-full rounded-[8px] bg-transparent shadow-none cursor-pointer;
+  @apply h-full w-full cursor-pointer rounded-[8px] bg-transparent shadow-none;
 }
 .table-range-bar::-moz-range-thumb {
-  @apply shadow-none w-1/3 bg-grey-heavy h-full rounded-lg border-none cursor-ew-resize;
+  @apply h-full w-1/3 cursor-ew-resize rounded-lg border-none bg-grey-heavy shadow-none;
 }
 </style>

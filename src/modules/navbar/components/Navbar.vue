@@ -17,7 +17,7 @@ const currentRouteIndex = computed(() =>
       <li v-for="(link, index) in menuLinks" :key="link.path">
         <router-link :to="link.path">
           <div
-            class="inline-flex items-center transition-colors hover:bg-grey-mid p-1.5 2xl:py-2 2xl:px-3 rounded-md whitespace-nowrap text-sm/[22px] 2xl:text-base font-medium text-text-tertiary hover:text-text-primary"
+            class="inline-flex items-center whitespace-nowrap rounded-md p-1.5 text-sm/[22px] font-medium text-text-tertiary transition-colors hover:bg-grey-mid hover:text-text-primary 2xl:px-3 2xl:py-2 2xl:text-base"
             :class="{
               'bg-grey-mid text-text-primary': currentRouteIndex === index
             }"

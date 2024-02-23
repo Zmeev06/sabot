@@ -68,7 +68,7 @@ const testColor = computed(() => '#CFF8FE');
 
 <template>
   <div
-    class="py-2 px-3 flex items-start gap-0.5"
+    class="flex items-start gap-0.5 px-3 py-2"
     :style="{ backgroundColor: testColor }"
     :class="[textColor]"
     :data-increase-type="increaseType"
@@ -89,7 +89,7 @@ const testColor = computed(() => '#CFF8FE');
 
 <style scoped>
 .title {
-  @apply text-text-primary text-lg/[18px];
+  @apply text-lg/[18px] text-text-primary;
 }
 
 .value {

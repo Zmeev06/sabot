@@ -1,5 +1,5 @@
 <template>
-  <div class="outline-1 outline-border-strong outline">
+  <div class="outline outline-1 outline-border-strong">
     <slot />
   </div>
 </template>
