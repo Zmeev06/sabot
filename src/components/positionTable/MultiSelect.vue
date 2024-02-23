@@ -57,7 +57,7 @@
 		</template>
 		<template #header>
 			<div class="px-4 py-2">
-				<h2 class="text-text-primary text-lg/[22px] font-medium">{{ header }}</h2>
+				<h2 class="font-secondary text-text-primary text-lg/[22px] font-medium">{{ header }}</h2>
 			</div>
 		</template>
 		<template #dropdownicon>
@@ -75,7 +75,7 @@
 	}
 
 	.ptMultiDropdownPanel {
-		@apply rounded-lg border-[1px] overflow-auto border-border-mid bg-base-white shadow-md shadow-text-primary/[3] py-1 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-border-mid [&::-webkit-scrollbar-thumb]:rounded-lg !min-w-[281px];
+		@apply rounded-lg border-[1px] overflow-auto border-border-mid bg-base-white shadow-md shadow-text-primary/[3] py-1 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-border-mid [&::-webkit-scrollbar-thumb]:rounded-lg !min-w-[200px];
 	}
 
 	.ptMultiDropdownItem {

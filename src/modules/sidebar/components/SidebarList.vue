@@ -24,7 +24,7 @@
 
 <template>
 	<div class="flex flex-col gap-[18px]">
-		<div class="text-lg font-medium text-gray-400" v-show="sidebarStore.isSidebarExpanded">
+		<div class="font-secondary text-lg font-medium text-gray-400" v-show="sidebarStore.isSidebarExpanded">
 			{{ title }}
 		</div>
 		<div class="flex flex-col gap-[6px]">

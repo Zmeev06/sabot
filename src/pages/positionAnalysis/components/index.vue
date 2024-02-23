@@ -5,7 +5,7 @@
 </script>
 
 <template>
-	<div class="space-y-6">
+	<div class="space-y-4 xl:space-y-6">
 		<TopSection />
 		<ChartSection />
 		<TableSection />

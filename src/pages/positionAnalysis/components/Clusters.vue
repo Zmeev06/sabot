@@ -199,7 +199,7 @@
 </script>
 
 <template>
-	<div class="rounded-xl border-[1px] border-border-mid bg-grey-light p-[22px] grid grid-rows-[auto_1fr]">
+	<div class="rounded-xl border-[1px] border-border-mid bg-grey-light p-4 xl:p-[22px] grid grid-rows-[auto_1fr]">
 		<div class="flex items-center gap-4 mb-4">
 			<SearchBox
 				v-model="selectedCity"

@@ -16,7 +16,7 @@
 			</button>
 		</template>
 		<template #content>
-			<div class="profileOverlay">
+			<div class="profileOverlay min-w-[240px]">
 				<ProfileHeader v-bind="headerData" class="border-b-[1px] border-b-border-mid" />
 				<ContentItemGroup
 					v-for="(group, index) in contentGroups"
