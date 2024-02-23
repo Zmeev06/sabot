@@ -84,7 +84,7 @@
 	}
 
 	.ptButtonSecondaryError {
-		@apply outline outline-1 bg-base-white outline-error-300 text-error-700 shadow-sm shadow-text-primary/5 hover:text-error-800 hover:bg-error-50 focus:ring-4 focus:ring-error-100 disabled:text-error-300 disabled:outline-error-200;
+		@apply outline outline-1 -outline-offset-1 bg-base-white outline-error-300 text-error-700 shadow-sm shadow-text-primary/5 hover:text-error-800 hover:bg-error-50 focus:ring-4 focus:ring-error-100 disabled:text-error-300 disabled:outline-error-200;
 	}
 
 	.ptButtonSizeSm {

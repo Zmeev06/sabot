@@ -32,7 +32,7 @@
 			<template #actions>
 				<div class="flex items-center gap-4">
 					<SearchBox
-						class="w-[280px]"
+						class="w-[220px] 2xl:w-[240px] 3xl:w-[280px]"
 						v-model="selectedCity"
 						:options="cities"
 						placeholder="Поиск по странице"
@@ -49,7 +49,7 @@
 			</template>
 		</Header>
 		<div>
-			<PageTabs class="mb-6" />
+			<PageTabs class="mb-4 xl:mb-6" />
 			<slot />
 		</div>
 	</div>

@@ -54,7 +54,7 @@
 <template>
 	<IconField
 		iconPosition="right"
-		class="inline-flex rounded-lg py-2.5 px-3.5 items-center gap-2 border-[1px] border-border-strong bg-base-white shadow-sm shadow-text-primary/5 transition-all hover:border-accent-normal cursor-text"
+		class="inline-flex rounded-lg py-1.5 px-3.5 xl:py-2.5 xl:px-3.5 items-center gap-2 border-[1px] border-border-strong bg-base-white shadow-sm shadow-text-primary/5 transition-all hover:border-accent-normal cursor-text"
 		:class="{
 			'!border-accent-normal': isFocused && !disabled,
 			'bg-grey-light hover:border-border-strong cursor-default': disabled,
@@ -63,11 +63,11 @@
 		<InputIcon>
 			<Icon
 				:name="icon"
-				class="w-5 h-5 text-fill-mid transition-colors"
+				class="w-5 h-5 text-fill-mid transition-colors flex-shrink-0"
 				:class="{ 'text-text-primary': isFocused }" />
 		</InputIcon>
 		<InputText
-			class="bg-transparent border-none border-transparent ring-0 ring-transparent outline-none appearance-none text-base placeholder:text-text-tertiary text-text-primary font-medium placeholder:font-normal disabled:text-fill-mid"
+			class="bg-transparent border-none border-transparent ring-0 ring-transparent outline-none appearance-none text-base placeholder:text-text-tertiary text-text-primary font-medium placeholder:font-normal disabled:text-fill-mid overflow-hidden"
 			data-input-field
 			v-model="modelValue"
 			:disabled="disabled"

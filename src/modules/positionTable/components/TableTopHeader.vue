@@ -5,7 +5,6 @@
 	import { Dropdown } from '../../../ui/dropdown';
 	import TableScrollbar from './table-scrollbar/TableScrollbar.vue';
 
-
 	const props = defineProps<{
 		scrollTrack: number | string;
 	}>();
@@ -34,7 +33,7 @@
 </script>
 
 <template>
-	<div class="flex items-center justify-between py-2 px-4">
+	<div class="flex items-center justify-between py-2 px-4 gap-8">
 		<div class="flex items-center gap-1">
 			<DropDownFilter v-model="selectedCity" :options="cities" optionLabel="name" icon="switch-vertical" />
 			<FilterButton icon="switch-horizontal" />
@@ -45,7 +44,10 @@
 			<FilterButton icon="contrast" />
 		</div>
 		<div class="flex items-center gap-[18px] max-w-[1038px] w-full">
-			<TableScrollbar :scroll-track="props.scrollTrack" @update:scroll-track="emit('update:scrollTrack', $event)"  class="w-full" />
+			<TableScrollbar
+				:scroll-track="props.scrollTrack"
+				@update:scroll-track="emit('update:scrollTrack', $event)"
+				class="w-full" />
 			<div class="flex items-center gap-3">
 				<span class="text-text-primary text-base">Выводить:</span>
 				<Dropdown class="px-2 py-1" :options="output" optionLabel="value" v-model="selectedOutput" />

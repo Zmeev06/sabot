@@ -43,7 +43,7 @@
 
 <style>
 	.ptTagRoot {
-		@apply inline-flex items-center gap-3 transition-colors hover:bg-grey-mid px-3 py-2 rounded-md whitespace-nowrap;
+		@apply inline-flex items-center gap-3 transition-colors hover:bg-grey-mid p-[6px] xl:px-3 xl:py-2 rounded-md whitespace-nowrap;
 	}
 
 	.ptTagIconOnly {
@@ -51,6 +51,6 @@
 	}
 
 	.ptTagValue {
-		@apply text-base font-medium text-text-tertiary transition-colors group-hover:text-text-primary;
+		@apply text-sm/[22px] xl:text-base font-medium text-text-tertiary transition-colors group-hover:text-text-primary;
 	}
 </style>
