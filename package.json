@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "super-build": "vite build --mode production"
+    "super-build": "vite build --mode production",
+    "format": "prettier .  --write"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
@@ -36,6 +37,7 @@
     "@vitejs/plugin-vue": "^5.0.3",
     "autoprefixer": "^10.4.17",
     "postcss": "^8.4.35",
+    "prettier": "3.2.5",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.2.2",
     "vite": "^5.1.0",

@@ -1,3 +1,3 @@
 export interface SidebarItem {
-	text: string;
+  text: string;
 }
