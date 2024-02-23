@@ -20,6 +20,8 @@ const columnHelper = createColumnHelper<Response>();
 export const columns = [
 	columnHelper.display({
 		id: 'actions',
+		header: () => 
+		h("div", { class: "w-8" }),
 		cell: () =>
 			h(
 				'button',

@@ -86,13 +86,11 @@ watch(
 );
 
 const handleDragStart = () => {
-  document
-    .querySelector(".smooth-dnd-container")
-    ?.classList.add("dragging-background");
+  document.querySelector(".table-body")?.classList.add("dragging-background");
 };
 const handleDragEnd = () => {
   document
-    .querySelector(".smooth-dnd-container")
+    .querySelector(".table-body")
     ?.classList.remove("dragging-background");
 };
 </script>
@@ -103,25 +101,27 @@ const handleDragEnd = () => {
   >
     <TableTopHeader class="border-b-[1px] border-b-border-heavy" />
     <Table>
-      <TableHeader class="!p-0 !border-none">
-        <TableRow
-          class="!p-0 border-b-[1px] border-b-border-heavy"
-          v-for="headerGroup in table.getHeaderGroups()"
-          :key="headerGroup.id"
-        >
-          <TableHead
-            class="!p-0 !border-none"
-            v-for="header in headerGroup.headers"
-            :key="header.id"
+      <Container>
+        <TableHeader class="!p-0 !border-none">
+          <TableRow
+            class="!p-0 border-b-[1px] border-b-border-heavy"
+            v-for="headerGroup in table.getHeaderGroups()"
+            :key="headerGroup.id"
           >
-            <FlexRender
-              v-if="!header.isPlaceholder"
-              :render="header.column.columnDef.header"
-              :props="header.getContext()"
-            />
-          </TableHead>
-        </TableRow>
-      </TableHeader>
+            <TableHead
+              class="!p-0 !border-none"
+              v-for="header in headerGroup.headers"
+              :key="header.id"
+            >
+              <FlexRender
+                v-if="!header.isPlaceholder"
+                :render="header.column.columnDef.header"
+                :props="header.getContext()"
+              />
+            </TableHead>
+          </TableRow>
+        </TableHeader>
+      </Container>
       <TableBody>
         <template v-if="table.getRowModel().rows?.length">
           <Container
@@ -133,6 +133,7 @@ const handleDragEnd = () => {
               animationDuration: '200',
               showOnTop: true,
             }"
+            class="table-body"
             @dragStart="handleDragStart"
             @dragEnd="handleDragEnd"
           >
