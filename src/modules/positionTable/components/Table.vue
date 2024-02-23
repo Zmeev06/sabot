@@ -181,7 +181,7 @@
 			v-model:scroll-track="scrollTrackPercent"
 			@update:scroll-track="controlScroll"
 			class="border-b-[1px] border-b-border-heavy" />
-		<div class="w-full overflow-y-auto" ref="scrollWrapperRef" @scroll="handleNativeScroll">
+		<div class="w-full overflow-y-auto overflow-x-hidden" ref="scrollWrapperRef" @scroll="handleNativeScroll">
 			<Table class="w-full border-collapse table-auto" ref="tableRef" position-table-component>
 				<TableHeader class="!p-0 !border-none relative z-20">
 					<TableRow
