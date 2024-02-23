@@ -310,7 +310,7 @@ function getMinWidthContentCell(index: number) {
         label="Вперёд"
       />
     </div>
-    <div class="absolute group top-0 right-[-32px] h-full z-10">
+    <div class="absolute group top-0 right-[-32px] h-full z-10 overflow-hidden">
         <div class="inline-flex items-center sticky top-0 h-full max-h-svh">
             <button
                 class="inline-flex items-center justify-end w-[90px] h-[132px] rounded-tl-full rounded-bl-full bg-accent-normal transition-transform translate-x-[100%] group-hover:translate-x-0">
