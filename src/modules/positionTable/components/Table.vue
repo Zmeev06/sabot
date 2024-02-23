@@ -14,6 +14,7 @@
 	import { Button } from '@//ui/button';
 	import { Pagination } from '@//components/pagination';
 	import RowExpanded from './RowExpanded.vue';
+	import { Icon } from '@//ui/icon';
 
 	import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@//ui/table';
 	import {
@@ -57,6 +58,8 @@
 			},
 		},
 	});
+
+	table.setPageSize(100);
 
 	function getCellWidth(index: number): number | string {
 		switch (index) {
@@ -176,13 +179,17 @@
 
 <template>
 	<div
-		class="shadow-sm shadow-text-primary/5 outline outline-1 outline-border-mid rounded-xl overflow-hidden grid grid-flow-row">
+		class="relative shadow-sm shadow-text-primary/5 outline outline-1 outline-border-mid rounded-xl overflow-visible grid grid-flow-row">
 		<TableTopHeader
 			v-model:scroll-track="scrollTrackPercent"
 			@update:scroll-track="controlScroll"
 			class="border-b-[1px] border-b-border-heavy" />
-		<div class="w-full overflow-y-auto" ref="scrollWrapperRef" @scroll="handleNativeScroll">
-			<Table class="w-full border-collapse table-auto" ref="tableRef" position-table-component>
+		<div
+			class="w-full overflow-y-auto overflow-x-hidden"
+			ref="scrollWrapperRef"
+			@scroll="handleNativeScroll"
+			position-table-component>
+			<Table class="w-full border-collapse table-auto" ref="tableRef">
 				<TableHeader class="!p-0 !border-none relative z-20">
 					<TableRow
 						class="relative !p-0 border-b-[1px] border-transparent after:absolute after:top-[100%] after:left-0 after:w-full after:h-[1px] after:bg-border-heavy"
@@ -255,6 +262,14 @@
 			<Button variant="secondary" size="sm" icon="arrow-narrow-left" iconPos="left" label="Назад" />
 			<Pagination />
 			<Button variant="secondary" size="sm" icon="arrow-narrow-right" iconPos="right" label="Вперёд" />
+		</div>
+		<div class="absolute group top-0 right-[-32px] h-full z-10">
+			<div class="inline-flex items-center sticky top-0 h-full max-h-svh">
+				<button
+					class="inline-flex items-center justify-end w-[90px] h-[132px] rounded-tl-full rounded-bl-full bg-accent-normal transition-transform translate-x-[100%] group-hover:translate-x-0">
+					<Icon name="chevron-right" class="h-12 w-12 text-base-white" />
+				</button>
+			</div>
 		</div>
 	</div>
 </template>

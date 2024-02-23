@@ -93,7 +93,7 @@
 		/* @apply border-border; */
 	}
 	body {
-		@apply bg-custom-green font-primary text-text-primary;
+		@apply bg-custom-green font-primary text-text-primary overflow-x-hidden;
 	}
 
 	body::-webkit-scrollbar {
