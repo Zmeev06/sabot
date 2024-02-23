@@ -10,6 +10,13 @@ import { Icon } from '@//ui/icon';
 import { InputField } from '@//ui/inputField';
 import { Input } from '@//ui/input';
 import { Button } from '@//ui/button';
+import { MaybeComputedElementRef, useCurrentElement, useElementSize } from '@vueuse/core';
+
+const el = useCurrentElement();
+const tableElement = computed(() =>
+	el.value ? el.value.closest('[position-table-component]') : undefined
+) as MaybeComputedElementRef;
+const { width } = useElementSize(tableElement);
 
 const chart = ref();
 let gradient: any = null;
@@ -47,7 +54,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="grid grid-cols-[1026px_1fr] gap-6 px-3 py-6">
+  <div class="py-6 px-3 grid gap-6 grid-cols-[1fr_457px]" :style="{ width: `${width}px` }">
     <div class="space-y-4">
       <div class="flex items-center gap-2">
         <button>

@@ -14,6 +14,7 @@ import TableTopHeader from './TableTopHeader.vue';
 import { Button } from '@//ui/button';
 import { Pagination } from '@//components/pagination';
 import RowExpanded from './RowExpanded.vue';
+import { Icon } from '@//ui/icon';
 
 import {
   Table,
@@ -65,6 +66,8 @@ const table = useVueTable({
     }
   }
 });
+
+table.setPageSize(100);
 
 function getCellWidth(index: number): number | string {
   switch (index) {
@@ -196,7 +199,7 @@ function getMinWidthContentCell(index: number) {
 
 <template>
   <div
-    class="grid grid-flow-row overflow-hidden rounded-xl shadow-sm shadow-text-primary/5 outline outline-1 outline-border-mid"
+    class="relative grid grid-flow-row rounded-xl shadow-sm shadow-text-primary/5 outline outline-1 outline-border-mid"
   >
     <TableTopHeader
       v-model:scroll-track="scrollTrackPercent"
@@ -207,6 +210,7 @@ function getMinWidthContentCell(index: number) {
       class="w-full overflow-y-auto overflow-x-hidden"
       ref="scrollWrapperRef"
       @scroll="handleNativeScroll"
+	  position-table-component
     >
       <Table
         class="w-full table-auto border-collapse"
@@ -305,6 +309,14 @@ function getMinWidthContentCell(index: number) {
         iconPos="right"
         label="Вперёд"
       />
+    </div>
+    <div class="absolute group top-0 right-[-32px] h-full z-10">
+        <div class="inline-flex items-center sticky top-0 h-full max-h-svh">
+            <button
+                class="inline-flex items-center justify-end w-[90px] h-[132px] rounded-tl-full rounded-bl-full bg-accent-normal transition-transform translate-x-[100%] group-hover:translate-x-0">
+                    <Icon name="chevron-right" class="h-12 w-12 text-base-white" />
+            </button>
+        </div>
     </div>
   </div>
 </template>

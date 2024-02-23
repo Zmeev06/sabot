@@ -171,7 +171,7 @@ export const columns = [
     columnHelper.display({
       id: `content-cell-${item.header.date}`,
       header: () =>
-        h(TooltipDelete, {}, () =>
+        h(TooltipDelete, { placement: 'top', appendTo: () => document.body }, () =>
           h(CellContentHeader, {
             date: item.header.date,
             value: item.header.value
