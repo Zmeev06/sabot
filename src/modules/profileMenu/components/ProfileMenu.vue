@@ -27,11 +27,11 @@ import { contentGroups } from '../constants/links';
           :group="group"
           class="border-b-[1px] border-b-border-mid"
         />
-        <div class="py-1 px-1.5">
+        <div class="px-1.5 py-1">
           <button
-            class="w-full flex items-center gap-2 p-2.5 rounded-md transition-colors hover:bg-border-mid"
+            class="flex w-full items-center gap-2 rounded-md p-2.5 transition-colors hover:bg-border-mid"
           >
-            <Icon name="logout" class="w-4 h-4 text-fill-extra" />
+            <Icon name="logout" class="h-4 w-4 text-fill-extra" />
             <span class="text-sm text-text-secondary">Выйти</span>
           </button>
         </div>

@@ -50,7 +50,7 @@ const multiSelectStyle = computed(() => ({
     :options="cities"
     optionLabel="name"
     placeholder="Select Cities"
-    class="w-full md:w-20rem"
+    class="md:w-20rem w-full"
   >
     <template #value>
       <button>
@@ -59,7 +59,7 @@ const multiSelectStyle = computed(() => ({
     </template>
     <template #header>
       <div class="px-4 py-2">
-        <h2 class="font-secondary text-text-primary text-lg/[22px] font-medium">
+        <h2 class="font-secondary text-lg/[22px] font-medium text-text-primary">
           {{ header }}
         </h2>
       </div>
@@ -70,7 +70,7 @@ const multiSelectStyle = computed(() => ({
     <template #itemcheckboxicon="{ checked }">
       <Icon
         name="checkbox"
-        class="w-3 h-3 text-base-white"
+        class="h-3 w-3 text-base-white"
         :modelValue="checked"
       />
     </template>
@@ -79,15 +79,15 @@ const multiSelectStyle = computed(() => ({
 
 <style>
 .ptMultiDropdownInput {
-  @apply text-base text-text-secondary whitespace-nowrap line-clamp-1 focus:outline-none focus:text-text-primary focus:font-medium;
+  @apply line-clamp-1 whitespace-nowrap text-base text-text-secondary focus:font-medium focus:text-text-primary focus:outline-none;
 }
 
 .ptMultiDropdownPanel {
-  @apply rounded-lg border-[1px] overflow-auto border-border-mid bg-base-white shadow-md shadow-text-primary/[3] py-1 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-border-mid [&::-webkit-scrollbar-thumb]:rounded-lg !min-w-[200px];
+  @apply !min-w-[200px] overflow-auto rounded-lg border-[1px] border-border-mid bg-base-white py-1 shadow-md shadow-text-primary/[3] [&::-webkit-scrollbar-thumb]:rounded-lg [&::-webkit-scrollbar-thumb]:bg-border-mid [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar]:w-2;
 }
 
 .ptMultiDropdownItem {
-  @apply my-0.5 mx-1.5 p-2.5 flex gap-2 items-center cursor-pointer transition-colors rounded-md hover:bg-grey-light aria-[selected="true"]:bg-grey-light data-[p-focused="true"]:bg-grey-light;
+  @apply mx-1.5 my-0.5 flex cursor-pointer items-center gap-2 rounded-md p-2.5 transition-colors hover:bg-grey-light aria-[selected="true"]:bg-grey-light data-[p-focused="true"]:bg-grey-light;
 }
 
 .ptMultiDropdownTrigger svg {
@@ -95,7 +95,7 @@ const multiSelectStyle = computed(() => ({
 }
 
 .ptDropdownIndicator {
-  @apply w-5 h-5 text-accent-normal;
+  @apply h-5 w-5 text-accent-normal;
 }
 
 .ptMultiDropdownOption {

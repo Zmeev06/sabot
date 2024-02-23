@@ -19,7 +19,7 @@ const scrollPanelStyle = ref({
 </script>
 
 <template>
-  <ScrollPanel :pt="scrollPanelStyle" class="h-svh sticky top-0">
+  <ScrollPanel :pt="scrollPanelStyle" class="sticky top-0 h-svh">
     <slot />
   </ScrollPanel>
 </template>

@@ -8,8 +8,8 @@ defineProps<{
 
 <template>
   <button
-    class="p-2.5 text-fill-mid bg-base-white transition-colors hover:bg-border-mid rounded-lg"
+    class="rounded-lg bg-base-white p-2.5 text-fill-mid transition-colors hover:bg-border-mid"
   >
-    <Icon :name="icon" class="w-5 h-5" />
+    <Icon :name="icon" class="h-5 w-5" />
   </button>
 </template>

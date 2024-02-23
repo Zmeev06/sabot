@@ -18,9 +18,9 @@ const emit = defineEmits<Emits>();
 </script>
 
 <template>
-  <div class="grid grid-cols-[1fr_auto] items-center gap-2 w-full">
+  <div class="grid w-full grid-cols-[1fr_auto] items-center gap-2">
     <Swiper
-      class="relative w-full rounded-lg outline -outline-offset-1 outline-1 outline-border-mid after:absolute after:-right-2 after:top-0 after:h-full after:w-20 after:bg-gradient-to-r after:from-transparent after:to-base-white after:z-10 xl:after:content-none"
+      class="relative w-full rounded-lg outline outline-1 -outline-offset-1 outline-border-mid after:absolute after:-right-2 after:top-0 after:z-10 after:h-full after:w-20 after:bg-gradient-to-r after:from-transparent after:to-base-white xl:after:content-none"
       :slides-per-view="'auto'"
       :resistanceRatio="0"
     >
@@ -30,7 +30,7 @@ const emit = defineEmits<Emits>();
         class="!w-auto !flex-grow"
       >
         <InfographicItem
-          class="-outline-offset-1 outline outline-1 outline-border-mid"
+          class="outline outline-1 -outline-offset-1 outline-border-mid"
           v-bind="item"
         />
       </SwiperSlide>

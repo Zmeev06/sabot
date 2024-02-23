@@ -11,13 +11,13 @@ const props = defineProps<Props>();
 <template>
   <div class="wrapper relative pl-1.5">
     <div
-      class="flex items-center justify-center rounded-lg bg-base-white p-3 text-text-primary text-sm/[18px] font-medium capitalize"
+      class="flex items-center justify-center rounded-lg bg-base-white p-3 text-sm/[18px] font-medium capitalize text-text-primary"
     >
       {{ props.label }}
     </div>
     <Icon
       name="tooltip-arrow"
-      class="rotate-90 text-grey-light w-4 h-1.5 absolute top-[50%] -left-1 -translate-y-[50%]"
+      class="absolute -left-1 top-[50%] h-1.5 w-4 -translate-y-[50%] rotate-90 text-grey-light"
     />
   </div>
 </template>

@@ -33,7 +33,7 @@ const selectedOutput = ref(output.value[2]);
 </script>
 
 <template>
-  <div class="flex items-center justify-between py-2 px-4 gap-8">
+  <div class="flex items-center justify-between gap-8 px-4 py-2">
     <div class="flex items-center gap-1">
       <DropDownFilter
         v-model="selectedCity"
@@ -48,14 +48,14 @@ const selectedOutput = ref(output.value[2]);
       <FilterButton icon="scale" />
       <FilterButton icon="contrast" />
     </div>
-    <div class="flex items-center gap-[18px] max-w-[1038px] w-full">
+    <div class="flex w-full max-w-[1038px] items-center gap-[18px]">
       <TableScrollbar
         :scroll-track="props.scrollTrack"
         @update:scroll-track="emit('update:scrollTrack', $event)"
         class="w-full"
       />
       <div class="flex items-center gap-3">
-        <span class="text-text-primary text-base">Выводить:</span>
+        <span class="text-base text-text-primary">Выводить:</span>
         <Dropdown
           class="px-2 py-1"
           :options="output"

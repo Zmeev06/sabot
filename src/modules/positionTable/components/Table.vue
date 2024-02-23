@@ -196,7 +196,7 @@ function getMinWidthContentCell(index: number) {
 
 <template>
   <div
-    class="shadow-sm shadow-text-primary/5 outline outline-1 outline-border-mid rounded-xl overflow-hidden grid grid-flow-row"
+    class="grid grid-flow-row overflow-hidden rounded-xl shadow-sm shadow-text-primary/5 outline outline-1 outline-border-mid"
   >
     <TableTopHeader
       v-model:scroll-track="scrollTrackPercent"
@@ -209,18 +209,18 @@ function getMinWidthContentCell(index: number) {
       @scroll="handleNativeScroll"
     >
       <Table
-        class="w-full border-collapse table-auto"
+        class="w-full table-auto border-collapse"
         ref="tableRef"
         position-table-component
       >
-        <TableHeader class="!p-0 !border-none relative z-20">
+        <TableHeader class="relative z-20 !border-none !p-0">
           <TableRow
-            class="relative !p-0 border-b-[1px] border-transparent after:absolute after:top-[100%] after:left-0 after:w-full after:h-[1px] after:bg-border-heavy"
+            class="relative border-b-[1px] border-transparent !p-0 after:absolute after:left-0 after:top-[100%] after:h-[1px] after:w-full after:bg-border-heavy"
             v-for="headerGroup in table.getHeaderGroups()"
             :key="headerGroup.id"
           >
             <TableHead
-              class="!p-0 !border-none"
+              class="!border-none !p-0"
               v-for="(header, index) in headerGroup.headers"
               :key="header.id"
               ref="headerCell"
@@ -239,10 +239,10 @@ function getMinWidthContentCell(index: number) {
             </TableHead>
           </TableRow>
         </TableHeader>
-        <TableBody class="border-b-2 relative z-10">
+        <TableBody class="relative z-10 border-b-2">
           <template v-if="table.getRowModel().rows?.length">
             <TableRow
-              class="group overflow-visible relative z-10 border-none min-w-min max-w-min outline outline-1 outline-offset-0 outline-border-mid"
+              class="group relative z-10 min-w-min max-w-min overflow-visible border-none outline outline-1 outline-offset-0 outline-border-mid"
               :class="[
                 {
                   'hover:outline-border-heavy': row.depth === 0,
@@ -288,7 +288,7 @@ function getMinWidthContentCell(index: number) {
       </Table>
     </div>
     <div
-      class="pt-3 pb-4 px-6 flex items-center justify-between gap-4 border-t-[1px] border-t-border-mid"
+      class="flex items-center justify-between gap-4 border-t-[1px] border-t-border-mid px-6 pb-4 pt-3"
     >
       <Button
         variant="secondary"

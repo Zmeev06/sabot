@@ -47,9 +47,9 @@ const chartTypeComputed = computed(() => {
     <Toggler class="flex flex-col-reverse">
       <template #content>
         <div
-          class="grid gap-4 xl:gap-6 grid-cols-[1fr_320px] xl:grid-cols-[1fr_380px] mb-6"
+          class="mb-6 grid grid-cols-[1fr_320px] gap-4 xl:grid-cols-[1fr_380px] xl:gap-6"
         >
-          <div class="h-[536px] grid grid-rows-[auto_auto_1fr_auto] pb-[18px]">
+          <div class="grid h-[536px] grid-rows-[auto_auto_1fr_auto] pb-[18px]">
             <ChartCategory
               v-model="currentCategory"
               :categories="categories"
@@ -61,7 +61,7 @@ const chartTypeComputed = computed(() => {
               class="mb-[18px]"
             />
             <Chart
-              class="overflow-hidden mb-[22px]"
+              class="mb-[22px] overflow-hidden"
               v-model:chartData="chartData"
               :chartType="currentChartType"
               :chartPropType="chartTypeComputed"

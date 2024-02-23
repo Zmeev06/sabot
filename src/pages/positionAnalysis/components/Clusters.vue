@@ -200,21 +200,21 @@ const nodes = ref([
 
 <template>
   <div
-    class="rounded-xl border-[1px] border-border-mid bg-grey-light p-4 xl:p-[22px] grid grid-rows-[auto_1fr]"
+    class="grid grid-rows-[auto_1fr] rounded-xl border-[1px] border-border-mid bg-grey-light p-4 xl:p-[22px]"
   >
-    <div class="flex items-center gap-4 mb-4">
+    <div class="mb-4 flex items-center gap-4">
       <SearchBox
         v-model="selectedCity"
         :options="cities"
         optionLabel="name"
         placeholder="Поиск по группам"
-        class="flex-shrink w-full max-h-9"
+        class="max-h-9 w-full flex-shrink"
       />
       <button>
-        <Icon name="show-more" class="w-5 h-5 text-fill-light" />
+        <Icon name="show-more" class="h-5 w-5 text-fill-light" />
       </button>
     </div>
-    <div class="overflow-auto scrollbar -mr-[18px]">
+    <div class="scrollbar -mr-[18px] overflow-auto">
       <Tree :value="nodes" v-model="selectedKey" selectionMode="checkbox" />
     </div>
   </div>

@@ -25,7 +25,7 @@ const cities = ref([
         :options="cities"
         optionLabel="name"
         placeholder="Поиск"
-        class="max-w-[1036px] w-full"
+        class="w-full max-w-[1036px]"
       />
       <Tooltip
         heading="Заголовок подсказки"
@@ -79,7 +79,7 @@ const cities = ref([
       <Button variant="secondary" size="sm" error icon="close" />
     </div>
     <div class="flex items-center gap-2 py-2">
-      <span class="font-secondary text-text-primary text-lg font-medium"
+      <span class="font-secondary text-lg font-medium text-text-primary"
         >Готовые фильтры:</span
       >
       <Tooltip
@@ -108,10 +108,10 @@ const cities = ref([
 
 <style scoped>
 .tooltip-trigger {
-  @apply w-5 h-5 text-fill-light;
+  @apply h-5 w-5 text-fill-light;
 }
 
 .dropdown-filter {
-  @apply max-w-[340px] flex-grow flex-shrink;
+  @apply max-w-[340px] flex-shrink flex-grow;
 }
 </style>

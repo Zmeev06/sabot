@@ -8,9 +8,9 @@ defineProps<{
 
 <template>
   <button
-    class="p-2.5 inline-flex justify-center items-center rounded-lg transition-colors hover:bg-border-mid"
+    class="inline-flex items-center justify-center rounded-lg p-2.5 transition-colors hover:bg-border-mid"
   >
-    <Icon :name="icon" class="w-5 h-5 text-fill-mid" />
+    <Icon :name="icon" class="h-5 w-5 text-fill-mid" />
     <slot />
   </button>
 </template>

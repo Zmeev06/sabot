@@ -8,7 +8,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="py-1 px-1.5">
+  <div class="px-1.5 py-1">
     <ContentItem v-for="item in group" :key="item.to" v-bind="item" />
   </div>
 </template>

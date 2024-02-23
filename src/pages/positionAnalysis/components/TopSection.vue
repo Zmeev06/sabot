@@ -80,9 +80,9 @@ onMounted(() => {
 
 <template>
   <FullWidthSection>
-    <div class="flex items-center gap-2 w-full">
+    <div class="flex w-full items-center gap-2">
       <Button icon="refresh" />
-      <div class="w-full grid grid-cols-4 xl:flex items-center gap-2">
+      <div class="grid w-full grid-cols-4 items-center gap-2 xl:flex">
         <Dropdown
           v-model="currentVersion"
           :options="versions ? versions : []"

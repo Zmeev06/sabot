@@ -21,7 +21,7 @@ onMounted(async () => {
 
 <template>
   <div>
-    <Toggler class="space-y-6 flex-col-reverse">
+    <Toggler class="flex-col-reverse space-y-6">
       <template #default="{ toggle, state }">
         <TableFiltersToggler
           @toggle="toggle"

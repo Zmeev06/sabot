@@ -22,11 +22,11 @@ const currentTabIndex = computed(() =>
         <router-link
           :key="tab.url"
           :to="tab.url"
-          class="block py-2 px-2.5 x:px-4 xl:py-2.5 text-sm/5 font-medium transition-colors hover:text-text-primary hover:bg-bg-secondary"
+          class="x:px-4 block px-2.5 py-2 text-sm/5 font-medium transition-colors hover:bg-bg-secondary hover:text-text-primary xl:py-2.5"
           :class="
             currentTabIndex === index
-              ? 'text-text-primary bg-bg-secondary'
-              : 'text-text-tertiary bg-base-white'
+              ? 'bg-bg-secondary text-text-primary'
+              : 'bg-base-white text-text-tertiary'
           "
         >
           {{ tab.title }}

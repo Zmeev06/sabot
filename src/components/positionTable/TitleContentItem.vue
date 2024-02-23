@@ -10,7 +10,7 @@ const props = defineProps<{
 
 <template>
   <div class="flex items-center justify-between gap-2 pl-2 pr-2">
-    <h2 class="text-text-secondary text-sm/4">{{ title }}</h2>
+    <h2 class="text-sm/4 text-text-secondary">{{ title }}</h2>
     <div
       class="whitespace-nowrap text-sm/[22px]"
       :class="{
@@ -28,13 +28,13 @@ const props = defineProps<{
       <button>
         <Icon
           name="trash"
-          class="w-4 h-4 text-error-500 opacity-0 invisible group-hover:opacity-100 group-hover:visible"
+          class="invisible h-4 w-4 text-error-500 opacity-0 group-hover:visible group-hover:opacity-100"
         />
       </button>
       <button>
         <Icon
           name="refresh"
-          class="w-4 h-4 text-success-500 opacity-0 invisible group-hover:opacity-100 group-hover:visible"
+          class="invisible h-4 w-4 text-success-500 opacity-0 group-hover:visible group-hover:opacity-100"
         />
       </button>
     </div>

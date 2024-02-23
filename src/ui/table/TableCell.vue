@@ -5,7 +5,7 @@ const props = defineProps<{ class?: string }>();
 </script>
 
 <template>
-  <td :class="cn('align-middle !border-none !p-0', props.class)">
+  <td :class="cn('!border-none !p-0 align-middle', props.class)">
     <slot />
   </td>
 </template>

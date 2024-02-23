@@ -16,7 +16,7 @@ defineProps<ITippyProps>();
 
     <template #content>
       <div class="wrapper relative overflow-visible">
-        <div class="text-text-primary space-y-1 p-3 bg-grey-light rounded-lg">
+        <div class="space-y-1 rounded-lg bg-grey-light p-3 text-text-primary">
           <h3 class="text-sm/[18px] font-medium text-text-primary">
             {{ heading }}
           </h3>
@@ -24,7 +24,7 @@ defineProps<ITippyProps>();
         </div>
         <Icon
           name="tooltip-arrow"
-          class="w-4 z-10 text-grey-light h-1.5 absolute top-[100%] left-[50%] -translate-x-[50%]"
+          class="absolute left-[50%] top-[100%] z-10 h-1.5 w-4 -translate-x-[50%] text-grey-light"
         />
       </div>
     </template>

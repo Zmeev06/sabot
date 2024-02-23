@@ -17,11 +17,11 @@ const switchStyle = ref({
 
 <style>
 .ptSwitchRoot {
-  @apply inline-block relative w-11 h-6 p-0.5;
+  @apply relative inline-block h-6 w-11 p-0.5;
 }
 
 .ptSwitchSlider {
-  @apply transition-colors absolute p-0.5 rounded-xl top-0 left-0 right-0 bottom-0 bg-grey-mid peer-checked:bg-accent-normal peer-checked:before:transform peer-checked:before:translate-x-5 before:rounded-full before:bg-base-white before:w-5 before:h-5 before:block before:transition-transform;
+  @apply absolute bottom-0 left-0 right-0 top-0 rounded-xl bg-grey-mid p-0.5 transition-colors before:block before:h-5 before:w-5 before:rounded-full before:bg-base-white before:transition-transform peer-checked:bg-accent-normal peer-checked:before:translate-x-5 peer-checked:before:transform;
 }
 
 .ptSwitchSlider::before {
@@ -30,6 +30,6 @@ const switchStyle = ref({
 }
 
 .ptSwitchInput {
-  @apply w-full h-full absolute top-0 left-0 z-10 p-0 m-0 opacity-0 rounded-full outline-none appearance-none cursor-pointer;
+  @apply absolute left-0 top-0 z-10 m-0 h-full w-full cursor-pointer appearance-none rounded-full p-0 opacity-0 outline-none;
 }
 </style>

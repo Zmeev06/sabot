@@ -49,12 +49,12 @@ const computedStyles = computed(() => ({
 }
 
 .ptBadgeSm {
-  @apply rounded-md text-[0.625rem] leading-[0.625] px-0.5 py-1;
+  @apply rounded-md px-0.5 py-1 text-[0.625rem] leading-[0.625];
 }
 .ptBadgeMd {
-  @apply rounded-2xl text-xs px-2 py-0.5;
+  @apply rounded-2xl px-2 py-0.5 text-xs;
 }
 .ptBadgeLg {
-  @apply rounded-2xl text-sm px-3 py-1;
+  @apply rounded-2xl px-3 py-1 text-sm;
 }
 </style>

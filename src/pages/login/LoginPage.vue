@@ -19,22 +19,22 @@ const login = async () => {
 <template lang="html">
   <Teleport to="body">
     <div
-      class="w-screen h-screen flex items-center justify-center fixed top-0 left-0 z-[999] bg-white"
+      class="fixed left-0 top-0 z-[999] flex h-screen w-screen items-center justify-center bg-white"
     >
       <div class="flex flex-col gap-2">
         <InputText
-          class="border-2 block"
+          class="block border-2"
           type="text"
           v-model="email"
           placeholder="email"
         />
         <InputText
-          class="border-2 block"
+          class="block border-2"
           type="text"
           v-model="password"
           placeholder="password"
         />
-        <div class="p-4 bg-cyan-600 cursor-pointer" @click="login">Вход</div>
+        <div class="cursor-pointer bg-cyan-600 p-4" @click="login">Вход</div>
       </div>
     </div>
   </Teleport>

@@ -77,51 +77,51 @@ const buttonStyle = ref({
 
 <style>
 .ptButtonDefault {
-  @apply inline-flex items-center justify-center rounded-lg whitespace-nowrap font-semibold transition-all disabled:pointer-events-none;
+  @apply inline-flex items-center justify-center whitespace-nowrap rounded-lg font-semibold transition-all disabled:pointer-events-none;
 }
 
 .ptButtonIconOnly {
-  @apply p-3 rounded-md;
+  @apply rounded-md p-3;
 }
 
 .ptButtonPrimary {
-  @apply bg-accent-normal text-base-white outline -outline-offset-1 outline-1 outline-accent-normal hover:bg-accent-dark hover:outline-accent-dark disabled:bg-accent-light disabled:border-accent-light shadow-sm shadow-text-primary/5 focus:shadow-none focus:ring-2 focus:ring-accent-light;
+  @apply bg-accent-normal text-base-white shadow-sm shadow-text-primary/5 outline outline-1 -outline-offset-1 outline-accent-normal hover:bg-accent-dark hover:outline-accent-dark focus:shadow-none focus:ring-2 focus:ring-accent-light disabled:border-accent-light disabled:bg-accent-light;
 }
 
 .ptButtonSecondary {
-  @apply outline outline-1 -outline-offset-1 bg-base-white outline-border-strong text-text-secondary shadow-sm shadow-text-primary/5 hover:text-text-primary hover:bg-bg-secondary focus:ring-4 focus:ring-accent-light disabled:text-border-strong disabled:outline-border-mid;
+  @apply bg-base-white text-text-secondary shadow-sm shadow-text-primary/5 outline outline-1 -outline-offset-1 outline-border-strong hover:bg-bg-secondary hover:text-text-primary focus:ring-4 focus:ring-accent-light disabled:text-border-strong disabled:outline-border-mid;
 }
 
 .ptButtonTertiary {
-  @apply bg-base-white text-fill-strong hover:text-text-secondary hover:bg-bg-secondary focus:bg-bg-secondary disabled:bg-bg-secondary disabled:text-border-strong;
+  @apply bg-base-white text-fill-strong hover:bg-bg-secondary hover:text-text-secondary focus:bg-bg-secondary disabled:bg-bg-secondary disabled:text-border-strong;
 }
 
 .ptButtonPrimaryError {
-  @apply bg-error-600 text-base-white -outline-offset-1 outline outline-1 outline-error-600 hover:bg-error-700 hover:outline-error-700 disabled:bg-error-200 disabled:outline-error-200 shadow-sm shadow-text-primary/5 focus:ring-4 focus:ring-error-100;
+  @apply bg-error-600 text-base-white shadow-sm shadow-text-primary/5 outline outline-1 -outline-offset-1 outline-error-600 hover:bg-error-700 hover:outline-error-700 focus:ring-4 focus:ring-error-100 disabled:bg-error-200 disabled:outline-error-200;
 }
 
 .ptButtonSecondaryError {
-  @apply outline outline-1 -outline-offset-1 bg-base-white outline-error-300 text-error-700 shadow-sm shadow-text-primary/5 hover:text-error-800 hover:bg-error-50 focus:ring-4 focus:ring-error-100 disabled:text-error-300 disabled:outline-error-200;
+  @apply bg-base-white text-error-700 shadow-sm shadow-text-primary/5 outline outline-1 -outline-offset-1 outline-error-300 hover:bg-error-50 hover:text-error-800 focus:ring-4 focus:ring-error-100 disabled:text-error-300 disabled:outline-error-200;
 }
 
 .ptButtonSizeSm {
-  @apply py-2 px-[14px] gap-2 text-sm;
+  @apply gap-2 px-[14px] py-2 text-sm;
 }
 
 .ptButtonSizeMd {
-  @apply py-[10px] px-[16px] gap-2 text-sm;
+  @apply gap-2 px-[16px] py-[10px] text-sm;
 }
 
 .ptButtonSizeLg {
-  @apply py-[10px] px-[18px] gap-2 text-base;
+  @apply gap-2 px-[18px] py-[10px] text-base;
 }
 
 .ptButtonSizeXl {
-  @apply py-3 px-[20px] gap-2 text-base;
+  @apply gap-2 px-[20px] py-3 text-base;
 }
 
 .ptButtonSize2Xl {
-  @apply py-4 px-7 gap-3 text-lg;
+  @apply gap-3 px-7 py-4 text-lg;
 }
 
 .ptButtonIcon {
