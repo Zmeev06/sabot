@@ -102,7 +102,7 @@
 	}
 
 	.title-wrapper {
-		@apply flex items-center gap-2 text-base font-bold text-text-primary mb-1.5;
+		@apply font-secondary flex items-center gap-2 text-base font-bold text-text-primary mb-1.5;
 	}
 
 	.title-icon {

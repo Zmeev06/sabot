@@ -45,7 +45,7 @@
 </script>
 
 <template>
-	<div class="py-2 pl-3 xl:pl-3.5 pr-1.5">
+	<div class="py-2 px-3 xl:pl-3.5 xl:pr-1.5">
 		<div class="mb-2 text-[0.75rem] leading-[1.125rem] font-medium text-fill-strong">
 			<span>{{ label }}</span>
 			<span class="text-fill-light">{{ additionalLabel }}</span>

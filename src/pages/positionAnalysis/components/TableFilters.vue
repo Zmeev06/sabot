@@ -70,8 +70,8 @@
 			<Button class="h-full" variant="secondary" label="Или" />
 			<Button variant="secondary" size="sm" error icon="close" />
 		</div>
-		<div class="flex items-center gap-2">
-			<span class="text-text-primary text-lg font-medium">Готовые фильтры:</span>
+		<div class="flex items-center gap-2 py-2">
+			<span class="font-secondary text-text-primary text-lg font-medium">Готовые фильтры:</span>
 			<Tooltip
 				heading="Заголовок подсказки"
 				body="Это последовательность символов, которую пользователь вводит в поисковую строку, чтобы найти интересующую его информацию. Формат поискового запроса зависит как от устройства поисковой системы, так и от типа информации для поиска.">

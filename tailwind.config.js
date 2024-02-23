@@ -25,7 +25,8 @@ export default {
 				'3xl': '1720px',
 			},
 			fontFamily: {
-				base: ['IBM Plex Sans', 'sans-serif'],
+				primary: ['IBM Plex Sans', 'sans-serif'],
+				secondary: ['NeueMachina', 'sans-serif'],
 			},
 			colors: {
 				background: {

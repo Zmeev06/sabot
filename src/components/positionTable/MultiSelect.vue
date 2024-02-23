@@ -57,7 +57,7 @@
 		</template>
 		<template #header>
 			<div class="px-4 py-2">
-				<h2 class="text-text-primary text-lg/[22px] font-medium">{{ header }}</h2>
+				<h2 class="font-secondary text-text-primary text-lg/[22px] font-medium">{{ header }}</h2>
 			</div>
 		</template>
 		<template #dropdownicon>

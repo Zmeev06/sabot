@@ -67,7 +67,7 @@
 				:class="{ 'text-text-primary': isFocused }" />
 		</InputIcon>
 		<InputText
-			class="bg-transparent border-none border-transparent ring-0 ring-transparent outline-none appearance-none text-base placeholder:text-text-tertiary text-text-primary font-medium placeholder:font-normal disabled:text-fill-mid"
+			class="bg-transparent border-none border-transparent ring-0 ring-transparent outline-none appearance-none text-base placeholder:text-text-tertiary text-text-primary font-medium placeholder:font-normal disabled:text-fill-mid overflow-hidden"
 			data-input-field
 			v-model="modelValue"
 			:disabled="disabled"
