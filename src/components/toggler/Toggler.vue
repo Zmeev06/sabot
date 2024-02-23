@@ -1,19 +1,22 @@
 <script setup lang="ts">
-	import { computed, ref } from 'vue';
+import { computed, ref } from 'vue';
 
-	const isShow = ref(true);
-	const state = computed(() => (isShow.value ? 'opened' : 'hidden'));
+const isShow = ref(true);
+const state = computed(() => (isShow.value ? 'opened' : 'hidden'));
 
-	function toggle() {
-		isShow.value = !isShow.value;
-	}
+function toggle() {
+  isShow.value = !isShow.value;
+}
 </script>
 
 <template>
-	<div>
-		<slot :toggle="toggle" :state="state" />
-		<div class="transition-all overflow-hidden max-h-[999px]" :style="{ maxHeight: isShow ? '' : '0' }">
-			<slot name="content" :state="state" />
-		</div>
-	</div>
+  <div>
+    <slot :toggle="toggle" :state="state" />
+    <div
+      class="transition-all overflow-hidden max-h-[999px]"
+      :style="{ maxHeight: isShow ? '' : '0' }"
+    >
+      <slot name="content" :state="state" />
+    </div>
+  </div>
 </template>

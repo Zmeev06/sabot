@@ -8,4 +8,14 @@ import TableHead from './TableHead.vue';
 import TableHeader from './TableHeader.vue';
 import TableRow from './TableRow.vue';
 
-export { Table, TableBody, TableCaption, TableCell, TableEmpty, TableFooter, TableHead, TableHeader, TableRow };
+export {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableEmpty,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow
+};

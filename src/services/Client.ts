@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig, ResponseType } from "axios";
+import axios, { AxiosRequestConfig, ResponseType } from 'axios';
 // import dotenv from 'dotenv'
 
 // dotenv.config()
@@ -29,26 +29,26 @@ const API = axios.create({
   baseURL: 'https://api.seobot.pro/api',
   timeout: REQUEST_TIMEOUT,
   headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json",
-    "ngrok-skip-browser-warning": true,
-  },
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+    'ngrok-skip-browser-warning': true
+  }
 });
 
 export const ApiClient = async ({
   data,
-  method = "GET",
+  method = 'GET',
   url,
   params,
   headers,
-  responseType = "json",
+  responseType = 'json'
 }: Client) => {
   const requestParams: AxiosRequestConfig = {
     method,
     url,
     params,
     data,
-    responseType,
+    responseType
   };
 
   API.defaults.headers = { ...API.defaults.headers, ...headers };
@@ -57,11 +57,11 @@ export const ApiClient = async ({
     .then((res) => ({ data: res.data, status: res.status }))
     .catch((err) => {
       console.error(
-        "\nERROR MESSAGE:",
+        '\nERROR MESSAGE:',
         err.response.data.message,
-        `\nSTATUS: ${err.response.data.status}`,
+        `\nSTATUS: ${err.response.data.status}`
       );
 
-      return { data: "isError", status: err.response.status };
+      return { data: 'isError', status: err.response.status };
     });
 };

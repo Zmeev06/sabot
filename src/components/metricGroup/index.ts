@@ -6,4 +6,13 @@ import InfoGraphic from './components/Infographic.vue';
 import InfoGraphicItem from './components/InfographicItem.vue';
 import type { IBadgeLegendItem, ChartType } from './constants/types';
 
-export { Chart, ChartCategory, ChartFilters, ChartLegend, InfoGraphic, InfoGraphicItem, IBadgeLegendItem, ChartType };
+export {
+  Chart,
+  ChartCategory,
+  ChartFilters,
+  ChartLegend,
+  InfoGraphic,
+  InfoGraphicItem,
+  IBadgeLegendItem,
+  ChartType
+};

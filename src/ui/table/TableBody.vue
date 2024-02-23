@@ -1,11 +1,11 @@
 <script setup lang="ts">
-	import { cn } from '../../utils/helpers';
+import { cn } from '../../utils/helpers';
 
-	const props = defineProps<{ class?: string }>();
+const props = defineProps<{ class?: string }>();
 </script>
 
 <template>
-	<tbody :class="cn('[&_tr:last-child]:border-0', props.class)">
-		<slot />
-	</tbody>
+  <tbody :class="cn('[&_tr:last-child]:border-0', props.class)">
+    <slot />
+  </tbody>
 </template>

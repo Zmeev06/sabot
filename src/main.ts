@@ -12,11 +12,11 @@ import 'v-calendar/style.css';
 import 'swiper/css';
 
 const app = createApp(App)
-	.use(store)
-	.use(router)
-	.use(PrimeVue, {
-		unstyled: true,
-	})
-	.use(VueTippy)
-	.use(VCalendar);
+  .use(store)
+  .use(router)
+  .use(PrimeVue, {
+    unstyled: true
+  })
+  .use(VueTippy)
+  .use(VCalendar);
 app.mount('#app');

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-	import { cn } from '../../utils/helpers';
+import { cn } from '../../utils/helpers';
 
-	const props = defineProps<{ class?: string }>();
+const props = defineProps<{ class?: string }>();
 </script>
 
 <template>
-	<tfoot :class="cn('bg-grey-mid text-base-white font-medium', props.class)">
-		<slot />
-	</tfoot>
+  <tfoot :class="cn('bg-grey-mid text-base-white font-medium', props.class)">
+    <slot />
+  </tfoot>
 </template>

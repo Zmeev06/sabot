@@ -1,9 +1,9 @@
 <script setup lang="ts">
-	import { DefaultLayout } from '@//components/layouts';
+import { DefaultLayout } from '@//components/layouts';
 </script>
 
 <template>
-	<DefaultLayout>
-		<RouterView />
-	</DefaultLayout>
+  <DefaultLayout>
+    <RouterView />
+  </DefaultLayout>
 </template>
