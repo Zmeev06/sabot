@@ -74,8 +74,8 @@ const cities = ref([
       >
         <Icon name="help-circle" class="tooltip-trigger" />
       </Tooltip>
-      <Button class="h-full" variant="secondary" label="И" />
-      <Button class="h-full" variant="secondary" label="Или" />
+      <Button variant="secondary" size="lg" label="И" />
+      <Button variant="secondary" size="lg" label="Или" />
       <Button variant="secondary" size="sm" error icon="close" />
     </div>
     <div class="flex items-center gap-2 py-2">
