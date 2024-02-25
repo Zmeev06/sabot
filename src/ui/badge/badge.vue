@@ -41,7 +41,7 @@ const badgeStyle =
 
 <style>
 .ptBadgePrimary {
-  @apply bg-gray-50 font-medium text-grey-700 outline outline-1 -outline-offset-1 outline-grey-200;
+  @apply bg-grey-50 font-medium text-grey-700 outline outline-1 -outline-offset-1 outline-grey-200;
 }
 
 .ptBadgeError {

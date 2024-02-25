@@ -160,6 +160,10 @@ onMounted(async () => {
   @apply hidden;
 }
 
+.vc-container {
+  @apply bg-base-white;
+}
+
 .calendar .vc-monthly .is-not-in-month * {
   @apply text-fill-mid !opacity-100;
 }
