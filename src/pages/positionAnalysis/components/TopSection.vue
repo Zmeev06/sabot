@@ -110,7 +110,7 @@ onMounted(() => {
         <Overlay>
           <template #trigger="{ toggle }">
             <Button
-              class="!font-normal"
+              class="!justify-end !font-normal"
               icon="calendar"
               size="lg"
               iconPos="left"

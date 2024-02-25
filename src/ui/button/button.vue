@@ -125,6 +125,6 @@ const buttonStyle = ref({
 }
 
 .ptButtonIcon {
-  @apply h-5 w-5;
+  @apply h-5 w-5 flex-shrink-0;
 }
 </style>

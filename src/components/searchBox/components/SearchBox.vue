@@ -8,7 +8,8 @@ const root = ref<InstanceType<typeof Dropdown>>();
 const input = ref<InstanceType<typeof InputField>>();
 
 const searchBoxStyle = ref({
-  root: 'ptSearchBox'
+  root: 'ptSearchBox',
+  input: 'ptSearchBoxInput'
 });
 
 defineProps<{
@@ -51,5 +52,9 @@ async function open(e: Event) {
 <style>
 .ptSearchBox {
   @apply border-none;
+}
+
+.ptSearchBoxInput {
+  @apply whitespace-nowrap text-base text-text-secondary focus:font-medium focus:text-text-primary focus:outline-none;
 }
 </style>
