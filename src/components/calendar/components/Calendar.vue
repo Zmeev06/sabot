@@ -92,20 +92,36 @@ onMounted(async () => {
     <div class="relative">
       <div
         v-if="$attrs.mode !== 'time'"
-        class="absolute top-3 z-[1] flex w-full justify-between px-6"
+        class="absolute top-5 z-[1] grid w-full grid-cols-2 items-center justify-between"
       >
-        <Button
-          class="h-10 w-10 p-0"
-          variant="tertiary"
-          icon="chevron-left"
-          @click="handleNav('prev')"
-        ></Button>
-        <Button
-          class="h-10 w-10 p-0"
-          variant="tertiary"
-          icon="chevron-right"
-          @click="handleNav('next')"
-        ></Button>
+        <div class="flex items-center justify-between px-6">
+          <Button
+            class="h-10 w-10 p-0"
+            variant="tertiary"
+            icon="chevron-left"
+            @click="handleNav('prev')"
+          ></Button>
+          <Button
+            class="h-10 w-10 p-0"
+            variant="tertiary"
+            icon="chevron-right"
+            @click="handleNav('next')"
+          ></Button>
+        </div>
+        <div class="flex items-center justify-between px-6">
+          <Button
+            class="h-10 w-10 p-0"
+            variant="tertiary"
+            icon="chevron-left"
+            @click="handleNav('prev')"
+          ></Button>
+          <Button
+            class="h-10 w-10 p-0"
+            variant="tertiary"
+            icon="chevron-right"
+            @click="handleNav('next')"
+          ></Button>
+        </div>
       </div>
 
       <DatePicker
@@ -140,6 +156,9 @@ onMounted(async () => {
     0px 8px 8px -4px rgba(16, 24, 40, 0.03),
     0px 20px 24px -4px rgba(16, 24, 40, 0.08);
 }
+.vc-popover-content-wrapper {
+  @apply hidden;
+}
 
 .calendar .vc-monthly .is-not-in-month * {
   @apply text-fill-mid !opacity-100;
@@ -152,6 +171,9 @@ onMounted(async () => {
 }
 .vc-header {
   @apply !m-0 h-9 !p-0;
+}
+.vc-header .vc-title {
+  @apply hover:!opacity-100;
 }
 .calendar .vc-title-wrapper {
   @apply text-base font-semibold text-text-secondary;
@@ -223,14 +245,15 @@ onMounted(async () => {
   @apply font-medium;
 }
 .calendar .vc-day:has(.vc-highlight-base-start) .vc-day-content {
-  @apply bg-accent-normal;
+  @apply relative z-20 overflow-visible bg-accent-normal;
 }
 .calendar .vc-day:has(.vc-highlight-base-end) {
   @apply rounded-r-[40px];
 }
 .calendar .vc-day:has(.vc-highlight-base-end) .vc-day-content {
-  @apply bg-accent-normal;
+  @apply relative z-20 overflow-visible bg-accent-normal;
 }
+
 .calendar
   .vc-day:has(.vc-highlight-bg-outline):not(:has(.vc-highlight-base-start)):not(
     :has(.vc-highlight-base-end)
@@ -238,25 +261,18 @@ onMounted(async () => {
   @apply rounded-[40px];
 }
 .calendar .vc-day-content {
-  @apply relative inline-flex h-10 w-10 select-none items-center justify-center p-0 text-center text-sm font-normal text-text-secondary ring-offset-background focus-within:relative focus-within:z-20 hover:bg-accent-normal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 aria-selected:opacity-100;
+  @apply relative inline-flex h-10 w-10 select-none items-center justify-center p-0 text-center text-sm font-normal text-text-secondary -outline-offset-1 focus-within:bg-accent-normal focus-within:!text-base-white focus-within:outline focus-within:outline-1 focus-within:outline-accent-dark focus-within:ring-0 aria-selected:opacity-100;
 }
 
-.calendar
-  .is-not-in-month:not(:has(.vc-highlight-content-solid)):not(
-    :has(.vc-highlight-content-light)
-  ):not(:has(.vc-highlight-content-outline)),
-.calendar .vc-disabled {
-  @apply text-grey-mid;
-}
 .calendar .vc-day.is-not-in-month .vc-day-content {
   @apply text-[#667085];
 }
 .calendar .vc-highlight-content-solid,
 .calendar .vc-highlight-content-outline {
-  @apply bg-grey-mid text-base-white;
+  @apply text-base-white;
 }
 .calendar .vc-day-content:hover {
-  @apply text-base-white;
+  @apply !bg-accent-normal !text-base-white;
 }
 .calendar .vc-pane-container.in-transition {
   @apply overflow-hidden;

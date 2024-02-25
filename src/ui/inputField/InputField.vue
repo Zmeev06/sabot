@@ -33,8 +33,8 @@ onMounted(() => document.addEventListener('click', click));
 onUnmounted(() => document.removeEventListener('click', click));
 
 function click(e: Event) {
-  // @ts-expect-error
   if (
+    // @ts-expect-error
     (e.target === root.value?.$el || root.value?.$el.contains(e.target)) &&
     !isFocused.value
   ) {
@@ -57,10 +57,10 @@ function blur() {
 <template>
   <IconField
     iconPosition="right"
-    class="inline-flex cursor-text items-center gap-2 rounded-lg border-[1px] border-border-strong bg-base-white px-3.5 py-1.5 shadow-sm shadow-text-primary/5 transition-all hover:border-accent-normal xl:px-3.5 xl:py-2.5"
+    class="inline-flex cursor-text items-center gap-2 rounded-lg bg-base-white px-3.5 py-1.5 shadow-sm shadow-text-primary/5 outline outline-1 -outline-offset-1 outline-border-strong transition-all hover:outline-accent-normal xl:px-3.5 xl:py-2.5"
     :class="{
-      '!border-accent-normal': isFocused && !disabled,
-      'cursor-default bg-grey-light hover:border-border-strong': disabled
+      '!outline-accent-normal': isFocused && !disabled,
+      'cursor-default bg-grey-light hover:outline-border-strong': disabled
     }"
     ref="root"
   >
