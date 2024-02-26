@@ -32,7 +32,7 @@ export const legend: IBadgeLegendItem[] = [
     id: '4',
     text: '31-50',
     styles: {
-      bgColor: 'bg-gray-50',
+      bgColor: 'bg-grey-50',
       borderColor: 'outline-grey-200',
       textColor: 'text-grey-700'
     }
@@ -41,7 +41,7 @@ export const legend: IBadgeLegendItem[] = [
     id: '5',
     text: '51-100',
     styles: {
-      bgColor: 'bg-gray-50',
+      bgColor: 'bg-grey-50',
       borderColor: 'outline-grey-200',
       textColor: 'text-grey-700'
     }
@@ -50,7 +50,7 @@ export const legend: IBadgeLegendItem[] = [
     id: '6',
     text: '101+',
     styles: {
-      bgColor: 'bg-gray-50',
+      bgColor: 'bg-grey-50',
       borderColor: 'outline-grey-200',
       textColor: 'text-grey-700'
     }

@@ -11,7 +11,7 @@ const props = defineProps<Props>();
 <template>
   <div class="wrapper relative pl-1.5">
     <div
-      class="flex items-center justify-center rounded-lg bg-base-white p-3 text-sm/[18px] font-medium capitalize text-text-primary"
+      class="flex items-center justify-center rounded-lg bg-foreground p-3 text-sm/[18px] font-medium capitalize text-text-primary"
     >
       {{ props.label }}
     </div>

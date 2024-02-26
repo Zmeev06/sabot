@@ -70,7 +70,7 @@ const multiSelectStyle = computed(() => ({
     <template #itemcheckboxicon="{ checked }">
       <Icon
         name="checkbox"
-        class="h-3 w-3 text-base-white"
+        class="h-3 w-3 text-foreground"
         :modelValue="checked"
       />
     </template>
@@ -83,7 +83,7 @@ const multiSelectStyle = computed(() => ({
 }
 
 .ptMultiDropdownPanel {
-  @apply !min-w-[200px] overflow-auto rounded-lg border-[1px] border-border-mid bg-base-white py-1 shadow-md shadow-text-primary/[3] [&::-webkit-scrollbar-thumb]:rounded-lg [&::-webkit-scrollbar-thumb]:bg-border-mid [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar]:w-2;
+  @apply !min-w-[200px] overflow-auto rounded-lg border-[1px] border-border-mid bg-foreground py-1 shadow-md shadow-text-primary/[3] [&::-webkit-scrollbar-thumb]:rounded-lg [&::-webkit-scrollbar-thumb]:bg-border-mid [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar]:w-2;
 }
 
 .ptMultiDropdownItem {

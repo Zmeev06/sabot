@@ -18,6 +18,7 @@ withDefaults(
     icon?: string;
     iconPosition?: string;
     disabled?: boolean;
+    placeholder?: string;
   }>(),
   {
     icon: 'search',
@@ -57,7 +58,7 @@ function blur() {
 <template>
   <IconField
     iconPosition="right"
-    class="inline-flex cursor-text items-center gap-2 rounded-lg bg-base-white px-3.5 py-1.5 shadow-sm shadow-text-primary/5 outline outline-1 -outline-offset-1 outline-border-strong transition-all hover:outline-accent-normal xl:px-3.5 xl:py-2.5"
+    class="inline-flex w-full cursor-text items-center gap-2 rounded-lg bg-foreground px-3.5 py-1.5 shadow-sm shadow-text-primary/5 outline outline-1 -outline-offset-1 outline-border-strong transition-all hover:outline-accent-normal xl:px-3.5 xl:py-2.5"
     :class="{
       '!outline-accent-normal': isFocused && !disabled,
       'cursor-default bg-grey-light hover:outline-border-strong': disabled
@@ -76,7 +77,7 @@ function blur() {
       data-input-field
       v-model="modelValue"
       :disabled="disabled"
-      v-bind="$attrs"
+      :placeholder="placeholder"
       @blur="blur"
       ref="input"
     />

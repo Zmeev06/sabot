@@ -78,7 +78,7 @@ const dropDownSlots = computed(() => {
 
 <style>
 .ptDropdownRoot {
-  @apply inline-flex cursor-pointer items-center justify-between gap-2 rounded-lg bg-base-white px-[14px] py-[10px] shadow-sm shadow-text-primary/5 outline outline-1 -outline-offset-1 outline-border-strong transition-all hover:outline-accent-normal focus:outline-accent-normal;
+  @apply inline-flex cursor-pointer items-center justify-between gap-2 rounded-lg bg-foreground px-[14px] py-[10px] shadow-sm shadow-text-primary/5 outline outline-1 -outline-offset-1 outline-border-strong transition-all hover:outline-accent-normal focus:outline-accent-normal;
 }
 
 .ptRootFocused {
@@ -90,7 +90,7 @@ const dropDownSlots = computed(() => {
 }
 
 .ptDropdownWrapper {
-  @apply my-1 overflow-auto rounded-lg border-[1px] border-border-mid bg-base-white shadow-md shadow-text-primary/[3] [&::-webkit-scrollbar-thumb]:rounded-lg [&::-webkit-scrollbar-thumb]:bg-border-mid [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar]:w-2;
+  @apply my-1 overflow-auto rounded-lg border-[1px] border-border-mid bg-foreground shadow-md shadow-text-primary/[3] [&::-webkit-scrollbar-thumb]:rounded-lg [&::-webkit-scrollbar-thumb]:bg-border-mid [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar]:w-2;
 }
 
 .ptDropdownItem {

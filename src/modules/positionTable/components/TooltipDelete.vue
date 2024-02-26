@@ -10,14 +10,14 @@ import { Icon } from '@//ui/icon';
     <template #content>
       <div class="wrapper relative overflow-visible">
         <button
-          class="flex items-center gap-1 overflow-hidden rounded-lg bg-base-white p-3 text-error-500"
+          class="flex items-center gap-1 overflow-hidden rounded-lg bg-foreground p-3 text-error-500"
         >
           <Icon name="trash" class="h-4 w-4" />
           <span class="text-sm/[18px] font-medium">Удалить</span>
         </button>
         <Icon
           name="tooltip-arrow"
-          class="absolute left-[50%] top-[100%] h-1.5 w-4 -translate-x-[50%] text-base-white"
+          class="absolute left-[50%] top-[100%] h-1.5 w-4 -translate-x-[50%] text-foreground"
         />
       </div>
     </template>

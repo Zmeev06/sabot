@@ -98,7 +98,7 @@ function getFixedCellStyle(index: number) {
     return '';
   }
 
-  return `sticky top-0 after:absolute after:z-[-1] after:top-0 after:left-0 after:w-full after:h-full after:bg-base-white group-hover:after:bg-grey-light after:transition-colors`;
+  return `sticky top-0 after:absolute after:z-[-1] after:top-0 after:left-0 after:w-full after:h-full after:bg-foreground group-hover:after:bg-grey-light after:transition-colors`;
 }
 
 /* */
@@ -210,13 +210,9 @@ function getMinWidthContentCell(index: number) {
       class="w-full overflow-y-auto overflow-x-hidden"
       ref="scrollWrapperRef"
       @scroll="handleNativeScroll"
-	  position-table-component
+      position-table-component
     >
-      <Table
-        class="w-full table-auto border-collapse"
-        ref="tableRef"
-        position-table-component
-      >
+      <Table class="w-full table-auto border-collapse" ref="tableRef">
         <TableHeader class="relative z-20 !border-none !p-0">
           <TableRow
             class="relative border-b-[1px] border-transparent !p-0 after:absolute after:left-0 after:top-[100%] after:h-[1px] after:w-full after:bg-border-heavy"
@@ -310,13 +306,16 @@ function getMinWidthContentCell(index: number) {
         label="Вперёд"
       />
     </div>
-    <div class="absolute group top-0 right-[-32px] h-full z-10 overflow-hidden">
-        <div class="inline-flex items-center sticky top-0 h-full max-h-svh">
-            <button
-                class="inline-flex items-center justify-end w-[90px] h-[132px] rounded-tl-full rounded-bl-full bg-accent-normal transition-transform translate-x-[100%] group-hover:translate-x-0">
-                    <Icon name="chevron-right" class="h-12 w-12 text-base-white" />
-            </button>
-        </div>
+    <div
+      class="group absolute right-[-32px] top-[110px] z-10 h-full overflow-hidden"
+    >
+      <div class="sticky top-0 inline-flex h-full max-h-svh items-center">
+        <button
+          class="inline-flex h-[132px] w-[90px] translate-x-[100%] items-center justify-end rounded-bl-full rounded-tl-full bg-accent-normal transition-transform group-hover:translate-x-0"
+        >
+          <Icon name="chevron-right" class="h-12 w-12 text-base-white" />
+        </button>
+      </div>
     </div>
   </div>
 </template>

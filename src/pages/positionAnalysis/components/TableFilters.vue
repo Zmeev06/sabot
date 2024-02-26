@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { Icon } from '../../../ui/icon';
 import { SearchBox } from '../../../components/searchBox';
 import { Tooltip } from '../../../ui/tooltip';
@@ -15,6 +15,10 @@ const cities = ref([
   { name: 'Istanbul', code: 'IST' },
   { name: 'Paris', code: 'PRS' }
 ]);
+
+const computedBadgeStyles = computed(() => ({
+  root: 'ptBadgePrimary'
+}));
 </script>
 
 <template>
@@ -24,6 +28,7 @@ const cities = ref([
         v-model="selectedCity"
         :options="cities"
         optionLabel="name"
+        size="lg"
         placeholder="Поиск"
         class="w-full max-w-[1036px]"
       />
@@ -88,11 +93,11 @@ const cities = ref([
       >
         <Icon name="help-circle" class="tooltip-trigger" />
       </Tooltip>
-      <Badge size="lg">Выпали из ТОП 10</Badge>
-      <Badge size="lg">Рост в ТОП 10</Badge>
-      <Badge size="lg">Сильная просадка</Badge>
-      <Badge size="lg">В ТОП 10</Badge>
-      <Badge size="lg">Близко к ТОП 10</Badge>
+      <Badge :pt="computedBadgeStyles" size="lg">Выпали из ТОП 10</Badge>
+      <Badge :pt="computedBadgeStyles" size="lg">Рост в ТОП 10</Badge>
+      <Badge :pt="computedBadgeStyles" size="lg">Сильная просадка</Badge>
+      <Badge :pt="computedBadgeStyles" size="lg">В ТОП 10</Badge>
+      <Badge :pt="computedBadgeStyles" size="lg">Близко к ТОП 10</Badge>
     </div>
     <div class="flex items-center gap-3">
       <Button class="w-[184px]" size="lg" variant="primary" label="Применить" />
@@ -113,5 +118,9 @@ const cities = ref([
 
 .dropdown-filter {
   @apply max-w-[340px] flex-shrink flex-grow;
+}
+
+.ptBadgePrimary {
+  @apply rounded-2xl bg-grey-50 px-3 py-1 text-sm font-medium text-grey-700 outline outline-1 -outline-offset-1 outline-grey-200;
 }
 </style>

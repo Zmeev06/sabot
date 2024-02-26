@@ -29,7 +29,7 @@
     --bg-primary: 0, 0, 0;
     --bg-secondary: 249, 250, 251;
     --bg-tertiary: 234, 236, 240;
-    --bg-gray-fill-light: 249, 250, 251;
+    --bg-grey-fill-light: 249, 250, 251;
 
     --border-strong: 208, 213, 221;
     --border-mid: 234, 236, 240;
@@ -86,6 +86,92 @@
 
     --radius: 0.5rem;
   }
+
+  .dark {
+    --background: 255, 255, 255;
+    --foreground: 0, 0, 0;
+
+    --base-black: 0, 0, 0;
+    --base-white: 255, 255, 255;
+
+    --accent-normal: 0, 194, 255;
+    --accent-dark: 0, 178, 234;
+    --accent-light: 200, 242, 255;
+
+    --brand-normal: 92, 216, 255;
+
+    --fill-light: 97, 100, 108;
+    --fill-mid: 133, 136, 142;
+    --fill-strong: 148, 150, 156;
+    --fill-extra: 206, 207, 210;
+
+    --text-primary: 245, 245, 246;
+    --text-secondary: 206, 207, 210;
+    --text-tertiary: 148, 150, 156;
+
+    --bg-global: 0, 0, 0;
+    --bg-primary: 0, 0, 0;
+    --bg-secondary: 19, 20, 22;
+    --bg-tertiary: 38, 40, 45;
+    --bg-grey-fill-light: 19, 20, 22;
+
+    --border-strong: 53, 55, 61;
+    --border-mid: 38, 40, 45;
+    --border-heavy: 97, 100, 108;
+
+    --grey-light: 19, 20, 22;
+    --grey-mid: 29, 30, 34;
+    --grey-heavy: 53, 55, 61;
+    --grey-strong: 38, 40, 45;
+
+    --grey-700: 206, 207, 210;
+    --grey-500: 133, 136, 142;
+    --grey-400: 97, 100, 108;
+    --grey-200: 38, 40, 45;
+    --grey-50: 19, 20, 22;
+
+    --grey-lightmode-50: 234, 236, 240;
+    --grey-lightmode-200: 234, 236, 240;
+    --grey-lightmode-700: 52, 64, 84;
+
+    --error-800: 145, 32, 24;
+    --error-700: 253, 162, 155;
+    --error-600: 249, 112, 102;
+    --error-500: 240, 68, 56;
+    --error-300: 179, 35, 24;
+    --error-200: 145, 32, 24;
+    --error-100: 122, 39, 26;
+    --error-50: 85, 22, 12;
+
+    --warning-500: 247, 144, 9;
+    --warning-50: 78, 29, 9;
+
+    --purple-700: 195, 180, 253;
+    --purple-400: 120, 57, 238;
+    --purple-200: 74, 31, 184;
+    --purple-50: 39, 17, 95;
+
+    --success-700: 117, 224, 167;
+    --success-600: 71, 205, 137;
+    --success-500: 23, 178, 106;
+    --success-400: 7, 148, 85;
+    --success-300: 6, 118, 71;
+    --success-200: 8, 93, 58;
+    --success-100: 7, 77, 49;
+    --success-50: 5, 51, 33;
+
+    --cyan-500: 6, 174, 212;
+    --cyan-400: 8, 138, 178;
+    --cyan-300: 14, 111, 144;
+    --cyan-200: 21, 91, 117;
+    --cyan-100: 22, 76, 99;
+    --cyan-50: 13, 45, 58;
+
+    --yellow-400: 250, 197, 21;
+
+    --custom-purple: 123, 97, 255;
+    --custom-green: 11, 19, 20;
+  }
 }
 
 @layer base {
@@ -93,7 +179,7 @@
     /* @apply border-border; */
   }
   body {
-    @apply bg-custom-green font-primary text-text-primary overflow-x-hidden;
+    @apply overflow-x-hidden bg-custom-green font-primary text-text-primary;
   }
 
   body::-webkit-scrollbar {

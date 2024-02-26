@@ -16,7 +16,7 @@ const scrollTrack = defineModel<number | string>({ required: true });
 <style>
 .table-range-bar {
   -webkit-appearance: none;
-  @apply h-full w-full rounded-[8px] bg-bg-gray-fill-light p-1;
+  @apply h-full w-full rounded-[8px] bg-bg-grey-fill-light p-1;
 }
 .table-range-bar:focus {
   @apply outline-none;

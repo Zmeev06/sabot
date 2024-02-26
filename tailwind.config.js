@@ -63,7 +63,7 @@ export default {
           primary: 'rgb(var(--bg-primary))',
           secondary: 'rgb(var(--bg-secondary))',
           tertiary: 'rgb(var(--bg-tertiary))',
-          'gray-fill-light': 'rgb(var(--bg-gray-fill-light))'
+          'grey-fill-light': 'rgb(var(--bg-grey-fill-light))'
         },
         border: {
           strong: 'rgb(var(--border-strong))',
@@ -75,6 +75,9 @@ export default {
           mid: 'rgb(var(--grey-mid))',
           heavy: 'rgb(var(--grey-heavy))',
           strong: 'rgb(var(--grey-strong))',
+          'lightmode-50': 'rgb(var(--grey-lightmode-50))',
+          'lightmode-200': 'rgb(var(--grey-lightmode-200))',
+          'lightmode-700': 'rgb(var(--grey-lightmode-700))',
           700: 'rgb(var(--grey-700))',
           500: 'rgb(var(--grey-500))',
           400: 'rgb(var(--grey-400))',
