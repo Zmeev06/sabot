@@ -26,7 +26,7 @@ const currentTabIndex = computed(() =>
           :class="
             currentTabIndex === index
               ? 'bg-bg-secondary text-text-primary'
-              : 'bg-base-white text-text-tertiary'
+              : 'bg-foreground text-text-tertiary'
           "
         >
           {{ tab.title }}

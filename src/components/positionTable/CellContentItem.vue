@@ -31,7 +31,7 @@ const bgColor = computed(() => {
       result += 'error-';
       break;
     case 'equal':
-      result += 'base-white';
+      result += 'foreground';
       break;
     case 'blue':
       result += 'cyan-';

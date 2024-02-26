@@ -92,7 +92,7 @@ function onContextMenuPopup(event: Event) {
     <template #checkboxicon>
       <Icon
         name="checkbox"
-        class="h-3 w-3 text-base-white"
+        class="h-3 w-3 text-foreground"
         @contextmenu="onContextMenuPopup"
       />
     </template>
@@ -128,7 +128,7 @@ ul.ptTreeSubgroup {
 }
 
 .ptBox {
-  @apply flex h-full w-full items-center justify-center rounded-sm border-[1px] border-border-strong bg-base-white p-[1px] transition-all hover:border-accent-normal peer-checked:border-accent-normal peer-checked:bg-accent-normal peer-hover:border-accent-normal;
+  @apply flex h-full w-full items-center justify-center rounded-sm border-[1px] border-border-strong bg-foreground p-[1px] transition-all hover:border-accent-normal peer-checked:border-accent-normal peer-checked:bg-accent-normal peer-hover:border-accent-normal;
 }
 
 .ptCheckboxInput {
@@ -136,11 +136,11 @@ ul.ptTreeSubgroup {
 }
 
 .ptCheckboxIcon {
-  @apply h-full w-full text-base-white transition-all;
+  @apply h-full w-full text-foreground transition-all;
 }
 
 .ptContextMenuRoot {
-  @apply rounded-lg border-[1px] border-border-mid bg-base-white;
+  @apply rounded-lg border-[1px] border-border-mid bg-foreground;
 
   box-shadow:
     0px 4px 6px -2px rgba(var(--text-primary), 0.03),

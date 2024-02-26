@@ -59,7 +59,7 @@ export class TooltipHelper {
     markUp.setAttribute('canvas-wrapper-element', '');
     markUp.style.cssText = `
 			width: 100%;
-			background-color: rgb(var(--base-white));
+			background-color: rgb(var(--foreground));
 			border: 1px solid rgb(var(--border-mid));
 			border-radius: var(--radius);
 			padding: 12px;

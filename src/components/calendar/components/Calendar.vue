@@ -85,7 +85,7 @@ onMounted(async () => {
 
 <template>
   <div
-    class="calendar-shadow mt-1 flex rounded-lg border-[1px] border-grey-mid bg-base-white"
+    class="calendar-shadow mt-1 flex rounded-lg border-[1px] border-grey-mid bg-foreground"
   >
     <CalendarSidebar />
 
@@ -161,7 +161,7 @@ onMounted(async () => {
 }
 
 .vc-container {
-  @apply bg-base-white;
+  @apply bg-foreground;
 }
 
 .calendar .vc-monthly .is-not-in-month * {
@@ -201,7 +201,7 @@ onMounted(async () => {
   @apply rounded-md px-2 py-1;
 }
 .vc-popover-content-wrapper .vc-nav-items .vc-nav-item.is-active {
-  @apply bg-grey-mid text-base-white;
+  @apply bg-grey-mid text-foreground;
 }
 .calendar .vc-pane-header-wrapper {
   @apply hidden;
@@ -265,7 +265,7 @@ onMounted(async () => {
   @apply rounded-[40px];
 }
 .calendar .vc-day-content {
-  @apply relative inline-flex h-10 w-10 select-none items-center justify-center p-0 text-center text-sm font-normal text-text-secondary -outline-offset-1 focus-within:bg-accent-normal focus-within:!text-base-white focus-within:outline focus-within:outline-1 focus-within:outline-accent-dark focus-within:ring-0 aria-selected:opacity-100;
+  @apply relative inline-flex h-10 w-10 select-none items-center justify-center p-0 text-center text-sm font-normal text-text-secondary -outline-offset-1 focus-within:bg-accent-normal focus-within:!text-foreground focus-within:outline focus-within:outline-1 focus-within:outline-accent-dark focus-within:ring-0 aria-selected:opacity-100;
 }
 
 .calendar .vc-day.is-not-in-month .vc-day-content {
@@ -273,10 +273,10 @@ onMounted(async () => {
 }
 .calendar .vc-highlight-content-solid,
 .calendar .vc-highlight-content-outline {
-  @apply text-base-white;
+  @apply text-foreground;
 }
 .calendar .vc-day-content:hover {
-  @apply !bg-accent-normal !text-base-white;
+  @apply !bg-accent-normal !text-foreground;
 }
 .calendar .vc-pane-container.in-transition {
   @apply overflow-hidden;
@@ -394,13 +394,13 @@ onMounted(async () => {
   @apply mt-1 flex items-center px-1 text-sm font-semibold uppercase leading-6;
 }
 .vc-time-select-group {
-  @apply inline-flex items-center rounded-md border border-solid bg-base-white px-1;
+  @apply inline-flex items-center rounded-md border border-solid bg-foreground px-1;
 }
 .vc-time-select-group .vc-base-icon {
   @apply mr-1 stroke-grey-mid;
 }
 .vc-time-select-group select {
-  @apply appearance-none bg-base-white p-1 text-center outline-none;
+  @apply appearance-none bg-foreground p-1 text-center outline-none;
 }
 .vc-time-month {
   @apply ml-2;

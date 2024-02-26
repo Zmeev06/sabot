@@ -21,7 +21,7 @@ const switchStyle = ref({
 }
 
 .ptSwitchSlider {
-  @apply absolute bottom-0 left-0 right-0 top-0 rounded-xl bg-grey-mid p-0.5 transition-colors before:block before:h-5 before:w-5 before:rounded-full before:bg-base-white before:transition-transform peer-checked:bg-accent-normal peer-checked:before:translate-x-5 peer-checked:before:transform;
+  @apply absolute bottom-0 left-0 right-0 top-0 rounded-xl bg-grey-mid p-0.5 transition-colors before:block before:h-5 before:w-5 before:rounded-full before:bg-foreground before:transition-transform peer-checked:bg-accent-normal peer-checked:before:translate-x-5 peer-checked:before:transform;
 }
 
 .ptSwitchSlider::before {

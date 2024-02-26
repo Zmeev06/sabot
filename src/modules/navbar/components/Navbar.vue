@@ -19,7 +19,7 @@ const currentRouteIndex = computed(() =>
           <div
             class="inline-flex items-center whitespace-nowrap rounded-md p-1.5 text-sm/[22px] font-medium text-text-tertiary transition-colors hover:bg-grey-mid hover:text-text-primary 2xl:px-3 2xl:py-2 2xl:text-base"
             :class="{
-              'bg-grey-mid text-text-primary': currentRouteIndex === index
+              'bg-grey-mid !text-text-primary': currentRouteIndex === index
             }"
           >
             {{ link.title }}

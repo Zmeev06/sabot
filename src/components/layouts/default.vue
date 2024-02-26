@@ -24,7 +24,7 @@ const cities = ref([
 
 <template>
   <div
-    class="my-3 h-full w-full rounded-l-[32px] bg-base-white px-8 pb-12 pt-6 text-text-primary"
+    class="my-3 h-full w-full rounded-l-[32px] bg-foreground px-8 pb-12 pt-6 text-text-primary"
   >
     <Header
       class="relative -mx-8 mb-6 px-8 after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-border-mid"

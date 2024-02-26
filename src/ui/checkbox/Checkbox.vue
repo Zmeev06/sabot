@@ -25,7 +25,7 @@ const checkboxStyle = ref({
 }
 
 .ptBox {
-  @apply flex h-full w-full items-center justify-center rounded-sm border-[1px] border-border-strong bg-base-white p-[1px] transition-all hover:border-accent-normal peer-checked:border-accent-normal peer-checked:bg-accent-normal peer-hover:border-accent-normal;
+  @apply flex h-full w-full items-center justify-center rounded-sm border-[1px] border-border-strong bg-foreground p-[1px] transition-all hover:border-accent-normal peer-checked:border-accent-normal peer-checked:bg-accent-normal peer-hover:border-accent-normal;
 }
 
 .ptCheckboxInput {
@@ -33,6 +33,6 @@ const checkboxStyle = ref({
 }
 
 .ptCheckboxIcon {
-  @apply h-full w-full text-base-white transition-all;
+  @apply h-full w-full text-foreground transition-all;
 }
 </style>
