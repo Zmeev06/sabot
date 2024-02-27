@@ -20,33 +20,6 @@ function getColorLevel(level: number): string {
   return '300';
 }
 
-const bgColor = computed(() => {
-  let result = 'bg-';
-
-  switch (props.increaseType) {
-    case 'up':
-      result += 'success-';
-      break;
-    case 'down':
-      result += 'error-';
-      break;
-    case 'equal':
-      result += 'foreground';
-      break;
-    case 'blue':
-      result += 'cyan-';
-      break;
-    case 'empty':
-      result += 'warning-50';
-      break;
-  }
-
-  props.increaseType !== 'empty' && props.increaseType !== 'equal'
-    ? (result += getColorLevel(props.increaseLevel))
-    : null;
-  return result;
-});
-
 const textColor = computed(() => {
   let result = 'text-';
 
@@ -62,15 +35,12 @@ const textColor = computed(() => {
 
   return result;
 });
-
-const testColor = computed(() => '#CFF8FE');
 </script>
 
 <template>
   <div
     class="flex items-start gap-0.5 px-3 py-2"
-    :style="{ backgroundColor: testColor }"
-    :class="[textColor]"
+    :class="[textColor, 'bg-success-300']"
     :data-increase-type="increaseType"
   >
     <h2 v-if="increaseType !== 'empty'" class="title">{{ title }}</h2>
