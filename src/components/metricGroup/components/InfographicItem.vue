@@ -47,7 +47,9 @@ const computedStyles = computed(() => ({
 </script>
 
 <template>
-  <div class="px-3 py-2 xl:pl-3.5 xl:pr-1.5">
+  <div
+    class="cursor-pointer px-3 py-2 transition-colors hover:bg-grey-light xl:pl-3.5 xl:pr-1.5"
+  >
     <div
       class="mb-2 text-[0.75rem] font-medium leading-[1.125rem] text-fill-strong"
     >
