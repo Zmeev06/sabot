@@ -42,7 +42,7 @@ withDefaults(
           :class="{
             [`${item.iconColor}`]: item.iconColor,
             'text-base-black': isCurrent,
-            'text-gray-500 group-hover:text-base-black': !isCurrent
+            'text-grey-500 group-hover:text-base-black': !isCurrent
           }"
         />
         <span v-show="sidebarStore.isSidebarExpanded">{{ item.title }}</span>

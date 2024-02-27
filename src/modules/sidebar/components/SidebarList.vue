@@ -25,7 +25,7 @@ function isCurrent(currentUrl: string, itemUrl: string) {
 <template>
   <div class="flex flex-col gap-[18px]">
     <div
-      class="font-secondary text-lg font-medium text-gray-400"
+      class="font-secondary text-lg font-medium text-grey-400"
       v-show="sidebarStore.isSidebarExpanded"
     >
       {{ title }}

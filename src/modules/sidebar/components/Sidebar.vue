@@ -37,7 +37,7 @@ const iconLogoName = computed(() =>
           </RouterLink>
 
           <button
-            class="hidden items-center justify-center p-0.5 text-gray-400 transition-transform 2xl:flex"
+            class="hidden items-center justify-center p-0.5 text-grey-400 transition-transform 2xl:flex"
             @click="sidebarStore.toggleSidebar"
             :class="{ 'rotate-180': !sidebarStore.isSidebarExpanded }"
           >

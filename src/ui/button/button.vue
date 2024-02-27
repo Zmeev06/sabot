@@ -85,23 +85,23 @@ const buttonStyle = ref({
 }
 
 .ptButtonPrimary {
-  @apply bg-accent-normal text-base-white shadow-sm shadow-text-primary/5 outline outline-1 -outline-offset-1 outline-accent-normal hover:bg-accent-dark hover:outline-accent-dark focus:shadow-none focus:ring-2 focus:ring-accent-light disabled:border-accent-light disabled:bg-accent-light;
+  @apply bg-accent-normal text-foreground shadow-sm shadow-text-primary/5 outline outline-1 -outline-offset-1 outline-accent-normal hover:bg-accent-dark hover:outline-accent-dark focus:shadow-none focus:ring-2 focus:ring-accent-light disabled:border-accent-light disabled:bg-accent-light;
 }
 
 .ptButtonSecondary {
-  @apply bg-base-white text-text-secondary shadow-sm shadow-text-primary/5 outline outline-1 -outline-offset-1 outline-border-strong hover:bg-bg-secondary hover:text-text-primary focus:ring-4 focus:ring-accent-light disabled:text-border-strong disabled:outline-border-mid;
+  @apply bg-foreground text-text-secondary shadow-sm shadow-text-primary/5 outline outline-1 -outline-offset-1 outline-border-strong hover:bg-bg-secondary hover:text-text-primary focus:ring-4 focus:ring-accent-light disabled:text-border-strong disabled:outline-border-mid;
 }
 
 .ptButtonTertiary {
-  @apply bg-base-white text-fill-strong hover:bg-bg-secondary hover:text-text-secondary focus:bg-bg-secondary disabled:bg-bg-secondary disabled:text-border-strong;
+  @apply bg-foreground text-fill-strong hover:bg-bg-secondary hover:text-text-secondary focus:bg-bg-secondary disabled:bg-bg-secondary disabled:text-border-strong;
 }
 
 .ptButtonPrimaryError {
-  @apply bg-error-600 text-base-white shadow-sm shadow-text-primary/5 outline outline-1 -outline-offset-1 outline-error-600 hover:bg-error-700 hover:outline-error-700 focus:ring-4 focus:ring-error-100 disabled:bg-error-200 disabled:outline-error-200;
+  @apply bg-error-600 text-foreground shadow-sm shadow-text-primary/5 outline outline-1 -outline-offset-1 outline-error-600 hover:bg-error-700 hover:outline-error-700 focus:ring-4 focus:ring-error-100 disabled:bg-error-200 disabled:outline-error-200;
 }
 
 .ptButtonSecondaryError {
-  @apply bg-base-white text-error-700 shadow-sm shadow-text-primary/5 outline outline-1 -outline-offset-1 outline-error-300 hover:bg-error-50 hover:text-error-800 focus:ring-4 focus:ring-error-100 disabled:text-error-300 disabled:outline-error-200;
+  @apply bg-foreground text-error-700 shadow-sm shadow-text-primary/5 outline outline-1 -outline-offset-1 outline-error-300 hover:bg-error-50 hover:text-error-800 focus:ring-4 focus:ring-error-100 disabled:text-error-300 disabled:outline-error-200;
 }
 
 .ptButtonSizeSm {

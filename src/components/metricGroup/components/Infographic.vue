@@ -43,7 +43,7 @@ function init(swiper: SwiperClass) {
       :class="[
         { 'after:hidden': isEnd },
         isOverflowed
-          ? 'after:absolute after:-right-2 after:top-0 after:z-10 after:h-full after:w-20 after:bg-gradient-to-r after:from-transparent after:to-base-white'
+          ? 'after:absolute after:-right-2 after:top-0 after:z-10 after:h-full after:w-20 after:bg-gradient-to-r after:from-transparent after:to-foreground'
           : ''
       ]"
       :slides-per-view="'auto'"

@@ -7,16 +7,25 @@ const modelValue = defineModel<any>();
 const root = ref<InstanceType<typeof Dropdown>>();
 const input = ref<InstanceType<typeof InputField>>();
 
-const searchBoxStyle = ref({
-  root: 'ptSearchBox',
-  input: 'ptSearchBoxInput'
-});
-
-defineProps<{
+interface Props {
+  pt?: any;
+  size: 'md' | 'lg';
   options: any[];
   optionLabel: string;
   placeholder?: string;
-}>();
+}
+
+const props = withDefaults(defineProps<Props>(), { size: 'md' });
+
+const searchBoxDropdownStyleObject = {
+  root: 'ptSearchBox',
+  input: 'ptSearchBoxInput'
+};
+
+const searchBoxStyle =
+  typeof props.pt === 'undefined'
+    ? ref(searchBoxDropdownStyleObject)
+    : ref(Object.assign(searchBoxDropdownStyleObject, props.pt));
 
 async function open(e: Event) {
   if (e.target !== input.value?.$el) {
@@ -38,6 +47,8 @@ async function open(e: Event) {
       <InputField
         v-model="modelValue"
         :placeholder="placeholder"
+        class="w-full"
+        :class="{ '!py-2.5': props.size === 'lg' }"
         v-bind="$attrs"
         @focus="open"
         ref="input"

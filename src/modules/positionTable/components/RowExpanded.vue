@@ -10,11 +10,15 @@ import { Icon } from '@//ui/icon';
 import { InputField } from '@//ui/inputField';
 import { Input } from '@//ui/input';
 import { Button } from '@//ui/button';
-import { MaybeComputedElementRef, useCurrentElement, useElementSize } from '@vueuse/core';
+import {
+  MaybeComputedElementRef,
+  useCurrentElement,
+  useElementSize
+} from '@vueuse/core';
 
 const el = useCurrentElement();
 const tableElement = computed(() =>
-	el.value ? el.value.closest('[position-table-component]') : undefined
+  el.value ? el.value.closest('[position-table-component]') : undefined
 ) as MaybeComputedElementRef;
 const { width } = useElementSize(tableElement);
 
@@ -54,7 +58,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="py-6 px-3 grid gap-6 grid-cols-[1fr_457px]" :style="{ width: `${width}px` }">
+  <div
+    class="grid grid-cols-[1fr_457px] gap-6 px-3 py-6"
+    :style="{ width: `${width}px` }"
+  >
     <div class="space-y-4">
       <div class="flex items-center gap-2">
         <button>
@@ -129,7 +136,7 @@ onMounted(() => {
 
 <style scoped>
 .block {
-  @apply space-y-[14px] divide-y-[1px] divide-border-mid rounded-lg bg-base-white p-[14px] outline outline-1 outline-border-mid *:pt-[14px] first:*:pt-0;
+  @apply space-y-[14px] divide-y-[1px] divide-border-mid rounded-lg bg-foreground p-[14px] outline outline-1 outline-border-mid *:pt-[14px] first:*:pt-0;
 }
 
 .title-wrapper {

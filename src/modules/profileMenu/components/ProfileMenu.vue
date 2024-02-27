@@ -42,7 +42,7 @@ import { contentGroups } from '../constants/links';
 
 <style scoped>
 .profileOverlay {
-  @apply rounded-lg border-[1px] border-base-white !bg-base-white shadow-md;
+  @apply rounded-lg border-[1px] border-foreground !bg-foreground shadow-md;
 
   box-shadow:
     0px 4px 6px -2px rgba(var(--text-primary), 0.03),

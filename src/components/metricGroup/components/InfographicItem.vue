@@ -3,6 +3,7 @@ import { computed } from 'vue';
 import { Badge } from '../../../ui/badge';
 import { Icon } from '../../../ui/icon';
 import { IGraphicItem } from '../constants/types';
+import { useColorModeStore } from '@//modules/colorModeToggler';
 
 function getTypeStyles(type: 'up' | 'down' | 'equal') {
   switch (type) {
@@ -19,6 +20,8 @@ function getTypeStyles(type: 'up' | 'down' | 'equal') {
 
 const props = defineProps<IGraphicItem>();
 
+const colorModeStore = useColorModeStore();
+
 const iconName = computed(() => {
   switch (props.badge.increaseType) {
     case 'up':
@@ -33,7 +36,10 @@ const iconName = computed(() => {
 const computedStyles = computed(() => ({
   root: [
     {
-      ptBadgePrimary: props.badge.variant === 'primary',
+      ptBadgePrimary:
+        props.badge.variant === 'primary' && !colorModeStore.isDark,
+      ptBadgePrimaryDefault:
+        props.badge.variant === 'primary' && colorModeStore.isDark,
       ptBadgeError: props.badge.variant === 'error'
     },
     {
@@ -77,7 +83,7 @@ const computedStyles = computed(() => ({
 }
 
 .ptBadgeError {
-  @apply bg-error-500 text-base-white;
+  @apply bg-error-500 text-foreground;
 }
 
 .ptBadgeSm {

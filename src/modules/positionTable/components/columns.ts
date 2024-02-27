@@ -179,7 +179,7 @@ export const columns = [
         ),
       cell: ({ row }) =>
         h(CellContentItem, {
-          class: 'w-full h-[40px] border-r-[1px] border-r-base-white',
+          class: 'w-full h-[40px] border-r-[1px] border-r-foreground',
           increaseType: item.body.increaseType,
           increaseLevel: item.body.increaseLevel,
           title: item.body.title,
@@ -199,7 +199,7 @@ export const columns = [
     cell: ({ row }) => {
       return h(
         'div',
-        { class: 'w-full h-full p-2 pr-3 bg-base-white' },
+        { class: 'w-full h-full p-2 pr-3 bg-foreground' },
         h(
           'h2',
           { class: 'text-text-primary text-sm/[14px]' },

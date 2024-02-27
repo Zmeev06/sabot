@@ -2,6 +2,7 @@
 import { computed } from 'vue';
 import { Badge } from '../../../ui/badge';
 import { BadgeItemStyles } from '../constants/types';
+import { useColorModeStore } from '@//modules/colorModeToggler';
 
 const props = withDefaults(
   defineProps<{
@@ -15,10 +16,14 @@ const props = withDefaults(
   }
 );
 
+const colorModeStore = useColorModeStore();
+
 const computedStyles = computed(() => ({
   root: [
     {
-      ptBadgePrimary: props.variant === 'primary',
+      ptBadgePrimary: props.variant === 'primary' && !colorModeStore.isDark,
+      ptBadgePrimaryDefault:
+        props.variant === 'primary' && colorModeStore.isDark,
       ptBadgeError: props.variant === 'error'
     },
     {
@@ -45,7 +50,7 @@ const computedStyles = computed(() => ({
 }
 
 .ptBadgeError {
-  @apply bg-error-500 text-base-white;
+  @apply bg-error-500 text-foreground;
 }
 
 .ptBadgeSm {
