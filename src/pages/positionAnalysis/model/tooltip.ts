@@ -178,5 +178,5 @@ export class TooltipHelper {
 
 function setAlphaRGBAColor(color: string, alpha: number) {
   const parts = color.split(' ');
-  return parts.slice(0, parts.length - 1).join('') + alpha + ')';
+  return parts.slice(0, parts.length - 1).join(' ') + alpha + ')';
 }

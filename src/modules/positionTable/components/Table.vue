@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
 import type { ColumnDef, ExpandedState } from '@tanstack/vue-table';
 import type { Response } from '../constants/types';
 import {
@@ -37,6 +37,7 @@ const props = defineProps<{
 }>();
 
 const tableRef = ref();
+const wrapper = ref<HTMLDivElement>();
 const headerCell = ref();
 const contentCell = ref();
 
@@ -195,11 +196,40 @@ function getMinWidthContentCell(index: number) {
 
   return '';
 }
+
+const scrollYValue = ref(0);
+const arrowTopValue = ref(132);
+
+function getTableScrollYValue() {
+  const scrollValue = Math.abs(
+    scrollYValue.value +
+      tableRef.value?.$el.getBoundingClientRect().top -
+      (scrollYValue.value + tableRef.value?.$el.getBoundingClientRect().top) +
+      tableRef.value?.$el.getBoundingClientRect().top
+  );
+
+  const allowScrollValue = wrapper.value?.offsetHeight! - window.innerHeight;
+  return scrollValue > allowScrollValue ? allowScrollValue : scrollValue;
+}
+
+function setScrollYValue() {
+  scrollYValue.value = document.documentElement.scrollTop;
+
+  if (tableRef.value?.$el.getBoundingClientRect().top <= 0) {
+    arrowTopValue.value = 132 + getTableScrollYValue();
+  } else {
+    arrowTopValue.value = 132;
+  }
+}
+
+onMounted(() => document.addEventListener('scroll', setScrollYValue));
+onUnmounted(() => document.removeEventListener('scroll', setScrollYValue));
 </script>
 
 <template>
   <div
     class="relative grid grid-flow-row rounded-xl shadow-sm shadow-text-primary/5 outline outline-1 outline-border-mid"
+    ref="wrapper"
   >
     <TableTopHeader
       v-model:scroll-track="scrollTrackPercent"
@@ -307,15 +337,14 @@ function getMinWidthContentCell(index: number) {
       />
     </div>
     <div
-      class="group absolute right-[-32px] top-[110px] z-10 h-full overflow-hidden"
+      class="group absolute right-[-32px] z-10 inline-flex h-full max-h-svh items-center overflow-hidden"
+      :style="{ top: `${arrowTopValue}px` }"
     >
-      <div class="sticky top-0 inline-flex h-full max-h-svh items-center">
-        <button
-          class="inline-flex h-[132px] w-[90px] translate-x-[100%] items-center justify-end rounded-bl-full rounded-tl-full bg-accent-normal transition-transform group-hover:translate-x-0"
-        >
-          <Icon name="chevron-right" class="h-12 w-12 text-base-white" />
-        </button>
-      </div>
+      <button
+        class="inline-flex h-[132px] w-[90px] translate-x-[100%] items-center justify-end rounded-bl-full rounded-tl-full bg-accent-normal/60 backdrop-blur-[6px] transition-transform group-hover:translate-x-0"
+      >
+        <Icon name="chevron-right" class="h-12 w-12 text-base-white" />
+      </button>
     </div>
   </div>
 </template>

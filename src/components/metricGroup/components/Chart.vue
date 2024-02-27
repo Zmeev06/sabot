@@ -58,9 +58,11 @@ onMounted(() => {
     canvasWrapper.offsetHeight / 1.6
   );
 
+  console.log();
+
   gradient?.addColorStop(
     0,
-    `rgba(${getColorFromCssVariable('--accent-normal')}, 0.3)`
+    `rgb(${getColorFromCssVariable('--accent-normal')} / 0.3)`
   );
   gradient?.addColorStop(1, 'rgba(255, 255, 255, 0)');
 

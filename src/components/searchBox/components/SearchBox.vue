@@ -9,7 +9,7 @@ const input = ref<InstanceType<typeof InputField>>();
 
 interface Props {
   pt?: any;
-  size: 'md' | 'lg';
+  size?: 'md' | 'lg';
   options: any[];
   optionLabel: string;
   placeholder?: string;

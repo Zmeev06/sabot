@@ -90,7 +90,7 @@ const dropDownSlots = computed(() => {
 }
 
 .ptDropdownWrapper {
-  @apply my-1 overflow-auto rounded-lg border-[1px] border-border-mid bg-foreground shadow-md shadow-text-primary/[3] [&::-webkit-scrollbar-thumb]:rounded-lg [&::-webkit-scrollbar-thumb]:bg-border-mid [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar]:w-2;
+  @apply my-1 overflow-auto rounded-lg border-[1px] border-border-mid bg-foreground shadow-md shadow-text-primary/[0.03] [&::-webkit-scrollbar-thumb]:rounded-lg [&::-webkit-scrollbar-thumb]:bg-border-mid [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar]:w-2;
 }
 
 .ptDropdownItem {

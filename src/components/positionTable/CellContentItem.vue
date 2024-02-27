@@ -8,18 +8,6 @@ const props = defineProps<{
   value: number;
 }>();
 
-function getColorLevel(level: number): string {
-  switch (level) {
-    case 1:
-      return '100';
-    case 2:
-      return '200';
-    case 3:
-      return '300';
-  }
-  return '300';
-}
-
 const textColor = computed(() => {
   let result = 'text-';
 
