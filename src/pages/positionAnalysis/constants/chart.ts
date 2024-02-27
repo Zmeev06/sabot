@@ -1,5 +1,6 @@
 import { ChartType } from '../../../components/metricGroup/constants/types';
 import { TooltipHelper } from '../model/tooltip';
+import { getColorFromCssVariableToRGBA } from '@//components/metricGroup';
 
 import Chart from 'chart.js/auto';
 
@@ -94,25 +95,25 @@ const chartLine: IChartDataConfig = {
     {
       label: 'My Dataset',
       data: [24, 24, 24, 24, 25, 25, 25, 25, 25, 26, 26, 26, 26, 26],
-      borderColor: '#2CE',
+      borderColor: getColorFromCssVariableToRGBA('--cyan-300'),
       backgroundColor: 'transparent',
-      pointBackgroundColor: '#2CE',
+      pointBackgroundColor: getColorFromCssVariableToRGBA('--cyan-400'),
       ...getChartDatasetDefault()
     },
     {
       label: 'My Dataset',
       data: [12, 14, 13, 15, 18, 19, 18, 17, 19, 25, 19, 18, 16, 18],
-      borderColor: '#A48AFB',
+      borderColor: getColorFromCssVariableToRGBA('--purple-400'),
       backgroundColor: 'transparent',
-      pointBackgroundColor: '#A48AFB',
+      pointBackgroundColor: getColorFromCssVariableToRGBA('--purple-400'),
       ...getChartDatasetDefault()
     },
     {
       label: 'My Dataset',
       data: [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 19, 19],
-      borderColor: '#47CD89',
+      borderColor: getColorFromCssVariableToRGBA('--success-400'),
       backgroundColor: 'transparent',
-      pointBackgroundColor: '#47CD89',
+      pointBackgroundColor: getColorFromCssVariableToRGBA('--success-400'),
       ...getChartDatasetDefault()
     }
   ]
@@ -139,9 +140,9 @@ const chartLineFilled: IChartDataConfig = {
     {
       label: 'First Dataset',
       data: [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 19, 19],
-      borderColor: '#47CD89',
-      backgroundColor: '#47CD89',
-      pointBackgroundColor: '#47CD89',
+      borderColor: getColorFromCssVariableToRGBA('--cyan-300'),
+      backgroundColor: getColorFromCssVariableToRGBA('--cyan-300'),
+      pointBackgroundColor: getColorFromCssVariableToRGBA('--cyan-300'),
       tension: 0.4,
       fill: true,
       pointRadius: 0
@@ -149,9 +150,9 @@ const chartLineFilled: IChartDataConfig = {
     {
       label: 'First Dataset',
       data: [12, 14, 13, 15, 18, 19, 18, 17, 19, 25, 19, 18, 16, 28],
-      borderColor: '#A48AFB',
-      backgroundColor: '#A48AFB',
-      pointBackgroundColor: '#A48AFB',
+      borderColor: getColorFromCssVariableToRGBA('--purple-400'),
+      backgroundColor: getColorFromCssVariableToRGBA('--purple-400'),
+      pointBackgroundColor: getColorFromCssVariableToRGBA('--purple-400'),
       tension: 0.4,
       fill: true,
       pointRadius: 0
@@ -159,9 +160,9 @@ const chartLineFilled: IChartDataConfig = {
     {
       label: 'First Dataset',
       data: [24, 24, 24, 24, 25, 25, 25, 25, 25, 26, 26, 26, 26, 26],
-      borderColor: '#67E3F9',
-      backgroundColor: '#67E3F9',
-      pointBackgroundColor: '#67E3F9',
+      borderColor: getColorFromCssVariableToRGBA('--success-400'),
+      backgroundColor: getColorFromCssVariableToRGBA('--success-400'),
+      pointBackgroundColor: getColorFromCssVariableToRGBA('--success-400'),
       tension: 0.4,
       fill: true,
       pointRadius: 0
@@ -188,21 +189,21 @@ const chartBar: IChartDataConfig = {
     {
       label: 'First bar',
       type: 'bar',
-      backgroundColor: '#67E3F9',
+      backgroundColor: getColorFromCssVariableToRGBA('--cyan-300'),
       data: [50, 25, 12, 48, 90, 76, 42, 32, 54, 213, 54, 123],
       borderRadius: 8
     },
     {
       label: 'Second bar',
       type: 'bar',
-      backgroundColor: '#A48AFB',
+      backgroundColor: getColorFromCssVariableToRGBA('--purple-400'),
       data: [21, 84, 24, 75, 37, 65, 34, 32, 54, 213, 54, 123],
       borderRadius: 8
     },
     {
       label: 'Third bar',
       type: 'bar',
-      backgroundColor: '#47CD89',
+      backgroundColor: getColorFromCssVariableToRGBA('--success-400'),
       data: [41, 52, 24, 74, 23, 21, 32, 32, 54, 213, 54, 123],
       borderRadius: 8
     }
@@ -215,7 +216,11 @@ const chartDoughnut: IChartDataConfig = {
     {
       label: 'First Dataset',
       data: [35, 25, 25, 15],
-      backgroundColor: ['#67E3F9', '#A48AFB', '#47CD89'],
+      backgroundColor: [
+        getColorFromCssVariableToRGBA('--cyan-300'),
+        getColorFromCssVariableToRGBA('--purple-400'),
+        getColorFromCssVariableToRGBA('--success-400')
+      ],
       fill: true,
       tension: 0.4
     }

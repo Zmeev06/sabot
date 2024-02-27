@@ -9,7 +9,7 @@ export class TooltipHelper {
 			flex-shrink: 0;
 			width: 12px;
 			height: 12px;
-			background-color: ${hexToRgbA(color, 0.2)};
+			background-color: ${setAlphaRGBAColor(color, 0.2)};
 			border-radius: 100%;
 			display: flex;
 			align-items: center;
@@ -20,7 +20,7 @@ export class TooltipHelper {
 			width: 8px;
 			height: 8px;
 			border-radius: 100%;
-			background-color: ${hexToRgbA(color)};
+			background-color: ${color};
 		`;
 
     circle.appendChild(circleInner);
@@ -176,19 +176,7 @@ export class TooltipHelper {
   }
 }
 
-function hexToRgbA(hex: string, alpha: number = 1) {
-  var c;
-  if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
-    c = hex.substring(1).split('');
-    if (c.length == 3) {
-      c = [c[0], c[0], c[1], c[1], c[2], c[2]];
-    }
-    c = '0x' + c.join('');
-    return (
-      'rgba(' +
-      [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') +
-      `,${alpha})`
-    );
-  }
-  throw new Error('Bad Hex');
+function setAlphaRGBAColor(color: string, alpha: number) {
+  const parts = color.split(' ');
+  return parts.slice(0, parts.length - 1).join('') + alpha + ')';
 }

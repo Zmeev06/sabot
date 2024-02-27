@@ -6,6 +6,7 @@ import { getChart } from '../../../services/analysis/getChart';
 import { useCoreStore } from '../../../store/coreStore';
 import { useRegionStore } from '../../../store/regionStore';
 import { useSearchTypeStore } from '../../../store/searchTypeStore';
+import { getColorFromCssVariable } from '@//components/metricGroup';
 
 type ChartPropType = 'line' | 'bar' | 'doughnut';
 
@@ -54,9 +55,13 @@ onMounted(() => {
     0,
     0,
     0,
-    canvasWrapper.offsetHeight / 1.3
+    canvasWrapper.offsetHeight / 1.6
   );
-  gradient?.addColorStop(0, 'rgba(34, 204, 238, 0.5)');
+
+  gradient?.addColorStop(
+    0,
+    `rgba(${getColorFromCssVariable('--accent-normal')}, 0.3)`
+  );
   gradient?.addColorStop(1, 'rgba(255, 255, 255, 0)');
 
   if (props.chartType === 'line') {
