@@ -22,6 +22,9 @@ const swiper = ref<typeof Swiper>();
 const isOverflowed = ref<boolean>();
 let isEnd: ComputedRef | null = null;
 
+const isSelected = ref<boolean>(false);
+const selectedIndex = ref<number | undefined>();
+
 function lock() {
   isOverflowed.value = false;
 }
@@ -33,10 +36,23 @@ function unlock() {
 function init(swiper: SwiperClass) {
   isEnd = computed(() => swiper.isEnd);
 }
+
+function click(index: number) {
+  if (selectedIndex.value === index) {
+    isSelected.value = false;
+    return;
+  }
+
+  isSelected.value = true;
+  selectedIndex.value = index;
+}
 </script>
 
 <template>
-  <div class="grid w-full grid-cols-[1fr_auto] items-center gap-2">
+  <div
+    class="grid w-full grid-cols-[1fr_auto] items-center gap-2"
+    :class="{ isSelected: isSelected }"
+  >
     <Swiper
       ref="swiper"
       class="relative w-full rounded-lg outline outline-1 -outline-offset-1 outline-border-mid"
@@ -56,7 +72,9 @@ function init(swiper: SwiperClass) {
       <SwiperSlide
         v-for="(item, index) in items"
         :key="index"
-        class="!w-auto !flex-grow"
+        class="slide !w-auto !flex-grow"
+        :class="{ selected: selectedIndex === index }"
+        @click="click(index)"
       >
         <InfographicItem
           class="outline outline-1 -outline-offset-1 outline-border-mid"
@@ -72,3 +90,12 @@ function init(swiper: SwiperClass) {
     />
   </div>
 </template>
+
+<style scoped>
+.isSelected .slide {
+  @apply opacity-30;
+}
+.isSelected .slide.selected {
+  @apply opacity-100;
+}
+</style>
