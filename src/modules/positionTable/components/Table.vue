@@ -311,7 +311,7 @@ function getMinWidthContentCell(index: number) {
     >
       <div class="sticky top-0 inline-flex h-full max-h-svh items-center">
         <button
-          class="inline-flex h-[132px] w-[90px] translate-x-[100%] items-center justify-end rounded-bl-full rounded-tl-full bg-accent-normal transition-transform group-hover:translate-x-0"
+          class="inline-flex h-[132px] w-[90px] translate-x-[100%] items-center justify-end rounded-bl-full rounded-tl-full bg-accent-normal/60 backdrop-blur-[6px] transition-transform group-hover:translate-x-0"
         >
           <Icon name="chevron-right" class="h-12 w-12 text-base-white" />
         </button>
