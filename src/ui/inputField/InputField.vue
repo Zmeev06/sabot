@@ -73,7 +73,7 @@ function blur() {
       />
     </InputIcon>
     <InputText
-      class="appearance-none overflow-hidden border-none border-transparent bg-transparent text-base font-medium text-text-primary outline-none ring-0 ring-transparent placeholder:font-normal placeholder:text-text-tertiary disabled:text-fill-mid"
+      class="w-full appearance-none overflow-hidden border-none border-transparent bg-transparent text-base font-medium text-text-primary outline-none ring-0 ring-transparent placeholder:font-normal placeholder:text-text-tertiary disabled:text-fill-mid"
       data-input-field
       v-model="modelValue"
       :disabled="disabled"
