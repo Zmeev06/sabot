@@ -71,7 +71,7 @@ const computedStyles = computed(() => ({
   </div>
 </template>
 
-<style>
+<style scoped>
 .ptBadgePrimaryDefault {
   @apply outline outline-1;
 }
