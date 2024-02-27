@@ -18,7 +18,8 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), { size: 'md' });
 
 const searchBoxDropdownStyleObject = {
-  root: 'ptSearchBox'
+  root: 'ptSearchBox',
+  input: 'ptSearchBoxInput'
 };
 
 const searchBoxStyle =
@@ -46,6 +47,7 @@ async function open(e: Event) {
       <InputField
         v-model="modelValue"
         :placeholder="placeholder"
+        class="w-full"
         :class="{ '!py-2.5': props.size === 'lg' }"
         v-bind="$attrs"
         @focus="open"
@@ -61,5 +63,9 @@ async function open(e: Event) {
 <style>
 .ptSearchBox {
   @apply border-none;
+}
+
+.ptSearchBoxInput {
+  @apply whitespace-nowrap text-base text-text-secondary focus:font-medium focus:text-text-primary focus:outline-none;
 }
 </style>
