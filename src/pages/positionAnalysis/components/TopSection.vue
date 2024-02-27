@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue';
+import { ref, onMounted, computed, watch } from 'vue';
 import { Button } from '@ui/button';
 import { FullWidthSection } from '@components/fullWidthSection/';
 import { Dropdown } from '@ui/dropdown';
@@ -24,8 +24,8 @@ const date = ref({
 const dateComputed = computed(() =>
   date.value.start
     ? date.value.end
-      ? `${format(date.value.start, 'LL.dd.yy')} - ${format(date.value.end, 'LL.dd.yy')}`
-      : format(date.value.start, 'LL.dd.y')
+      ? `${format(date.value.start, 'dd.LL.yyyy')} - ${format(date.value.end, 'dd.LL.yyyy')}`
+      : format(date.value.start, 'dd.LL.yyyy')
     : 'Pick a date'
 );
 
@@ -68,6 +68,13 @@ const getSearchTypesData = async () => {
     searchTypes.value = data.data;
     currentSearchType.value = data.data[0];
     searchTypeStore.setSearchType(data.data[0]);
+  }
+};
+
+const modelModifiers = {
+  range: {
+    start: date.value.start,
+    end: date.value.end
   }
 };
 
@@ -116,11 +123,16 @@ onMounted(() => {
               iconPos="left"
               variant="secondary"
               :label="dateComputed"
+              ref="toggleButton"
               @click="toggle"
             />
           </template>
           <template #content>
-            <Calendar v-model.range="date" :columns="2" />
+            <Calendar
+              v-model.range="date"
+              :modelModifiers="modelModifiers"
+              :columns="2"
+            />
           </template>
         </Overlay>
       </div>

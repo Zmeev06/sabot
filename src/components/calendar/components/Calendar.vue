@@ -3,7 +3,7 @@ import { useVModel } from '@vueuse/core';
 import { Icon } from '@//ui/icon';
 import type { Calendar } from 'v-calendar';
 import { DatePicker } from 'v-calendar';
-import { computed, nextTick, onMounted, ref } from 'vue';
+import { computed, nextTick, onMounted, ref, watch } from 'vue';
 import CalendarSidebar from './CalendarSidebar.vue';
 import CalendarFooter from './CalendarFooter.vue';
 import { Button } from '@//ui/button';
@@ -81,13 +81,19 @@ onMounted(async () => {
   if (modelValue.value instanceof Date && calendarRef.value)
     calendarRef.value.focusDate(modelValue.value);
 });
+
+const range = ref();
+
+const changeDate = (data) => {
+  range.value = modelValue;
+};
 </script>
 
 <template>
   <div
     class="calendar-shadow mt-1 flex rounded-lg border-[1px] border-grey-mid bg-base-white"
   >
-    <CalendarSidebar />
+    <CalendarSidebar :data="modelValue" @changedValue="changeDate" />
 
     <div class="relative">
       <div
@@ -117,13 +123,17 @@ onMounted(async () => {
         trim-weeks
         :transition="'none'"
         :columns="columns"
+        :range="range"
       >
         <template #nav-prev-button>
           <Icon name="chevron-left" />
         </template>
 
         <template #footer>
-          <CalendarFooter class="border-t-[1px] border-t-border-mid" />
+          <CalendarFooter
+            class="border-t-[1px] border-t-border-mid"
+            :data="modelValue"
+          />
         </template>
 
         <template #nav-next-button>
