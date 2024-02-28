@@ -6,6 +6,7 @@ import { Dropdown } from '../../../ui/dropdown';
 import TableScrollbar from './table-scrollbar/TableScrollbar.vue';
 
 const props = defineProps<{
+  isScrollable: boolean;
   scrollTrack: number | string;
 }>();
 
@@ -48,8 +49,12 @@ const selectedOutput = ref(output.value[2]);
       <FilterButton icon="scale" />
       <FilterButton icon="contrast" />
     </div>
-    <div class="flex w-full max-w-[1038px] items-center gap-[18px]">
+    <div
+      class="flex w-full max-w-[1038px] items-center gap-[18px]"
+      :class="{ 'justify-end': !isScrollable }"
+    >
       <TableScrollbar
+        v-if="isScrollable"
         :scroll-track="props.scrollTrack"
         @update:scroll-track="emit('update:scrollTrack', $event)"
         class="w-full"
