@@ -10,7 +10,9 @@ const props = defineProps<{
 
 <template>
   <div class="flex items-center justify-between gap-2 pl-2 pr-2">
-    <h2 class="text-sm/4 text-text-secondary">{{ title }}</h2>
+    <h2 class="text-sm/4 text-text-secondary group-hover:text-text-primary">
+      {{ title }}
+    </h2>
     <div
       class="whitespace-nowrap text-sm/[22px]"
       :class="{

@@ -222,8 +222,28 @@ function setScrollYValue() {
   }
 }
 
-onMounted(() => document.addEventListener('scroll', setScrollYValue));
-onUnmounted(() => document.removeEventListener('scroll', setScrollYValue));
+const isScrollable = ref(false);
+
+function setIsScrollable() {
+  const scrollWidth = computed(() => scrollWrapperRef.value?.scrollWidth ?? 0);
+  const clientWidth = computed(() => scrollWrapperRef.value?.clientWidth ?? 0);
+
+  Number(scrollWidth.value - clientWidth.value)
+    ? (isScrollable.value = true)
+    : (isScrollable.value = false);
+}
+
+onMounted(() => {
+  setScrollYValue();
+  setIsScrollable();
+
+  document.addEventListener('scroll', setScrollYValue);
+  window.addEventListener('resize', setIsScrollable);
+});
+onUnmounted(() => {
+  document.removeEventListener('scroll', setScrollYValue);
+  window.removeEventListener('resize', setIsScrollable);
+});
 </script>
 
 <template>
@@ -232,6 +252,7 @@ onUnmounted(() => document.removeEventListener('scroll', setScrollYValue));
     ref="wrapper"
   >
     <TableTopHeader
+      :isScrollable="isScrollable"
       v-model:scroll-track="scrollTrackPercent"
       @update:scroll-track="controlScroll"
       class="border-b-[1px] border-b-border-heavy"
